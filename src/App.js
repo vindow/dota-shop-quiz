@@ -1,10 +1,10 @@
 import React from 'react';
-import Item from './components/item/item.js'
+import ItemHover from './components/itemHover/itemHover.js'
 
 function App() {
   return (
     <div>
-      <Item></Item>
+      <ItemHover></ItemHover>
     </div>
   );
 }

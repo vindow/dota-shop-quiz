@@ -1530,13 +1530,15 @@
          },
          {
             "key":"bonus_damage_melee",
-            "header":"+Damage (MELEE)",
-            "value":"18"
+            "header":"+",
+            "value":"18",
+			"footer":"Damage (MELEE)"
          },
          {
             "key":"bonus_damage_range",
-            "header":"+Damage (RANGED)",
-            "value":"12"
+            "header":"+",
+            "value":"12",
+			"footer":"Damage (RANGED)"
          },
          {
             "key":"bonus_armor",
@@ -2091,8 +2093,9 @@
          },
          {
             "key":"bonus_spell_amp",
-            "header":"+Spell Amplification",
-            "value":"3%"
+            "header":"+",
+            "value":"3%",
+			"footer":"Spell Amplification"
          }
       ],
       "mc":false,
@@ -3392,8 +3395,9 @@
          },
          {
             "key":"hp_regen_amp",
-            "header":"+Health Regen Amplification",
-            "value":"50%"
+            "header":"+",
+            "value":"50%",
+			"footer":"Health Regen Amplification"
          },
          {
             "key":"fixed_health_regen",
@@ -3563,13 +3567,15 @@
          },
          {
             "key":"manacost_reduction",
-            "header":"+Manacost and Manaloss Reduction",
-            "value":"12%"
+            "header":"+",
+            "value":"12%",
+			"footer":"Manacost and Manaloss Reduction"
          },
          {
             "key":"spell_amp",
-            "header":"+Base Spell Amplification",
-            "value":"8%"
+            "header":"+",
+            "value":"8%",
+			"footer":"Spell Amplification"
          }
       ],
       "mc":false,
@@ -3836,13 +3842,15 @@
          },
          {
             "key":"manacost_reduction",
-            "header":"+Manacost and Manaloss Reduction",
-            "value":"12%"
+            "header":"+",
+            "value":"12%",
+			"footer":"Manacost and Manaloss Reduction"
          },
          {
             "key":"spell_amp",
-            "header":"+Spell Amplification",
-            "value":"8%"
+            "header":"+",
+            "value":"8%",
+			"footer":"Spell Amplification"
          }
       ],
       "mc":false,
@@ -4737,8 +4745,9 @@
          },
          {
             "key":"status_resistance",
-            "header":"+Status Resistance",
-            "value":"20%"
+            "header":"+",
+            "value":"20%",
+			"footer":"Status Resistance"
          },
          {
             "key":"bonus_attack_speed",
@@ -4754,8 +4763,9 @@
          },
          {
             "key":"hp_regen_amp",
-            "header":"+Self HP Regen and Lifesteal Amp",
-            "value":"30%"
+            "header":"+",
+            "value":"30%",
+			"footer":"Self HP Regen and Lifesteal Amp"
          }
       ],
       "mc":false,
@@ -4791,23 +4801,27 @@
          },
          {
             "key":"status_resistance",
-            "header":"+Status Resistance",
-            "value":"20%"
+            "header":"+",
+            "value":"20%",
+			"footer":"Status Resistance"
          },
          {
             "key":"manacost_reduction",
-            "header":"+Manacost and Manaloss Reduction",
-            "value":"16%"
+            "header":"+",
+            "value":"16%",
+			"footer":"Manacost and Manaloss Reduction"
          },
          {
             "key":"spell_amp",
-            "header":"+Spell Amplification",
-            "value":"12%"
+            "header":"+",
+            "value":"12%",
+			"footer":"Spell Amplification"
          },
          {
             "key":"hp_regen_amp",
-            "header":"+Self HP Regen and Lifesteal Amp",
-            "value":"30%"
+            "header":"+",
+            "value":"30%",
+			"footer":"Self HP Regen and Lifesteal Amp"
          }
       ],
       "mc":false,
@@ -4849,8 +4863,9 @@
          },
          {
             "key":"manacost_reduction",
-            "header":"+Manacost and Manaloss Reduction",
-            "value":"16%"
+            "header":"+",
+            "value":"16%",
+			"footer":"Manacost and Manaloss Reduction"
          },
          {
             "key":"movement_speed_percent_bonus",
@@ -4860,8 +4875,9 @@
          },
          {
             "key":"spell_amp",
-            "header":"+Spell Amplification",
-            "value":"12%"
+            "header":"+",
+            "value":"12%",
+			"footer":"Spell Amplification"
          }
       ],
       "mc":false,
@@ -4909,8 +4925,9 @@
          },
          {
             "key":"status_resistance",
-            "header":"+Status Resistance",
-            "value":"30%"
+            "header":"+",
+            "value":"30%",
+			"footer":"Status Resistance"
          }
       ],
       "mc":false,
@@ -5031,13 +5048,15 @@
          },
          {
             "key":"status_resistance",
-            "header":"+Status Resistance",
-            "value":"16%"
+            "header":"+",
+            "value":"16%",
+			"footer":"Status Resistance"
          },
          {
             "key":"hp_regen_amp",
-            "header":"+Self HP Regen and Lifesteal Amp",
-            "value":"24%"
+            "header":"+",
+            "value":"24%",
+			"footer":"Self HP Regen and Lifesteal Amp"
          }
       ],
       "mc":false,
@@ -5944,13 +5963,15 @@
          },
          {
             "key":"status_resistance",
-            "header":"+Status Resistance",
-            "value":"20%"
+            "header":"+",
+            "value":"20%",
+			"footer":"Status Resistance"
          },
          {
             "key":"hp_regen_amp",
-            "header":"+Self HP Regen and Lifesteal Amp",
-            "value":"30%"
+            "header":"+",
+            "value":"30%",
+			"footer":"Self HP Regen and Lifesteal Amp"
          }
       ],
       "mc":100,

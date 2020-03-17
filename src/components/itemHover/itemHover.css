@@ -1,0 +1,65 @@
+.item {
+    border: 1px grey solid;
+    background-color: #333333;
+    color: #cccccc;
+    width: 300px;
+}
+.itemHeader {
+    display: flex;
+    padding: 5px 5px 0px 5px;
+}
+.itemImage {
+    width: 20%;
+}
+.itemHeaderText {
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+}
+.itemName {
+    color: white;
+    font-size: 14pt;
+    font-weight: bold;
+}
+.itemPrice {
+    color: gold;
+    display:flex;
+}
+.itemSymbol {
+    margin-right: 5px;
+}
+.itemAbility {
+    background-color:#212b3d;
+}
+.itemAbilityHeader {
+    background-color:rgb(64, 76, 99);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+.itemAbilityHeaderTitle {
+    font-weight: bold;
+}
+.itemAbilityHeaderStat {
+    display: flex;
+    justify-content: space-between;
+}
+.itemAbilityText {
+    padding: 5px;
+}
+.itemAttrib {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+.itemAttribText {
+
+}
+.itemAttribNum {
+    color:#efefef
+}
+.itemLore {
+    padding: 5px;
+    font-style: italic;
+    color: #aaaaaa
+}
