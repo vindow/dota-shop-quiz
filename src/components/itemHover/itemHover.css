@@ -26,7 +26,8 @@
     display:flex;
 }
 .itemSymbol {
-    margin-right: 5px;
+    margin: auto 5px auto 0px;
+    max-height: 1em;
 }
 .itemAbility {
     background-color:#212b3d;
@@ -43,6 +44,7 @@
 .itemAbilityHeaderStat {
     display: flex;
     justify-content: space-between;
+    margin: auto 0;
 }
 .itemAbilityText {
     padding: 5px;

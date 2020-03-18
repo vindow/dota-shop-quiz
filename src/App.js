@@ -1,10 +1,15 @@
 import React from 'react';
-import ItemHover from './components/itemHover/itemHover.js'
+import Item from './components/item/item.js'
+import "./App.css"
 
 function App() {
+  let items = []
+  for (let i = 0; i < 100; i++) {
+    items.push(<Item index={i}></Item>)
+  }
   return (
-    <div>
-      <ItemHover></ItemHover>
+    <div className="grid">
+      {items}
     </div>
   );
 }

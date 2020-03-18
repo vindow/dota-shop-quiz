@@ -7,125 +7,145 @@ class ItemHover extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            index : 134
-        }
     }
 
     render() {
         console.log(items)
+        let upgrade = <div></div>;
         let toggle = <div></div>;
         let active = <div></div>;
         let passive = [];
         let use = <div></div>;
         let attrib = []
-        if ("toggle" in items[this.state.index]) {
+        if ("upgrade" in items[this.props.index]) {
+            upgrade = 
+            <div className="itemAbility">
+                <div className="itemAbilityHeader">
+                    <span className="itemAbilityHeaderTitle">Upgrade: {items[this.props.index].upgrade[0].name}</span>
+                    {items[this.props.index].cd !== false && 
+                        <span className="itemAbilityHeaderStat">
+                            <img className="itemSymbol" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
+                            {items[this.props.index].cd}
+                        </span>
+                    }
+                    {items[this.props.index].mc !== false && 
+                        <span className="itemAbilityHeaderStat">
+                            <img className="itemSymbol" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
+                            {items[this.props.index].mc}
+                        </span>
+                    }
+                </div>
+                <div className="itemAbilityText">{items[this.props.index].upgrade[0].desc}</div>
+            </div>
+        }
+        if ("toggle" in items[this.props.index]) {
             toggle = 
             <div className="itemAbility">
                 <div className="itemAbilityHeader">
-                    <span className="itemAbilityHeaderTitle">Toggle: {items[this.state.index].toggle[0].name}</span>
-                    {items[this.state.index].cd !== false && 
+                    <span className="itemAbilityHeaderTitle">Toggle: {items[this.props.index].toggle[0].name}</span>
+                    {items[this.props.index].cd !== false && 
                         <span className="itemAbilityHeaderStat">
                             <img className="itemSymbol" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
-                            {items[this.state.index].cd}
+                            {items[this.props.index].cd}
                         </span>
                     }
-                    {items[this.state.index].mc !== false && 
+                    {items[this.props.index].mc !== false && 
                         <span className="itemAbilityHeaderStat">
                             <img className="itemSymbol" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
-                            {items[this.state.index].mc}
+                            {items[this.props.index].mc}
                         </span>
                     }
                 </div>
-                <div className="itemAbilityText">{items[this.state.index].toggle[0].desc}</div>
+                <div className="itemAbilityText">{items[this.props.index].toggle[0].desc}</div>
             </div>
         }
-        if ("active" in items[this.state.index]) {
+        if ("active" in items[this.props.index]) {
             active = 
             <div className="itemAbility">
                 <div className="itemAbilityHeader">
-                    <span className="itemAbilityHeaderTitle">Active: {items[this.state.index].active[0].name}</span>
-                    {items[this.state.index].cd !== false && 
+                    <span className="itemAbilityHeaderTitle">Active: {items[this.props.index].active[0].name}</span>
+                    {items[this.props.index].cd !== false && 
                         <span className="itemAbilityHeaderStat">
                             <img className="itemSymbol" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
-                            {items[this.state.index].cd}
+                            {items[this.props.index].cd}
                         </span>
                     }
-                    {items[this.state.index].mc !== false && 
+                    {items[this.props.index].mc !== false && 
                         <span className="itemAbilityHeaderStat">
                             <img className="itemSymbol" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
-                            {items[this.state.index].mc}
+                            {items[this.props.index].mc}
                         </span>
                     }
                 </div>
-                <div className="itemAbilityText">{items[this.state.index].active[0].desc}</div>
+                <div className="itemAbilityText">{items[this.props.index].active[0].desc}</div>
             </div>
         }
-        if ("passive" in items[this.state.index]) {
-            for (let i = 0; i < items[this.state.index].passive.length; i++) {
+        if ("passive" in items[this.props.index]) {
+            for (let i = 0; i < items[this.props.index].passive.length; i++) {
                 passive.push(
                     <div className="itemAbility">
                         <div className="itemAbilityHeader">
-                            <span className="itemAbilityHeaderTitle">Passive: {items[this.state.index].passive[i].name}</span>
+                            <span className="itemAbilityHeaderTitle">Passive: {items[this.props.index].passive[i].name}</span>
                         </div>
-                        <div className="itemAbilityText">{items[this.state.index].passive[i].desc}</div>
+                        <div className="itemAbilityText">{items[this.props.index].passive[i].desc}</div>
                     </div>
                 );
             }
         }
-        if ("use" in items[this.state.index]) {
+        if ("use" in items[this.props.index]) {
             use = 
             <div className="itemAbility">
                 <div className="itemAbilityHeader">
-                    <span className="itemAbilityHeaderTitle">Use: {items[this.state.index].use[0].name}</span>
-                    {items[this.state.index].cd !== false && 
+                    <span className="itemAbilityHeaderTitle">Use: {items[this.props.index].use[0].name}</span>
+                    {items[this.props.index].cd !== false && 
                         <span className="itemAbilityHeaderStat">
                             <img className="itemSymbol" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
-                            {items[this.state.index].cd}
+                            {items[this.props.index].cd}
                         </span>
                     }
-                    {items[this.state.index].mc !== false && 
+                    {items[this.props.index].mc !== false && 
                         <span className="itemAbilityHeaderStat">
                             <img className="itemSymbol" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
-                            {items[this.state.index].mc}
+                            {items[this.props.index].mc}
                         </span>
                     }
                 </div>
-                <div className="itemAbilityText">{items[this.state.index].use[0].desc}</div>
+                <div className="itemAbilityText">{items[this.props.index].use[0].desc}</div>
             </div>
         }
-        for (let i = 0; i < items[this.state.index].attrib.length; i++) {
+        for (let i = 0; i < items[this.props.index].attrib.length; i++) {
             attrib.push(
                 <span className="itemAttribText">
-                    {items[this.state.index].attrib[i].header}
+                    {items[this.props.index].attrib[i].header}
                     <span className="itemAttribNum">
-                        {items[this.state.index].attrib[i].value + " "}
+                        {items[this.props.index].attrib[i].value + " "}
                     </span>
-                    {items[this.state.index].attrib[i].footer}
+                    {items[this.props.index].attrib[i].footer}
                 </span>
             )
         }
         return (
             <div className="item">
                 <div className="itemHeader">
-                    <img className="itemImage" src={"http://cdn.dota2.com/apps/dota2/images/items/" + items[this.state.index].id + "_lg.png"} />
+                    <img className="itemImage" src={"http://cdn.dota2.com/apps/dota2/images/items/" + items[this.props.index].id + "_lg.png"} />
                     <div className="itemHeaderText">
-                        <span className="itemName">{items[this.state.index].dname}</span>
+                        <span className="itemName">{items[this.props.index].dname}</span>
                         <span className="itemPrice">
                             <img className="itemSymbol" src={"http://cdn.dota2.com/apps/dota2/images/tooltips/gold.png"} />
-                            {items[this.state.index].cost}
+                            {items[this.props.index].cost}
                         </span>
                     </div>
                 </div>
                 <div className="itemAttrib">
                     {attrib}
                 </div>
+                {upgrade}
                 {toggle}
                 {active}
                 {passive}
                 {use}
                 <div className="itemLore">
-                    {items[this.state.index].lore}
+                    {items[this.props.index].lore}
                 </div>
             </div>
         );

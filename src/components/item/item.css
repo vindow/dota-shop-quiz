@@ -1,0 +1,8 @@
+.itemInfo {
+    display: none;
+}
+
+.itemIcon:hover + .itemInfo {
+    display: block;
+    position: absolute;
+}
