@@ -10,7 +10,6 @@ class ItemHover extends React.Component {
     }
 
     render() {
-        console.log(items)
         let upgrade = <div></div>;
         let toggle = <div></div>;
         let active = <div></div>;
@@ -127,7 +126,9 @@ class ItemHover extends React.Component {
         return (
             <div className="item">
                 <div className="itemHeader">
-                    <img className="itemImage" src={"http://cdn.dota2.com/apps/dota2/images/items/" + items[this.props.index].id + "_lg.png"} />
+                    <div>
+                        <img src={"http://cdn.dota2.com/apps/dota2/images/items/" + items[this.props.index].id + "_lg.png"} />
+                    </div>
                     <div className="itemHeaderText">
                         <span className="itemName">{items[this.props.index].dname}</span>
                         <span className="itemPrice">

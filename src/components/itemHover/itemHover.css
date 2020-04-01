@@ -8,9 +8,6 @@
     display: flex;
     padding: 5px 5px 0px 5px;
 }
-.itemImage {
-    width: 20%;
-}
 .itemHeaderText {
     display: flex;
     margin-left: 10px;
