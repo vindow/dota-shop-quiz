@@ -12,8 +12,17 @@ const hoverOptions = {
 
 class Item extends React.Component {
 
-    constructor(props) {
+    /*constructor(props) {
         super(props);
+    }*/
+
+    getItemIndex = () => {
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].id === this.props.id) {
+                return i;
+            }
+        }
+        return 0;
     }
 
     render() {
@@ -21,11 +30,11 @@ class Item extends React.Component {
             <ReactHover options={hoverOptions}>
                 <ReactHover.Trigger type='trigger'>
                     <div className="itemIcon">
-                        <img src={"http://cdn.dota2.com/apps/dota2/images/items/" + items[this.props.index].id + "_lg.png"} />
+                        <img alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"} />
                     </div>
                 </ReactHover.Trigger>
                 <ReactHover.Hover type='hover'>
-                    <ItemHover index={this.props.index}></ItemHover>
+                    <ItemHover index={this.getItemIndex()}></ItemHover>
                 </ReactHover.Hover>
             </ReactHover>
         );

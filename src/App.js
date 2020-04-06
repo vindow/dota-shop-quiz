@@ -1,5 +1,4 @@
 import React from 'react';
-import Item from './components/item/item.js';
 import './App.css';
 import Game from './components/game/game.js';
 
