@@ -72,20 +72,6 @@ class Game extends React.Component {
     }
 
     render() {
-        /*let components = [];
-        let recipe = this.getCurrentRecipe();
-        for (let i = 0; i < recipe.length; i++) {
-            if (recipe[i] !== "recipe"){
-                let component = this.getItemData(recipe[i]);
-                if (component === null) {
-                    console.log("null item! id: " + recipe[i]);
-                }
-                components.push(component);
-            }
-        }
-        let possibleComponents = components.concat(this.generateRandomItems(recipe));
-        console.log(possibleComponents);
-        console.log(this.getCurrentRecipe());*/
         return(
             <div>
                 <Item id={this.state.itemsToQuiz[this.state.current].id}></Item>

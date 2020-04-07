@@ -8,77 +8,86 @@ class ItemHover extends React.Component {
     /*constructor(props) {
         super(props);
     }*/
-
-    render() {
-        let upgrade = <div></div>;
-        let toggle = <div></div>;
-        let active = <div></div>;
-        let passive = [];
-        let use = <div></div>;
-        let attrib = []
+    renderUpgrade = () => {
         if ("upgrade" in items[this.props.index]) {
-            upgrade = 
-            <div className="itemAbility">
-                <div className="itemAbilityHeader">
-                    <span className="itemAbilityHeaderTitle">Upgrade: {items[this.props.index].upgrade[0].name}</span>
-                    {items[this.props.index].cd !== false && 
-                        <span className="itemAbilityHeaderStat">
-                            <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
-                            {items[this.props.index].cd}
-                        </span>
-                    }
-                    {items[this.props.index].mc !== false && 
-                        <span className="itemAbilityHeaderStat">
-                            <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
-                            {items[this.props.index].mc}
-                        </span>
-                    }
+            return ( 
+                <div className="itemAbility">
+                    <div className="itemAbilityHeader">
+                        <span className="itemAbilityHeaderTitle">Upgrade: {items[this.props.index].upgrade[0].name}</span>
+                        {items[this.props.index].cd !== false && 
+                            <span className="itemAbilityHeaderStat">
+                                <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
+                                {items[this.props.index].cd}
+                            </span>
+                        }
+                        {items[this.props.index].mc !== false && 
+                            <span className="itemAbilityHeaderStat">
+                                <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
+                                {items[this.props.index].mc}
+                            </span>
+                        }
+                    </div>
+                    <div className="itemAbilityText">{items[this.props.index].upgrade[0].desc}</div>
                 </div>
-                <div className="itemAbilityText">{items[this.props.index].upgrade[0].desc}</div>
-            </div>
+            );
         }
+        return;
+    }
+
+    renderToggle = () => {
         if ("toggle" in items[this.props.index]) {
-            toggle = 
-            <div className="itemAbility">
-                <div className="itemAbilityHeader">
-                    <span className="itemAbilityHeaderTitle">Toggle: {items[this.props.index].toggle[0].name}</span>
-                    {items[this.props.index].cd !== false && 
-                        <span className="itemAbilityHeaderStat">
-                            <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
-                            {items[this.props.index].cd}
-                        </span>
-                    }
-                    {items[this.props.index].mc !== false && 
-                        <span className="itemAbilityHeaderStat">
-                            <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
-                            {items[this.props.index].mc}
-                        </span>
-                    }
+            return (
+                <div className="itemAbility">
+                    <div className="itemAbilityHeader">
+                        <span className="itemAbilityHeaderTitle">Toggle: {items[this.props.index].toggle[0].name}</span>
+                        {items[this.props.index].cd !== false && 
+                            <span className="itemAbilityHeaderStat">
+                                <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
+                                {items[this.props.index].cd}
+                            </span>
+                        }
+                        {items[this.props.index].mc !== false && 
+                            <span className="itemAbilityHeaderStat">
+                                <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
+                                {items[this.props.index].mc}
+                            </span>
+                        }
+                    </div>
+                    <div className="itemAbilityText">{items[this.props.index].toggle[0].desc}</div>
                 </div>
-                <div className="itemAbilityText">{items[this.props.index].toggle[0].desc}</div>
-            </div>
+            );
         }
+        return;
+    }
+
+    renderActive = () => {
         if ("active" in items[this.props.index]) {
-            active = 
-            <div className="itemAbility">
-                <div className="itemAbilityHeader">
-                    <span className="itemAbilityHeaderTitle">Active: {items[this.props.index].active[0].name}</span>
-                    {items[this.props.index].cd !== false && 
-                        <span className="itemAbilityHeaderStat">
-                            <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
-                            {items[this.props.index].cd}
-                        </span>
-                    }
-                    {items[this.props.index].mc !== false && 
-                        <span className="itemAbilityHeaderStat">
-                            <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
-                            {items[this.props.index].mc}
-                        </span>
-                    }
+            return (
+                <div className="itemAbility">
+                    <div className="itemAbilityHeader">
+                        <span className="itemAbilityHeaderTitle">Active: {items[this.props.index].active[0].name}</span>
+                        {items[this.props.index].cd !== false && 
+                            <span className="itemAbilityHeaderStat">
+                                <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
+                                {items[this.props.index].cd}
+                            </span>
+                        }
+                        {items[this.props.index].mc !== false && 
+                            <span className="itemAbilityHeaderStat">
+                                <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
+                                {items[this.props.index].mc}
+                            </span>
+                        }
+                    </div>
+                    <div className="itemAbilityText">{items[this.props.index].active[0].desc}</div>
                 </div>
-                <div className="itemAbilityText">{items[this.props.index].active[0].desc}</div>
-            </div>
+            );
         }
+        return;
+    }
+
+    renderPassive = () => {
+        let passive = [];
         if ("passive" in items[this.props.index]) {
             for (let i = 0; i < items[this.props.index].passive.length; i++) {
                 passive.push(
@@ -91,27 +100,37 @@ class ItemHover extends React.Component {
                 );
             }
         }
+        return passive;
+    }
+
+    renderUse = () => {
         if ("use" in items[this.props.index]) {
-            use = 
-            <div className="itemAbility">
-                <div className="itemAbilityHeader">
-                    <span className="itemAbilityHeaderTitle">Use: {items[this.props.index].use[0].name}</span>
-                    {items[this.props.index].cd !== false && 
-                        <span className="itemAbilityHeaderStat">
-                            <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
-                            {items[this.props.index].cd}
-                        </span>
-                    }
-                    {items[this.props.index].mc !== false && 
-                        <span className="itemAbilityHeaderStat">
-                            <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
-                            {items[this.props.index].mc}
-                        </span>
-                    }
+            return (
+                <div className="itemAbility">
+                    <div className="itemAbilityHeader">
+                        <span className="itemAbilityHeaderTitle">Use: {items[this.props.index].use[0].name}</span>
+                        {items[this.props.index].cd !== false && 
+                            <span className="itemAbilityHeaderStat">
+                                <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
+                                {items[this.props.index].cd}
+                            </span>
+                        }
+                        {items[this.props.index].mc !== false && 
+                            <span className="itemAbilityHeaderStat">
+                                <img className="itemSymbol" alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
+                                {items[this.props.index].mc}
+                            </span>
+                        }
+                    </div>
+                    <div className="itemAbilityText">{items[this.props.index].use[0].desc}</div>
                 </div>
-                <div className="itemAbilityText">{items[this.props.index].use[0].desc}</div>
-            </div>
+            );
         }
+        return;
+    }
+
+    renderAttributes = () => {
+        let attrib = [];
         for (let i = 0; i < items[this.props.index].attrib.length; i++) {
             attrib.push(
                 <span key={i} className="itemAttribText">
@@ -123,6 +142,10 @@ class ItemHover extends React.Component {
                 </span>
             )
         }
+        return attrib;
+    }
+
+    render() {
         return (
             <div className="item">
                 <div className="itemHeader">
@@ -138,13 +161,13 @@ class ItemHover extends React.Component {
                     </div>
                 </div>
                 <div className="itemAttrib">
-                    {attrib}
+                    {this.renderAttributes()}
                 </div>
-                {upgrade}
-                {toggle}
-                {active}
-                {passive}
-                {use}
+                {this.renderUpgrade()}
+                {this.renderToggle()}
+                {this.renderActive()}
+                {this.renderPassive()}
+                {this.renderUse()}
                 <div className="itemLore">
                     {items[this.props.index].lore}
                 </div>
