@@ -8,7 +8,7 @@ const hoverOptions = {
     followCursor: true,
     shiftX: 20,
     shiftY: 0
-  }
+}
 
 class Item extends React.Component {
 
@@ -26,18 +26,33 @@ class Item extends React.Component {
     }
 
     render() {
-        return (
-            <ReactHover options={hoverOptions}>
-                <ReactHover.Trigger type='trigger'>
-                    <div className="itemIcon">
-                        <img alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"} />
-                    </div>
-                </ReactHover.Trigger>
-                <ReactHover.Hover type='hover'>
-                    <ItemHover index={this.getItemIndex()}></ItemHover>
-                </ReactHover.Hover>
-            </ReactHover>
-        );
+        if (this.props.id === "recipe") {
+            return(
+                <ReactHover options={hoverOptions}>
+                    <ReactHover.Trigger type='trigger'>
+                        <div className="itemIcon">
+                            <img alt="" src="http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png" />
+                        </div>
+                    </ReactHover.Trigger>
+                    <ReactHover.Hover type='hover'>
+                        <ItemHover index={-1}></ItemHover>
+                    </ReactHover.Hover>
+                </ReactHover>
+            );
+        } else {
+            return (
+                <ReactHover options={hoverOptions}>
+                    <ReactHover.Trigger type='trigger'>
+                        <div className="itemIcon">
+                            <img alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"} />
+                        </div>
+                    </ReactHover.Trigger>
+                    <ReactHover.Hover type='hover'>
+                        <ItemHover index={this.getItemIndex()}></ItemHover>
+                    </ReactHover.Hover>
+                </ReactHover>
+            );
+        }
     }
 }
 

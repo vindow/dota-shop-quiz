@@ -146,33 +146,49 @@ class ItemHover extends React.Component {
     }
 
     render() {
-        return (
-            <div className="item">
-                <div className="itemHeader">
-                    <div>
-                        <img alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + items[this.props.index].id + "_lg.png"} />
+        console.log(this.props.index);
+        if (this.props.index === -1) {
+            return (
+                <div className="item">
+                    <div className="itemHeader">
+                        <div>
+                            <img alt="" src="http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png" />
+                        </div>
+                        <div className="itemHeaderText">
+                            <span className="itemName">Recipe</span>
+                        </div>
                     </div>
-                    <div className="itemHeaderText">
-                        <span className="itemName">{items[this.props.index].dname}</span>
-                        <span className="itemPrice">
-                            <img className="itemSymbol" alt="" src={"http://cdn.dota2.com/apps/dota2/images/tooltips/gold.png"} />
-                            {items[this.props.index].cost}
-                        </span>
+                </div>
+            );
+        } else {
+            return (
+                <div className="item">
+                    <div className="itemHeader">
+                        <div>
+                            <img alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + items[this.props.index].id + "_lg.png"} />
+                        </div>
+                        <div className="itemHeaderText">
+                            <span className="itemName">{items[this.props.index].dname}</span>
+                            <span className="itemPrice">
+                                <img className="itemSymbol" alt="" src={"http://cdn.dota2.com/apps/dota2/images/tooltips/gold.png"} />
+                                {items[this.props.index].cost}
+                            </span>
+                        </div>
+                    </div>
+                    <div className="itemAttrib">
+                        {this.renderAttributes()}
+                    </div>
+                    {this.renderUpgrade()}
+                    {this.renderToggle()}
+                    {this.renderActive()}
+                    {this.renderPassive()}
+                    {this.renderUse()}
+                    <div className="itemLore">
+                        {items[this.props.index].lore}
                     </div>
                 </div>
-                <div className="itemAttrib">
-                    {this.renderAttributes()}
-                </div>
-                {this.renderUpgrade()}
-                {this.renderToggle()}
-                {this.renderActive()}
-                {this.renderPassive()}
-                {this.renderUse()}
-                <div className="itemLore">
-                    {items[this.props.index].lore}
-                </div>
-            </div>
-        );
+            );
+        }
     }
 }
 

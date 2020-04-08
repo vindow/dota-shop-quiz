@@ -71,12 +71,29 @@ class Game extends React.Component {
         return quizItems;
     }
 
+    createMysteryIcons = () => {
+        let numIcons = this.state.itemsToQuiz[this.state.current].components.length;
+        let icons = [];
+        for (let i = 0; i < numIcons; i++) {
+            icons.push(
+                <div key={i}>
+                    <img src="http://cdn.dota2.com/apps/dota2/images/quiz/item-slot-unknown.png" alt=""></img>
+                </div>
+            );
+        }
+        return icons;
+    }
+
     render() {
         return(
             <div>
                 <Item id={this.state.itemsToQuiz[this.state.current].id}></Item>
                 <div>
+                    {this.createMysteryIcons()}
+                </div>
+                <div>
                     {this.createQuizItems()}
+                    <Item id="recipe"></Item>
                 </div>
             </div>
         );
