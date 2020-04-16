@@ -1509,7 +1509,7 @@
       "lore":"Winged boots that grant omnipresence.",
       "components":[
          "travel_boots",
-         "recipe_travel_boots"
+         "recipe"
       ],
       "created":true,
       "charges":false,
@@ -2957,33 +2957,6 @@
       "created":true,
       "charges":false,
       "RecipeCost":0
-   },
-   {
-      "passive":[
-         {
-            "name":"Ability Upgrade",
-            "desc":"Upgrades the ultimate, and some abilities, of all heroes."
-         }
-      ],
-      "id":"ultimate_scepter_2",
-      "img":"/apps/dota2/images/items/ultimate_scepter_2_lg.png?t=1584472485163",
-      "dname":"Aghanim's Blessing",
-      "qual":"rare",
-      "cost":6000,
-      "notes":"",
-      "attrib":[
-
-      ],
-      "mc":false,
-      "cd":false,
-      "lore":"The scepter of a wizard with demigod-like powers.",
-      "components":[
-         "ultimate_scepter",
-         "recipe"
-      ],
-      "created":true,
-      "charges":false,
-      "RecipeCost":1800
    },
    {
       "active":[

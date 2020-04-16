@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { reset } from '../../actions.js';
 import Item from '../item/item';
 import items from '../../data/items.json';
 
@@ -7,6 +9,7 @@ class Game extends React.Component {
     constructor(props) {
         super(props);
         console.log(items);
+        
         let itemsWithRecipe = [];
         for (let i = 0; i < items.length; i++) {
             if (items[i].components !== null) {
@@ -14,9 +17,14 @@ class Game extends React.Component {
             }
         }
         console.log(itemsWithRecipe);
+        let recipe = itemsWithRecipe[0].components;
+        let components = this.getQuizComponents(recipe);
+
         this.state = {
             itemsToQuiz: itemsWithRecipe,
-            current: 1
+            current: 0,
+            currentRecipe : recipe,
+            currentQuiz : components
         }
     }
 
@@ -30,6 +38,7 @@ class Game extends React.Component {
     }
 
     generateRandomItems = (recipe) => {
+        //TODO: Add an exception to power treads (don't add band of elvenskin and robe of magi to pool)
         let components = recipe.filter((item) => {
             return item !== "recipe"
         });
@@ -50,9 +59,8 @@ class Game extends React.Component {
         
     }
 
-    createQuizItems = () => {
+    getQuizComponents = (recipe) => {
         let components = [];
-        let recipe = this.state.itemsToQuiz[this.state.current].components;
         for (let i = 0; i < recipe.length; i++) {
             if (recipe[i] !== "recipe"){
                 let component = this.getItemData(recipe[i]);
@@ -62,11 +70,23 @@ class Game extends React.Component {
                 components.push(component);
             }
         }
-        let possibleComponents = components.concat(this.generateRandomItems(recipe));
-        console.log(possibleComponents);
+        return components.concat(this.generateRandomItems(recipe));
+    }
+
+    createQuiz = () => {
+        let recipe = this.state.itemsToQuiz[this.state.current].components;
+        let components = this.getQuizComponents(recipe);
+        console.log(components);
+        this.setState({
+            currentRecipe : recipe, 
+            currentQuiz : components
+        });
+    }
+
+    createQuizComponents = () => {
         let quizItems = []
-        for (let i = 0; i < possibleComponents.length; i++) {
-            quizItems.push(<Item key={i} id={possibleComponents[i].id}></Item>);
+        for (let i = 0; i < this.state.currentQuiz.length; i++) {
+            quizItems.push(<Item key={i} id={this.state.currentQuiz[i].id} index={i}></Item>);
         }
         return quizItems;
     }
@@ -84,6 +104,52 @@ class Game extends React.Component {
         return icons;
     }
 
+    nextQuiz = () => {
+        let i = this.state.current + 1;
+        if (i < this.state.itemsToQuiz.length) {
+            let recipe = this.state.itemsToQuiz[i].components;
+            let components = this.getQuizComponents(recipe);
+            this.setState({
+                current: i,
+                currentRecipe : recipe,
+                currentQuiz : components
+            })
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log(this.props.selected);
+        let recipe = this.state.currentRecipe.slice();
+        let selected = [];
+        for (let i = 0; i < this.props.selected.length - 1; i++) {
+            if (this.props.selected[i] === 1) {
+                selected.push(this.state.currentQuiz[i].id);
+            }
+        }
+        if (this.props.selected[8] === 1) {
+            selected.push("recipe");
+        }
+        if (recipe.length === selected.length) {
+            recipe.sort();
+            selected.sort();
+            let correct = true;
+            for (let i = 0; i < recipe.length; i++) {
+                if(recipe[i] !== selected[i]) {
+                    correct = false;
+                    break;
+                }
+            }
+            if (correct) {
+                console.log("Correct!");
+                this.props.dispatch(reset());
+                this.nextQuiz();
+            } else {
+                console.log("Incorrect!");
+                this.props.dispatch(reset());
+            }
+        }
+    }
+
     render() {
         return(
             <div>
@@ -92,12 +158,18 @@ class Game extends React.Component {
                     {this.createMysteryIcons()}
                 </div>
                 <div>
-                    {this.createQuizItems()}
-                    <Item id="recipe"></Item>
+                    {this.createQuizComponents()}
+                    <Item id="recipe" index={8}></Item>
                 </div>
             </div>
         );
     }
 }
 
-export default Game;
+function mapStateToProps(state) {
+    return {
+        selected : state.selected
+    };
+}
+
+export default connect(mapStateToProps)(Game);

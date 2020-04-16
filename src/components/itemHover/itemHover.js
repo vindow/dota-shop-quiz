@@ -146,7 +146,6 @@ class ItemHover extends React.Component {
     }
 
     render() {
-        console.log(this.props.index);
         if (this.props.index === -1) {
             return (
                 <div className="item">
