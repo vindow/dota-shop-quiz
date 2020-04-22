@@ -1,0 +1,21 @@
+.game {
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gameQuizItem {
+    margin: 0 auto;
+    width: 86px;
+}
+
+.gameMysteryRow {
+    display: flex;
+    justify-content: center;
+}
+
+.gameComponentRow {
+    display: flex;
+    justify-content: center;
+}

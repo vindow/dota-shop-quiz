@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { reset } from '../../actions.js';
 import Item from '../item/item';
 import items from '../../data/items.json';
+import './game.css';
 
 class Game extends React.Component {
 
@@ -17,14 +18,70 @@ class Game extends React.Component {
             }
         }
         console.log(itemsWithRecipe);
+        let materialIDs = [];
+        for (let i = 0; i < itemsWithRecipe.length; i++) {
+            let tmp = itemsWithRecipe[i].components;
+            for (let j = 0; j < tmp.length; j++) {
+                if (!materialIDs.includes(tmp[j])) {
+                    materialIDs.push(tmp[j]);
+                }
+            }
+        }
+        console.log(materialIDs);
+        
         let recipe = itemsWithRecipe[0].components;
-        let components = this.getQuizComponents(recipe);
+
+        let components = [];
+        for (let i = 0; i < recipe.length; i++) {
+            if (recipe[i] !== "recipe"){
+                let component = this.getItemData(recipe[i]);
+                if (component === null) {
+                    console.log("null item! id: " + recipe[i]);
+                }
+                components.push(component);
+            }
+        }
+        let filtered = items.filter((item) => {
+            for (let i = 0; i < recipe.length; i++) {
+                if (recipe[i] === item.id) {
+                    return;
+                }
+            }
+            if (materialIDs.includes(item.id)) {
+                return item;
+            }
+        });
+        let componentCosts = [];
+        for (let i = 0; i < recipe.length; i++) {
+            if (recipe[i] !== "recipe") {
+                componentCosts.push(this.getItemData(recipe[i]).cost);
+            }
+        }
+        if (itemsWithRecipe[0].cost !== 0) {
+            componentCosts.push(itemsWithRecipe[0].cost);
+        }
+        console.log(componentCosts);
+        let costFiltered = filtered.filter((item) => {
+            for (let i = 0; i < recipe.length; i++) {
+                if (item.cost <= (componentCosts[i] + 100) && item.cost >= (componentCosts[i] - 100)) {
+                    return item;
+                }
+            }
+        });
+        console.log(costFiltered);
+        let randItems = [];
+        for (let i = 0; i < 8 - recipe.length; i++) {
+            let rand = Math.floor(Math.random() * costFiltered.length);
+            randItems.push(costFiltered[rand]);
+        }
+        components = components.concat(randItems);
 
         this.state = {
             itemsToQuiz: itemsWithRecipe,
             current: 0,
             currentRecipe : recipe,
-            currentQuiz : components
+            currentQuiz : components,
+            materials: materialIDs
         }
     }
 
@@ -39,21 +96,44 @@ class Game extends React.Component {
 
     generateRandomItems = (recipe) => {
         //TODO: Add an exception to power treads (don't add band of elvenskin and robe of magi to pool)
-        let components = recipe.filter((item) => {
+        /*let components = recipe.filter((item) => {
             return item !== "recipe"
-        });
+        });*/
         let filtered = items.filter((item) => {
-            for (let i = 0; i < components.length; i++) {
-                if (components[i] === item.id) {
+            for (let i = 0; i < recipe.length; i++) {
+                if (recipe[i] === item.id) {
                     return;
                 }
             }
-            return item;
+            if (this.state.materials.includes(item.id)) {
+                return item;
+            }
         });
+        console.log(filtered);
+        let componentCosts = [];
+        for (let i = 0; i < recipe.length; i++) {
+            if (recipe[i] !== "recipe") {
+                componentCosts.push(this.getItemData(recipe[i]).cost);
+            }
+        }
+        console.log(this.state.itemsToQuiz[this.state.current + 1]);
+        let recipeCost = this.state.itemsToQuiz[this.state.current + 1].RecipeCost;
+        if (recipeCost !== 0) {
+            componentCosts.push(recipeCost);
+        }
+        console.log(componentCosts);
+        let costFiltered = filtered.filter((item) => {
+            for (let i = 0; i < recipe.length; i++) {
+                if (item.cost <= (componentCosts[i] + 200) && item.cost >= (componentCosts[i] - 200)) {
+                    return item;
+                }
+            }
+        });
+        console.log(costFiltered);
         let randItems = [];
-        for (let i = 0; i < 8 - components.length; i++) {
-            let rand = Math.floor(Math.random() * filtered.length);
-            randItems.push(filtered[rand]);
+        for (let i = 0; i < 8 - recipe.length; i++) {
+            let rand = Math.floor(Math.random() * costFiltered.length);
+            randItems.push(costFiltered[rand]);
         }
         return randItems;
         
@@ -114,6 +194,9 @@ class Game extends React.Component {
                 currentRecipe : recipe,
                 currentQuiz : components
             })
+        } else {
+            //TODO: Add proper win screen
+            console.log("You Win!");
         }
     }
 
@@ -152,12 +235,14 @@ class Game extends React.Component {
 
     render() {
         return(
-            <div>
-                <Item id={this.state.itemsToQuiz[this.state.current].id}></Item>
-                <div>
+            <div className="game">
+                <div className="gameQuizItem">
+                    <Item id={this.state.itemsToQuiz[this.state.current].id}></Item>
+                </div>
+                <div className="gameMysteryRow">
                     {this.createMysteryIcons()}
                 </div>
-                <div>
+                <div className="gameComponentRow">
                     {this.createQuizComponents()}
                     <Item id="recipe" index={8}></Item>
                 </div>
