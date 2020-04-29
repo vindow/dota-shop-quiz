@@ -1,21 +1,33 @@
 .game {
-    margin: 0 auto;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
 }
 
 .gameQuizItem {
-    margin: 0 auto;
-    width: 86px;
+  margin: 0 auto;
+  width: 86px;
 }
 
 .gameMysteryRow {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .gameComponentRow {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
+
+/*.wrapper {
+  opacity: 1;
+  margin-top: 0px;
+  transition-property: opacity,margin;
+  transition-duration: 1s;
+}
+
+.wrapper.is-test-open {
+  opacity: 0;
+  margin-top: -100px;
+}*/

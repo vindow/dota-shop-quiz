@@ -3,13 +3,35 @@ import { connect } from 'react-redux';
 import { reset } from '../../actions.js';
 import Item from '../item/item';
 import items from '../../data/items.json';
+import styled, { keyframes } from 'styled-components';
 import './game.css';
 
+const wrapperKeyFrame = keyframes`
+    0% {
+        opacity: 1;
+        top: 0px
+    }
+    100% {
+        opacity 0;
+        top: -100px;
+    }
+`;
+const Wrapper = styled.div`
+    opacity: 0;
+    position: relative;
+    background-color: red;
+    &.is-test-open {
+        animation: ${wrapperKeyFrame} 1s ease-in-out 0s 1;
+    }
+    
+`;
 class Game extends React.Component {
 
     constructor(props) {
         super(props);
         console.log(items);
+
+        this.wrapperRef = React.createRef();
         
         let itemsWithRecipe = [];
         for (let i = 0; i < items.length; i++) {
@@ -81,7 +103,8 @@ class Game extends React.Component {
             current: 0,
             currentRecipe : recipe,
             currentQuiz : components,
-            materials: materialIDs
+            materials: materialIDs,
+            frozen: false
         }
     }
 
@@ -166,7 +189,7 @@ class Game extends React.Component {
     createQuizComponents = () => {
         let quizItems = []
         for (let i = 0; i < this.state.currentQuiz.length; i++) {
-            quizItems.push(<Item key={i} id={this.state.currentQuiz[i].id} index={i}></Item>);
+                quizItems.push(<Item key={i} locked={this.state.frozen} id={this.state.currentQuiz[i].id} index={i}></Item>);
         }
         return quizItems;
     }
@@ -202,50 +225,75 @@ class Game extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log(this.props.selected);
-        let recipe = this.state.currentRecipe.slice();
-        let selected = [];
-        for (let i = 0; i < this.props.selected.length - 1; i++) {
-            if (this.props.selected[i] === 1) {
-                selected.push(this.state.currentQuiz[i].id);
-            }
-        }
-        if (this.props.selected[8] === 1) {
-            selected.push("recipe");
-        }
-        if (recipe.length === selected.length) {
-            recipe.sort();
-            selected.sort();
-            let correct = true;
-            for (let i = 0; i < recipe.length; i++) {
-                if(recipe[i] !== selected[i]) {
-                    correct = false;
-                    break;
+        if (!this.state.frozen) {
+            let recipe = this.state.currentRecipe.slice();
+            let selected = [];
+            for (let i = 0; i < this.props.selected.length - 1; i++) {
+                if (this.props.selected[i] === 1) {
+                    selected.push(this.state.currentQuiz[i].id);
                 }
             }
-            if (correct) {
-                console.log("Correct!");
-                this.props.dispatch(reset());
-                this.nextQuiz();
-            } else {
-                console.log("Incorrect!");
-                this.props.dispatch(reset());
+            if (this.props.selected[8] === 1) {
+                selected.push("recipe");
+            }
+            if (recipe.length === selected.length) {
+                recipe.sort();
+                selected.sort();
+                let correct = true;
+                for (let i = 0; i < recipe.length; i++) {
+                    if(recipe[i] !== selected[i]) {
+                        correct = false;
+                        break;
+                    }
+                }
+                const wrapper = this.wrapperRef.current;
+                wrapper.classList.add('is-test-open');
+                if (correct) {
+                    this.props.dispatch(reset());
+                    this.setState({frozen : true});
+                    setTimeout(() => {
+                        wrapper.classList.remove('is-test-open');
+                        console.log("Correct!");
+                        this.nextQuiz();
+                        this.setState({frozen : false});
+                    }, 1000)
+                } else {
+                    console.log("Incorrect!");
+                    this.props.dispatch(reset());
+                }
+                
             }
         }
     }
+
+    /*getStreak = () => {
+        return (
+            <span>
+                TEST
+            </span>
+        );
+    }*/
 
     render() {
         return(
             <div className="game">
                 <div className="gameQuizItem">
-                    <Item id={this.state.itemsToQuiz[this.state.current].id}></Item>
+                    <Item id={this.state.itemsToQuiz[this.state.current].id} locked={this.state.frozen}></Item>
                 </div>
                 <div className="gameMysteryRow">
                     {this.createMysteryIcons()}
                 </div>
                 <div className="gameComponentRow">
                     {this.createQuizComponents()}
-                    <Item id="recipe" index={8}></Item>
+                    <Item id="recipe" locked={this.state.frozen} index={8}></Item>
                 </div>
+                <Wrapper ref={this.wrapperRef}>
+                    <div className="test">
+                        <div className="test__body">
+                            TEST
+                        </div>
+                    </div>
+                </Wrapper>
             </div>
         );
     }
