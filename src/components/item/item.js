@@ -56,10 +56,10 @@ class Item extends React.Component {
 
     selectItem = () => {
         if (this.props.locked !== true) {
-            if (this.props.selected[this.props.index] === 0) {
-                this.props.dispatch(select(this.props.index));
-            } else {
+            if (this.props.selected.includes(this.props.index)) {
                 this.props.dispatch(deselect(this.props.index));
+            } else {
+                this.props.dispatch(select(this.props.index));
             }
         }
     }
@@ -84,7 +84,7 @@ class Item extends React.Component {
             hover = <ItemHover index={this.getItemIndex()}></ItemHover>
         }
         let div;
-        if (this.props.selected[this.props.index] === 1) {
+        if (this.props.selected.includes(this.props.index)) {
             div = <FadedIcon onClick={this.selectItem}>{img}</FadedIcon>
         } else {
             div = <div onClick={this.selectItem}>{img}</div>

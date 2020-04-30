@@ -262,7 +262,7 @@ class Game extends React.Component {
     createQuizComponents = () => {
         let quizItems = []
         for (let i = 0; i < this.state.currentQuiz.length; i++) {
-                quizItems.push(<Item key={i} locked={this.state.frozen} id={this.state.currentQuiz[i].id} index={i}></Item>);
+            quizItems.push(<Item key={i} locked={this.state.frozen} id={this.state.currentQuiz[i].id} index={i}></Item>);
         }
         return quizItems;
     }
@@ -271,15 +271,17 @@ class Game extends React.Component {
     createMysteryIcons = () => {
         let selected = [];
         let indicies = [];
-        for (let i = 0; i < this.props.selected.length - 1; i++) {
-            if (this.props.selected[i] === 1) {
-                selected.push(this.state.currentQuiz[i].id);
-                indicies.push(i);
+        for (let i = 0; i < this.props.selected.length; i++) {
+            if (this.props.selected[i] === 8) {
+                selected.push("recipe");
+            } else {
+                selected.push(this.state.currentQuiz[this.props.selected[i]].id);
+                indicies.push(this.props.selected[i]);
             }
         }
-        if (this.props.selected[8] === 1) {
+        /*if (this.props.selected[8] === 1) {
             selected.push("recipe");
-        }
+        }*/
         let numIcons = this.state.itemsToQuiz[this.state.current].components.length;
         let icons = [];
         for (let i = 0; i < selected.length; i++) {
@@ -314,14 +316,17 @@ class Game extends React.Component {
             // Check which items are selected
             let recipe = this.state.currentRecipe.slice();
             let selected = [];
-            for (let i = 0; i < this.props.selected.length - 1; i++) {
-                if (this.props.selected[i] === 1) {
-                    selected.push(this.state.currentQuiz[i].id);
+            for (let i = 0; i < this.props.selected.length; i++) {
+                if (this.props.selected[i] === 8) {
+                    selected.push("recipe");
+                } else {
+                    selected.push(this.state.currentQuiz[this.props.selected[i]].id);
                 }
+                
             }
-            if (this.props.selected[8] === 1) {
+            /*if (this.props.selected[8] === 1) {
                 selected.push("recipe");
-            }
+            }*/
 
             // Only check for correctness if all slots are filled
             if (recipe.length === selected.length) {

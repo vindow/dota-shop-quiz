@@ -4,32 +4,23 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import './index.css';
 import Game from './components/game/game.js';
+import produce from 'immer';
 
 
 const initialState = {
-    selected : [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    selected : []
 };
 
 function reducer(state = initialState, action) {
     switch(action.type) {
         case 'SELECT':
-            return {
-                selected : state.selected.map((item, index) => {
-                    if (index === action.value) {
-                        return 1;
-                    }
-                    return item;
-                })
-            }
+            return produce(state, draft => {
+                draft.selected.push(action.value);
+            })
         case 'DESELECT':
-            return {
-                selected : state.selected.map((item, index) => {
-                    if (index === action.value) {
-                        return 0;
-                    }
-                    return item;
-                })
-            }
+            return produce(state, draft => {
+                draft.selected.splice(draft.selected.indexOf(action.value), 1);
+            })
         case 'RESET':
             return initialState;
         default:
