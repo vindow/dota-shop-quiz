@@ -94,7 +94,7 @@ class Game extends React.Component {
         });
 
         //Add exception for Power Treads
-        if (itemsWithRecipe[0].id == "power_treads") {
+        if (itemsWithRecipe[0].id === "power_treads") {
             for (let i = 0; i < filtered.length; i++) {
                 if (filtered[i].id === "robe" || filtered[i].id === "boots_of_elves") {
                     filtered.splice(i, 1);
@@ -185,7 +185,7 @@ class Game extends React.Component {
         });
 
         // Add exception for power treads (remove band of elvenskin and robe of magi)
-        if (this.state.itemsToQuiz[this.state.current + 1].id == "power_treads") {
+        if (this.state.itemsToQuiz[this.state.current + 1].id === "power_treads") {
             console.log("PT");
             for (let i = 0; i < filtered.length; i++) {
                 if (filtered[i].id === "robe" || filtered[i].id === "boots_of_elves") {
@@ -270,7 +270,7 @@ class Game extends React.Component {
     // Generates the components for the row of mystery icon symbols that will update as items are selected
     createMysteryIcons = () => {
         let selected = [];
-        let indicies = []
+        let indicies = [];
         for (let i = 0; i < this.props.selected.length - 1; i++) {
             if (this.props.selected[i] === 1) {
                 selected.push(this.state.currentQuiz[i].id);

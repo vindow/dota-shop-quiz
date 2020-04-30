@@ -23,6 +23,13 @@ const Wrapper = styled.div`
 
 const Icon = styled.img`
     margin: 0px 5px;
+    &.selected {
+        filter: saturate(10%) opacity(50%);
+    }
+`;
+
+const FadedIcon = styled.div`
+    filter: saturate(10%) opacity(50%);
 `;
 
 const hoverOptions = {
@@ -68,37 +75,33 @@ class Item extends React.Component {
     }
 
     render() {
+        let img, hover;
         if (this.props.id === "recipe") {
-            return(
-                <Wrapper ref={this.wrapperRef}>
-                    <ReactHover options={hoverOptions}>
-                        <ReactHover.Trigger type='trigger'>
-                            <div className="itemIcon" onClick={this.selectItem}>
-                                <Icon alt="" src="http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png" />
-                            </div>
-                        </ReactHover.Trigger>
-                        <ReactHover.Hover type='hover'>
-                            <ItemHover index={-1}></ItemHover>
-                        </ReactHover.Hover>
-                    </ReactHover>
-                </Wrapper>
-            );
+            img = <Icon ref={this.imgRef} alt="" src="http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png" />
+            hover = <ItemHover index={-1}></ItemHover>
         } else {
-            return (
-                <Wrapper ref={this.wrapperRef}>
-                    <ReactHover options={hoverOptions}>
-                        <ReactHover.Trigger type='trigger'>
-                            <div className="itemIcon" onClick={this.selectItem}>
-                                <Icon alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"} />
-                            </div>
-                        </ReactHover.Trigger>
-                        <ReactHover.Hover type='hover'>
-                            <ItemHover index={this.getItemIndex()}></ItemHover>
-                        </ReactHover.Hover>
-                    </ReactHover>
-                </Wrapper>
-            );
+            img = <Icon ref={this.imgRef} alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"} />
+            hover = <ItemHover index={this.getItemIndex()}></ItemHover>
         }
+        let div;
+        if (this.props.selected[this.props.index] === 1) {
+            div = <FadedIcon onClick={this.selectItem}>{img}</FadedIcon>
+        } else {
+            div = <div onClick={this.selectItem}>{img}</div>
+        }
+        return(
+            <Wrapper ref={this.wrapperRef}>
+                <ReactHover options={hoverOptions}>
+                    <ReactHover.Trigger type='trigger'>
+                        {div}
+                    </ReactHover.Trigger>
+                    <ReactHover.Hover type='hover'>
+                        {hover}
+                    </ReactHover.Hover>
+                </ReactHover>
+            </Wrapper>
+        );
+        
     }
 }
 
