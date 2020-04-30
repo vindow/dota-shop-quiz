@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { reset } from '../../actions.js';
 import Item from '../item/item';
+import MysteryIcon from '../mysteryIcon/mysteryIcon';
 import items from '../../data/items.json';
 import styled, { keyframes } from 'styled-components';
 import './game.css';
@@ -98,6 +99,7 @@ class Game extends React.Component {
         }
         components = components.concat(randItems);
 
+        //TODO: Add score mechanic
         this.state = {
             itemsToQuiz: itemsWithRecipe,
             current: 0,
@@ -194,15 +196,27 @@ class Game extends React.Component {
         return quizItems;
     }
 
+    //TODO: Create components for mystery icons that will update their picture to whatever is selected
+
     createMysteryIcons = () => {
+        let selected = [];
+        let indicies = []
+        for (let i = 0; i < this.props.selected.length - 1; i++) {
+            if (this.props.selected[i] === 1) {
+                selected.push(this.state.currentQuiz[i].id);
+                indicies.push(i);
+            }
+        }
+        if (this.props.selected[8] === 1) {
+            selected.push("recipe");
+        }
         let numIcons = this.state.itemsToQuiz[this.state.current].components.length;
         let icons = [];
-        for (let i = 0; i < numIcons; i++) {
-            icons.push(
-                <div key={i}>
-                    <img src="http://cdn.dota2.com/apps/dota2/images/quiz/item-slot-unknown.png" alt=""></img>
-                </div>
-            );
+        for (let i = 0; i < selected.length; i++) {
+            icons.push(<MysteryIcon key={i} id={selected[i]} index={indicies[i]}></MysteryIcon>);
+        }
+        for (let i = 0; i < numIcons - selected.length; i++) {
+            icons.push(<MysteryIcon key={i + selected.length} id={"unknown"} index={-1}></MysteryIcon>);
         }
         return icons;
     }
@@ -246,14 +260,15 @@ class Game extends React.Component {
                         break;
                     }
                 }
+                //TODO: Add streak text/incorrect text instead of placeholder
                 const wrapper = this.wrapperRef.current;
                 wrapper.classList.add('is-test-open');
                 if (correct) {
-                    this.props.dispatch(reset());
                     this.setState({frozen : true});
                     setTimeout(() => {
                         wrapper.classList.remove('is-test-open');
                         console.log("Correct!");
+                        this.props.dispatch(reset());
                         this.nextQuiz();
                         this.setState({frozen : false});
                     }, 1000)

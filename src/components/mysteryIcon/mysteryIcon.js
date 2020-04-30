@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ReactHover from 'react-hover';
 import items from '../../data/items.json';
 import ItemHover from '../itemHover/itemHover.js';
-import { select, deselect} from '../../actions.js';
+import { deselect } from '../../actions.js';
 import styled , { keyframes } from 'styled-components';
 
 const wrapperKeyFrame = keyframes`
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     }
 `;
 
-const Icon = styled.img`
+const Icon = styled.img `
     margin: 0px 5px;
 `;
 
@@ -31,7 +31,7 @@ const hoverOptions = {
     shiftY: 0
 }
 
-class Item extends React.Component {
+class MysteryIcon extends React.Component {
 
     constructor(props) {
         super(props);
@@ -47,18 +47,12 @@ class Item extends React.Component {
         return 0;
     }
 
-    selectItem = () => {
-        if (this.props.locked !== true) {
-            if (this.props.selected[this.props.index] === 0) {
-                this.props.dispatch(select(this.props.index));
-            } else {
-                this.props.dispatch(deselect(this.props.index));
-            }
-        }
+    deselectItem = () => {
+        this.props.dispatch(deselect(this.props.index));
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.locked === true) {
+        if ((prevProps.id === 'unknown' && this.props.id !== 'unknown') || (this.props.id === 'unknown'&& prevProps.id !== 'unknown')) {
             const wrapper = this.wrapperRef.current;
             wrapper.classList.add('fade-in');
             setTimeout(() => {
@@ -68,12 +62,20 @@ class Item extends React.Component {
     }
 
     render() {
-        if (this.props.id === "recipe") {
+        if (this.props.id === 'unknown') {
+            return(
+                <Wrapper ref={this.wrapperRef}>
+                    <div className="itemIcon">
+                        <Icon alt="" src="http://cdn.dota2.com/apps/dota2/images/quiz/item-slot-unknown.png" />
+                    </div>
+                </Wrapper>
+            );
+        } else if (this.props.id === "recipe") {
             return(
                 <Wrapper ref={this.wrapperRef}>
                     <ReactHover options={hoverOptions}>
                         <ReactHover.Trigger type='trigger'>
-                            <div className="itemIcon" onClick={this.selectItem}>
+                            <div className="itemIcon" onClick={this.deselectItem}>
                                 <Icon alt="" src="http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png" />
                             </div>
                         </ReactHover.Trigger>
@@ -88,7 +90,7 @@ class Item extends React.Component {
                 <Wrapper ref={this.wrapperRef}>
                     <ReactHover options={hoverOptions}>
                         <ReactHover.Trigger type='trigger'>
-                            <div className="itemIcon" onClick={this.selectItem}>
+                            <div className="itemIcon" onClick={this.deselectItem}>
                                 <Icon alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"} />
                             </div>
                         </ReactHover.Trigger>
@@ -108,4 +110,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(Item);
+export default connect(mapStateToProps)(MysteryIcon);
