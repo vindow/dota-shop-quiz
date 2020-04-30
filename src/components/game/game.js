@@ -25,7 +25,7 @@ const Wrapper = styled.div`
     font-size : 3em;
     font-weight: bold;
     margin : auto;
-    top: -100px;
+    top: 0px;
     text-align: center;
     &.is-test-open {
         animation: ${wrapperKeyFrame} 1s ease-in-out 0s 1;
@@ -93,6 +93,16 @@ class Game extends React.Component {
             }
         });
 
+        //Add exception for Power Treads
+        if (itemsWithRecipe[0].id == "power_treads") {
+            for (let i = 0; i < filtered.length; i++) {
+                if (filtered[i].id === "robe" || filtered[i].id === "boots_of_elves") {
+                    filtered.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+
         // Get the costs of all items in the current recipe (including recipe cost)
         let componentCosts = [];
         for (let i = 0; i < recipe.length; i++) {
@@ -134,7 +144,7 @@ class Game extends React.Component {
                 alreadyPicked.push(rand);
             }
         }
-        
+
         components = components.concat(randItems);
         this.state = {
             itemsToQuiz: itemsWithRecipe,
@@ -162,10 +172,6 @@ class Game extends React.Component {
     // Generates the random items to fill the rest of the quiz items with wrong items
     // Tries to generate items that are close in price to the real components
     generateRandomItems = (recipe) => {
-        //TODO: Add an exception to power treads (don't add band of elvenskin and robe of magi to pool)
-        /*let components = recipe.filter((item) => {
-            return item !== "recipe"
-        });*/
         // Get only items that are components (items that build into other items), exclude items included in recipe
         let filtered = items.filter((item) => {
             for (let i = 0; i < recipe.length; i++) {
@@ -177,6 +183,19 @@ class Game extends React.Component {
                 return item;
             }
         });
+
+        // Add exception for power treads (remove band of elvenskin and robe of magi)
+        if (this.state.itemsToQuiz[this.state.current + 1].id == "power_treads") {
+            console.log("PT");
+            for (let i = 0; i < filtered.length; i++) {
+                if (filtered[i].id === "robe" || filtered[i].id === "boots_of_elves") {
+                    console.log("splicing");
+                    filtered.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+
         // Get the costs of all items in the current recipe (including recipe cost)
         let componentCosts = [];
         for (let i = 0; i < recipe.length; i++) {
