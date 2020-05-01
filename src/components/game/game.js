@@ -458,7 +458,7 @@ class Game extends React.Component {
                 </div>
                 <div className="gameComponentRow">
                     {this.createQuizComponents()}
-                    <Item id="recipe" locked={this.state.frozen} index={8}></Item>
+                    <Item id="recipe" locked={this.state.frozen} index={8} clickable={true}></Item>
                 </div>
                 <Wrapper ref={this.wrapperRef}>
                     {this.getStreak()}

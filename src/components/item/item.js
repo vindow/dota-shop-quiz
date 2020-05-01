@@ -61,6 +61,7 @@ class Item extends React.Component {
     }
 
     selectItem = () => {
+        console.log("clicked");
         if (this.props.locked !== true && this.props.clickable === true) {
             if (this.props.selected.includes(this.props.index)) {
                 this.props.dispatch(deselect(this.props.index));

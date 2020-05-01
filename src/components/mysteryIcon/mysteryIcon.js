@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ReactHover from 'react-hover';
 import items from '../../data/items.json';
 import ItemHover from '../itemHover/itemHover.js';
 import { deselect } from '../../actions.js';
@@ -25,11 +24,13 @@ const Icon = styled.img `
     margin: 0px 5px;
 `;
 
-const hoverOptions = {
-    followCursor: true,
-    shiftX: 20,
-    shiftY: 0
-}
+const ItemInfo = styled.div`
+    display: none;
+    ${Wrapper}:hover & {
+        display: block;
+        position: absolute;
+    }
+`;
 
 class MysteryIcon extends React.Component {
 
@@ -73,31 +74,23 @@ class MysteryIcon extends React.Component {
         } else if (this.props.id === "recipe") {
             return(
                 <Wrapper ref={this.wrapperRef}>
-                    <ReactHover options={hoverOptions}>
-                        <ReactHover.Trigger type='trigger'>
-                            <div className="itemIcon" onClick={this.deselectItem}>
-                                <Icon alt="" src="http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png" />
-                            </div>
-                        </ReactHover.Trigger>
-                        <ReactHover.Hover type='hover'>
-                            <ItemHover index={-1}></ItemHover>
-                        </ReactHover.Hover>
-                    </ReactHover>
+                    <div className="itemIcon" onClick={this.deselectItem}>
+                        <Icon alt="" src="http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png" />
+                    </div>
+                    <ItemInfo>
+                        <ItemHover index={-1}></ItemHover>
+                    </ItemInfo>
                 </Wrapper>
             );
         } else {
             return (
                 <Wrapper ref={this.wrapperRef}>
-                    <ReactHover options={hoverOptions}>
-                        <ReactHover.Trigger type='trigger'>
-                            <div className="itemIcon" onClick={this.deselectItem}>
-                                <Icon alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"} />
-                            </div>
-                        </ReactHover.Trigger>
-                        <ReactHover.Hover type='hover'>
-                            <ItemHover index={this.getItemIndex()}></ItemHover>
-                        </ReactHover.Hover>
-                    </ReactHover>
+                    <div className="itemIcon" onClick={this.deselectItem}>
+                        <Icon alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"} />
+                    </div>
+                    <ItemInfo>
+                        <ItemHover index={this.getItemIndex()}></ItemHover>
+                    </ItemInfo>
                 </Wrapper>
             );
         }
