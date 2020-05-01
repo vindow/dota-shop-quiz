@@ -19,15 +19,3 @@
   display: flex;
   justify-content: center;
 }
-
-/*.wrapper {
-  opacity: 1;
-  margin-top: 0px;
-  transition-property: opacity,margin;
-  transition-duration: 1s;
-}
-
-.wrapper.is-test-open {
-  opacity: 0;
-  margin-top: -100px;
-}*/

@@ -125,16 +125,22 @@ class Game extends React.Component {
 
         // Populate randItems with items close in cost to recipe items
         let randItems = [];
-        if (costFiltered.length <= (8 - recipe.length)) {
+        let numRand = 8;
+        if (recipe.includes("recipe")) {
+            numRand -= recipe.length - 1;
+        } else {
+            numRand -= recipe.length;
+        }
+        if (costFiltered.length <= numRand) {
             // Okay to add repeats if not enough valid items
             randItems = costFiltered;
-            for (let i = 0; i < 8 - recipe.length - randItems.length; i++) {
+            for (let i = 0; i < numRand - randItems.length; i++) {
                 let rand = Math.floor(Math.random() * costFiltered.length);
                 randItems.push(costFiltered[rand]);
             }
         } else {
             let alreadyPicked = []
-            for (let i = 0; i < 8 - recipe.length; i++) {
+            for (let i = 0; i < numRand; i++) {
                 // Try not to add repeats if enough valid items
                 let rand;
                 do {
@@ -146,6 +152,13 @@ class Game extends React.Component {
         }
 
         components = components.concat(randItems);
+        // Shuffle the components
+        for (let i = components.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            let tmp = components[i];
+            components[i] = components[j];
+            components[j] = tmp;
+        }
         this.state = {
             itemsToQuiz: itemsWithRecipe,
             current: 0,
@@ -155,7 +168,8 @@ class Game extends React.Component {
             frozen: false,
             streak : 0,
             score : 0,
-            tries : 3
+            tries : 3,
+            win : false
         }
     }
 
@@ -219,17 +233,23 @@ class Game extends React.Component {
 
         // Populate randItems with items close in cost to recipe items
         let randItems = [];
-        if (costFiltered.length <= (8 - recipe.length)) {
+        let numRand = 8;
+        if (recipe.includes("recipe")) {
+            numRand -= recipe.length - 1;
+        } else {
+            numRand -= recipe.length;
+        }
+        if (costFiltered.length <= numRand) {
             // Okay to add repeats if not enough valid items
             randItems = costFiltered;
-            for (let i = 0; i < 8 - recipe.length - randItems.length; i++) {
+            for (let i = 0; i < numRand - randItems.length; i++) {
                 let rand = Math.floor(Math.random() * costFiltered.length);
                 randItems.push(costFiltered[rand]);
             }
         } else {
             // Try not to add repeats if enough valid items
             let alreadyPicked = []
-            for (let i = 0; i < 8 - recipe.length; i++) {
+            for (let i = 0; i < numRand; i++) {
                 let rand;
                 do {
                     rand = Math.floor(Math.random() * costFiltered.length);
@@ -262,7 +282,7 @@ class Game extends React.Component {
     createQuizComponents = () => {
         let quizItems = []
         for (let i = 0; i < this.state.currentQuiz.length; i++) {
-            quizItems.push(<Item key={i} locked={this.state.frozen} id={this.state.currentQuiz[i].id} index={i}></Item>);
+            quizItems.push(<Item key={i} locked={this.state.frozen} id={this.state.currentQuiz[i].id} index={i} clickable={true}></Item>);
         }
         return quizItems;
     }
@@ -279,9 +299,6 @@ class Game extends React.Component {
                 indicies.push(this.props.selected[i]);
             }
         }
-        /*if (this.props.selected[8] === 1) {
-            selected.push("recipe");
-        }*/
         let numIcons = this.state.itemsToQuiz[this.state.current].components.length;
         let icons = [];
         for (let i = 0; i < selected.length; i++) {
@@ -299,6 +316,13 @@ class Game extends React.Component {
         if (i < this.state.itemsToQuiz.length) {
             let recipe = this.state.itemsToQuiz[i].components;
             let components = this.getQuizComponents(recipe);
+            // Shuffle the components
+            for (let i = components.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                let tmp = components[i];
+                components[i] = components[j];
+                components[j] = tmp;
+            }
             this.setState({
                 current: i,
                 currentRecipe : recipe,
@@ -307,6 +331,7 @@ class Game extends React.Component {
         } else {
             //TODO: Add proper win screen
             console.log("You Win!");
+            this.setState({win : true});
         }
     }
 
@@ -324,9 +349,6 @@ class Game extends React.Component {
                 }
                 
             }
-            /*if (this.props.selected[8] === 1) {
-                selected.push("recipe");
-            }*/
 
             // Only check for correctness if all slots are filled
             if (recipe.length === selected.length) {
@@ -367,19 +389,32 @@ class Game extends React.Component {
                         //TODO: Add proper game over state
                         console.log("Game Over");
                     }
-                    this.setState({
-                        frozen : true, 
-                        streak : 0,
-                        tries : currentTries
-                    });
-                    setTimeout(() => {
-                        wrapper.classList.remove('is-test-open');
-                        console.log("Incorrect!");
-                        this.props.dispatch(reset());
-                        this.setState({frozen : false});
-                    }, 1000)
+                    
+                    if (currentTries === 0) {
+                        this.setState({
+                            frozen : true
+                        });
+                        //TODO: Add proper game over state
+                        console.log("Game Over");
+                        setTimeout(() => {
+                            this.setState({
+                                tries : currentTries
+                            });
+                        })
+                    } else {
+                        this.setState({
+                            frozen : true, 
+                            streak : 0,
+                            tries : currentTries
+                        });
+                        setTimeout(() => {
+                            wrapper.classList.remove('is-test-open');
+                            console.log("Incorrect!");
+                            this.props.dispatch(reset());
+                            this.setState({frozen : false});
+                        }, 1000)
+                    }
                 }
-                
             }
         }
     }
@@ -406,10 +441,17 @@ class Game extends React.Component {
     }
 
     render() {
+        let gg = <div></div>
+        if (this.state.tries <= 0) {
+            gg = <div>YOU DUN LOST</div>
+        }
+        if (this.state.win) {
+            gg = <div>YOU WON</div>
+        }
         return(
             <div className="game">
                 <div className="gameQuizItem">
-                    <Item id={this.state.itemsToQuiz[this.state.current].id} locked={this.state.frozen}></Item>
+                    <Item id={this.state.itemsToQuiz[this.state.current].id} locked={this.state.frozen} clickable={false}></Item>
                 </div>
                 <div className="gameMysteryRow">
                     {this.createMysteryIcons()}
@@ -427,6 +469,7 @@ class Game extends React.Component {
                 <div>
                     Score: {this.state.score}
                 </div>
+                {gg}
             </div>
         );
     }

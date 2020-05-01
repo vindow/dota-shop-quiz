@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ReactHover from 'react-hover';
 import items from '../../data/items.json';
 import ItemHover from '../itemHover/itemHover.js';
 import { select, deselect} from '../../actions.js';
@@ -23,20 +22,27 @@ const Wrapper = styled.div`
 
 const Icon = styled.img`
     margin: 0px 5px;
-    &.selected {
-        filter: saturate(10%) opacity(50%);
+    width: 85px;
+    height: 62px;
+    object-fit: cover;
+`;
+
+const FadedIcon = styled.img`
+    margin: 0px 5px;
+    width: 85px;
+    height: 62px;
+    object-fit: cover;
+    filter: saturate(10%) opacity(50%);
+    z-index: -1;
+`;
+
+const ItemInfo = styled.div`
+    display: none;
+    ${Wrapper}:hover & {
+        display: block;
+        position: absolute;
     }
 `;
-
-const FadedIcon = styled.div`
-    filter: saturate(10%) opacity(50%);
-`;
-
-const hoverOptions = {
-    followCursor: true,
-    shiftX: 20,
-    shiftY: 0
-}
 
 class Item extends React.Component {
 
@@ -55,7 +61,7 @@ class Item extends React.Component {
     }
 
     selectItem = () => {
-        if (this.props.locked !== true) {
+        if (this.props.locked !== true && this.props.clickable === true) {
             if (this.props.selected.includes(this.props.index)) {
                 this.props.dispatch(deselect(this.props.index));
             } else {
@@ -75,33 +81,35 @@ class Item extends React.Component {
     }
 
     render() {
-        let img, hover;
+        let imgURL, hover;
         if (this.props.id === "recipe") {
-            img = <Icon ref={this.imgRef} alt="" src="http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png" />
+            imgURL = "http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png"
             hover = <ItemHover index={-1}></ItemHover>
         } else {
-            img = <Icon ref={this.imgRef} alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"} />
+            imgURL = "http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"
             hover = <ItemHover index={this.getItemIndex()}></ItemHover>
         }
         let div;
         if (this.props.selected.includes(this.props.index)) {
-            div = <FadedIcon onClick={this.selectItem}>{img}</FadedIcon>
+            div = 
+            <div onClick={this.selectItem}>
+                <FadedIcon alt="" src={imgURL} />
+            </div>
         } else {
-            div = <div onClick={this.selectItem}>{img}</div>
+            div = 
+            <div onClick={this.selectItem}>
+                <Icon alt="" src={imgURL} />
+            </div>
         }
+
         return(
             <Wrapper ref={this.wrapperRef}>
-                <ReactHover options={hoverOptions}>
-                    <ReactHover.Trigger type='trigger'>
-                        {div}
-                    </ReactHover.Trigger>
-                    <ReactHover.Hover type='hover'>
-                        {hover}
-                    </ReactHover.Hover>
-                </ReactHover>
+                {div}
+                <ItemInfo>
+                    {hover}
+                </ItemInfo>
             </Wrapper>
         );
-        
     }
 }
 

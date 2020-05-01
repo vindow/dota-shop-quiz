@@ -6,7 +6,7 @@ import './index.css';
 import Game from './components/game/game.js';
 import produce from 'immer';
 
-
+//TODO: Add difficulty setting
 const initialState = {
     selected : []
 };
