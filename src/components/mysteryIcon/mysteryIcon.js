@@ -15,23 +15,26 @@ const wrapperKeyFrame = keyframes`
 `;
 
 const Wrapper = styled.div`
-    margin: 15px 8px;
+    margin: 1%;
     border: 2px #343434 solid;
-    height: 62px;
     &.fade-in {
         z-index: -1;
         animation: ${wrapperKeyFrame} 0.3s ease-in-out 0s 1;
     }
 `;
 
-const Icon = styled.img `
-    width: 85px;
-    height: 62px;
-    object-fit: cover;
+const Icon = styled.div.attrs(props => ({
+    url: props.url,
+}))`
+    background-size: cover;
+    width: 4.4vw;
+    height: 3.21vw;
+    background-image: url(${props => props.url});
 `;
 
 const ItemInfo = styled.div`
     display: none;
+    z-index: 1;
     ${Wrapper}:hover & {
         display: block;
         position: absolute;
@@ -69,37 +72,27 @@ class MysteryIcon extends React.Component {
     }
 
     render() {
+        let imgURL, hover;
         if (this.props.id === 'unknown') {
-            return(
-                <Wrapper ref={this.wrapperRef}>
-                    <div className="itemIcon">
-                        <Icon alt="" src="http://cdn.dota2.com/apps/dota2/images/quiz/item-slot-unknown.png" />
-                    </div>
-                </Wrapper>
-            );
+            imgURL = "http://cdn.dota2.com/apps/dota2/images/quiz/item-slot-unknown.png"
+            hover = <div></div>;
         } else if (this.props.id === "recipe") {
-            return(
-                <Wrapper ref={this.wrapperRef}>
-                    <div className="itemIcon" onClick={this.deselectItem}>
-                        <Icon alt="" src="http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png" />
-                    </div>
-                    <ItemInfo>
+            imgURL = "http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png"
+            hover = <ItemInfo>
                         <ItemHover index={-1}></ItemHover>
                     </ItemInfo>
-                </Wrapper>
-            );
         } else {
-            return (
-                <Wrapper ref={this.wrapperRef}>
-                    <div className="itemIcon" onClick={this.deselectItem}>
-                        <Icon alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"} />
-                    </div>
-                    <ItemInfo>
+            imgURL = "http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"
+            hover = <ItemInfo>
                         <ItemHover index={this.getItemIndex()}></ItemHover>
                     </ItemInfo>
-                </Wrapper>
-            );
         }
+        return (
+            <Wrapper ref={this.wrapperRef}>
+                <Icon url={imgURL} onClick={this.deselectItem}></Icon>
+                {hover}
+            </Wrapper>
+        );
     }
 }
 

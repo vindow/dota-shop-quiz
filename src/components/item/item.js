@@ -15,9 +15,8 @@ const wrapperKeyFrame = keyframes`
 `;
 
 const Wrapper = styled.div`
-    margin: 0px 5px;
+    margin: 1%;
     border: 2px #343434 solid;
-    height: 62px;
     &.fade-in {
         z-index: -1;
         animation: ${wrapperKeyFrame} 0.3s ease-in-out 0s 1;
@@ -27,16 +26,18 @@ const Wrapper = styled.div`
 const Icon = styled.div.attrs(props => ({
     url: props.url,
 }))`
-    width: 85px;
-    height: 62px;
+    background-size: cover;
+    width: 4.4vw;
+    height: 3.21vw;
     background-image: url(${props => props.url});
 `;
 
 const FadedIcon = styled.div.attrs(props => ({
     url: props.url,
 }))`
-    width: 85px;
-    height: 62px;
+    background-size: cover;
+    width: 4.4vw;
+    height: 3.21vw;
     filter: saturate(10%) opacity(50%);
     background-image: url(${props => props.url});
     z-index: 0;

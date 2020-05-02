@@ -5,20 +5,45 @@ import Item from '../item/item';
 import MysteryIcon from '../mysteryIcon/mysteryIcon';
 import items from '../../data/items.json';
 import styled, { keyframes } from 'styled-components';
-import './game.css';
+
+//TODO: Refactor all CSS into styled-components
 
 const Page = styled.div`
     text-align: center;
 `;
 
+const GameMain = styled.div`
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    border: 2px rgb(49, 49, 49) solid;
+    padding: 1em;
+`;
+
+const QuizItem = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
+const Row = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
+const Components = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
 const wrapperKeyFrame = keyframes`
     0% {
         opacity: 1;
-        top: -200px
+        top: -30%;
     }
     100% {
         opacity 0;
-        top: -300px;
+        top: -60%;
     }
 `;
 const Wrapper = styled.div`
@@ -33,7 +58,6 @@ const Wrapper = styled.div`
     &.is-test-open {
         animation: ${wrapperKeyFrame} 1s ease-in-out 0s 1;
     }
-    
 `;
 
 const StatText = styled.div`
@@ -43,21 +67,21 @@ const StatText = styled.div`
 const endDialogKeyFrame = keyframes`
     0% {
         opacity: 0;
-        top: 100px;
+        top: 0%;
     }
     100% {
         opacity: 1;
-        top: 200px;
+        top: 20%;
     }
 `;
 
 const EndDialog = styled.div`
     width: 30%;
-    position: absolute;
+    position: fixed;
     display: block;
     text-align: center;
-    margin: 0 auto;
-    top: 200px;
+    margin: auto;
+    top: 20%;
     left: 0;
     right: 0;
     padding: 2em;
@@ -565,26 +589,24 @@ class Game extends React.Component {
                     <DifficultyButton onClick={this.setEasy} disabled={this.props.easy}>Easy</DifficultyButton>
                     <DifficultyButton onClick={this.setHard} disabled={!this.props.easy}>Hard</DifficultyButton>
                 </div>
-                <div className="game">
-                    <div className="gameQuizItem">
+                <GameMain>
+                    <QuizItem>
                         <Item id={this.state.itemsToQuiz[this.state.current].id} locked={this.state.frozen} clickable={false} easy={this.state.easy}></Item>
-                    </div>
-                    <div className="gameMysteryRow">
+                    </QuizItem>
+                    <Row>
                         {this.createMysteryIcons()}
-                    </div>
-                    <div className="gameMysteryRow">
-                        <div className="gameComponentRow">
-                            {this.createQuizComponents()}
-                        </div>
+                    </Row>
+                    <Row>
+                        {this.createQuizComponents()}
                         <Item id="recipe" locked={this.state.frozen} index={8} clickable={true} easy={this.state.easy}></Item>
-                    </div>
+                    </Row>
                     <StatText>
                         Guesses Left: {this.state.tries}
                     </StatText>
                     <StatText>
                         Score: {this.state.score}
                     </StatText>
-                </div>
+                </GameMain>
                 <Wrapper ref={this.wrapperRef}>
                     {this.getStreak()}
                 </Wrapper>
