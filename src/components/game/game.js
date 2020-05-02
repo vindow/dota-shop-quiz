@@ -6,7 +6,6 @@ import MysteryIcon from '../mysteryIcon/mysteryIcon';
 import items from '../../data/items.json';
 import styled, { keyframes } from 'styled-components';
 
-//TODO: Refactor all CSS into styled-components
 
 const Page = styled.div`
     text-align: center;
@@ -34,11 +33,13 @@ const Row = styled.div`
 const wrapperKeyFrame = keyframes`
     0% {
         opacity: 1;
-        top: -30%;
+        top: -2.5em;
+        z-index: 1;
     }
     100% {
         opacity 0;
-        top: -60%;
+        top: -4.5em;
+        z-index: 1;
     }
 `;
 const Wrapper = styled.div`
@@ -48,8 +49,9 @@ const Wrapper = styled.div`
     font-size : 3em;
     font-weight: bold;
     margin : auto;
-    top: 0px;
+    top: -2.5em;
     text-align: center;
+    z-index: -1;
     &.is-test-open {
         animation: ${wrapperKeyFrame} 1s ease-in-out 0s 1;
     }

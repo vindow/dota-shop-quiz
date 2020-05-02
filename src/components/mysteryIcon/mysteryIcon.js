@@ -35,6 +35,9 @@ const Icon = styled.div.attrs(props => ({
 const ItemInfo = styled.div`
     display: none;
     z-index: 1;
+    margin-top: 3px;
+    margin-left: -2px;
+    pointer-events: none;
     ${Wrapper}:hover & {
         display: block;
         position: absolute;
@@ -61,8 +64,16 @@ class MysteryIcon extends React.Component {
         this.props.dispatch(deselect(this.props.index));
     }
 
+    componentDidMount() {
+        const wrapper = this.wrapperRef.current;
+        wrapper.classList.add('fade-in');
+        setTimeout(() => {
+            wrapper.classList.remove('fade-in');
+        }, 300)
+    }
+
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if ((prevProps.id === 'unknown' && this.props.id !== 'unknown') || (this.props.id === 'unknown'&& prevProps.id !== 'unknown')) {
+        if ((prevProps.id === 'unknown' && this.props.id !== 'unknown') || (this.props.id === 'unknown' && prevProps.id !== 'unknown')) {
             const wrapper = this.wrapperRef.current;
             wrapper.classList.add('fade-in');
             setTimeout(() => {

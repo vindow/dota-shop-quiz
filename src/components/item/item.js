@@ -48,9 +48,10 @@ const ItemInfo = styled.div`
     z-index: 1;
     margin-top: 3px;
     margin-left: -2px;
+    position: absolute;
+    pointer-events: none;
     ${Wrapper}:hover & {
         display: block;
-        position: absolute;
     }
 `;
 
