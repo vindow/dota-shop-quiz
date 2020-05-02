@@ -7,6 +7,10 @@ import items from '../../data/items.json';
 import styled, { keyframes } from 'styled-components';
 import './game.css';
 
+const Page = styled.div`
+    text-align: center;
+`;
+
 const wrapperKeyFrame = keyframes`
     0% {
         opacity: 1;
@@ -20,8 +24,7 @@ const wrapperKeyFrame = keyframes`
 const Wrapper = styled.div`
     opacity: 0;
     position: relative;
-    color : red;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    color : #CC1400;
     font-size : 3em;
     font-weight: bold;
     margin : auto;
@@ -31,6 +34,38 @@ const Wrapper = styled.div`
         animation: ${wrapperKeyFrame} 1s ease-in-out 0s 1;
     }
     
+`;
+
+const StatText = styled.div`
+    font-size: 1.5em;
+`;
+
+const EndDialog = styled.div`
+    width: 30%;
+    position: absolute;
+    display: block;
+    text-align: center;
+    margin: 100px auto;
+    left: 0;
+    right: 0;
+    padding: 2em;
+    background-color: #222222;
+    border: 2px rgb(49, 49, 49) groove;
+`;
+
+const LargeText = styled.div`
+    font-size: 2em;
+    margin-bottom: 0.75em;
+`;
+
+const RestartButton = styled.button`
+    background-color: #333333;
+    border: 1px solid #444444;
+    text-align: center;
+    padding: 6px 22px;
+    color: #dddddd;
+    font-size: 1.5em;
+    margin-bottom: 0.25em;
 `;
 
 const streakNames = ["Try Again!", "Correct!", "Double Answer!", "Answering Spree!", "Dominating!", "Mega Answer!", "Unstoppable!", "Wicked Sick!", "Monster Answer!", "Godlike!", "Beyond Godlike!"]
@@ -43,12 +78,19 @@ class Game extends React.Component {
         this.wrapperRef = React.createRef();
         
         // First time initialization
-        
+        //Get list of items to quiz
         let itemsWithRecipe = [];
         for (let i = 0; i < items.length; i++) {
             if (items[i].components !== null) {
                 itemsWithRecipe.push(items[i]);
             }
+        }
+        // Shuffle items
+        for (let i = itemsWithRecipe.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            let tmp = itemsWithRecipe[i];
+            itemsWithRecipe[i] = itemsWithRecipe[j];
+            itemsWithRecipe[j] = tmp;
         }
         console.log(itemsWithRecipe);
 
@@ -317,11 +359,11 @@ class Game extends React.Component {
             let recipe = this.state.itemsToQuiz[i].components;
             let components = this.getQuizComponents(recipe);
             // Shuffle the components
-            for (let i = components.length - 1; i > 0; i--) {
-                let j = Math.floor(Math.random() * (i + 1));
-                let tmp = components[i];
-                components[i] = components[j];
-                components[j] = tmp;
+            for (let j = components.length - 1; j > 0; j--) {
+                let k = Math.floor(Math.random() * (j + 1));
+                let tmp = components[j];
+                components[j] = components[k];
+                components[k] = tmp;
             }
             this.setState({
                 current: i,
@@ -397,10 +439,11 @@ class Game extends React.Component {
                         //TODO: Add proper game over state
                         console.log("Game Over");
                         setTimeout(() => {
+                            wrapper.classList.remove('is-test-open');
                             this.setState({
                                 tries : currentTries
                             });
-                        })
+                        }, 1000)
                     } else {
                         this.setState({
                             frozen : true, 
@@ -422,7 +465,7 @@ class Game extends React.Component {
     // Gets the current streak text
     getStreak = () => {
         let text;
-        let amount = this.state.streak * 30 + 200;
+        let amount = (this.state.streak > 0) ? this.state.streak * 30 + 170 : 0;
         if (this.state.streak < streakNames.length) {
             text = streakNames[this.state.streak];
         } else {
@@ -434,43 +477,88 @@ class Game extends React.Component {
                     {text}
                 </div>
                 <div>
-                    +{amount}
+                    {this.state.streak > 0 ? "+" + amount : " "}
                 </div>
             </div>
         );
     }
 
+    reset = () => {
+        let quiz = this.state.itemsToQuiz.slice();
+        for (let i = quiz.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            let tmp = quiz[i];
+            quiz[i] = quiz[j];
+            quiz[j] = tmp;
+        }
+        let recipe = quiz[0].components;
+        let components = this.getQuizComponents(recipe);
+        // Shuffle the components
+        for (let i = components.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            let tmp = components[i];
+            components[i] = components[j];
+            components[j] = tmp;
+        }
+        this.props.dispatch(reset());
+        this.setState({
+            itemsToQuiz: quiz,
+            current: 0,
+            currentRecipe : recipe,
+            currentQuiz : components,
+            streak : 0,
+            score : 0,
+            tries : 3,
+            win : false,
+            frozen: false
+        });
+    }
+
     render() {
         let gg = <div></div>
         if (this.state.tries <= 0) {
-            gg = <div>YOU DUN LOST</div>
+            gg = <EndDialog>
+                <LargeText>Game Over</LargeText>
+                <LargeText>Final Score: {this.state.score}</LargeText>
+                <RestartButton onClick={this.reset}>Replay?</RestartButton>
+            </EndDialog>
         }
         if (this.state.win) {
-            gg = <div>YOU WON</div>
+            gg = <EndDialog>
+                <div>Game Complete</div>
+                <div>Final Score: {this.state.score}</div>
+                <RestartButton onClick={this.reset}>Replay?</RestartButton>
+            </EndDialog>
         }
         return(
-            <div className="game">
-                <div className="gameQuizItem">
-                    <Item id={this.state.itemsToQuiz[this.state.current].id} locked={this.state.frozen} clickable={false}></Item>
-                </div>
-                <div className="gameMysteryRow">
-                    {this.createMysteryIcons()}
-                </div>
-                <div className="gameComponentRow">
-                    {this.createQuizComponents()}
-                    <Item id="recipe" locked={this.state.frozen} index={8} clickable={true}></Item>
+            <Page>
+                <h1>Shopkeeper's Quiz</h1>
+                <div className="game">
+                    <div className="gameQuizItem">
+                        <Item id={this.state.itemsToQuiz[this.state.current].id} locked={this.state.frozen} clickable={false}></Item>
+                    </div>
+                    <div className="gameMysteryRow">
+                        {this.createMysteryIcons()}
+                    </div>
+                    <div className="gameMysteryRow">
+                        <div className="gameComponentRow">
+                            {this.createQuizComponents()}
+                        </div>
+                        <Item id="recipe" locked={this.state.frozen} index={8} clickable={true}></Item>
+                    </div>
+                    <StatText>
+                        Guesses Left: {this.state.tries}
+                    </StatText>
+                    <StatText>
+                        Score: {this.state.score}
+                    </StatText>
                 </div>
                 <Wrapper ref={this.wrapperRef}>
                     {this.getStreak()}
                 </Wrapper>
-                <div>
-                    Guesses Left: {this.state.tries}
-                </div>
-                <div>
-                    Score: {this.state.score}
-                </div>
                 {gg}
-            </div>
+            </Page>
+            
         );
     }
 }

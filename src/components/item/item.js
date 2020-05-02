@@ -15,20 +15,22 @@ const wrapperKeyFrame = keyframes`
 `;
 
 const Wrapper = styled.div`
+    margin: 0px 5px;
+    border: 2px #343434 solid;
+    height: 62px;
     &.fade-in {
+        z-index: -1;
         animation: ${wrapperKeyFrame} 0.3s ease-in-out 0s 1;
     }
 `;
 
 const Icon = styled.img`
-    margin: 0px 5px;
     width: 85px;
     height: 62px;
     object-fit: cover;
 `;
 
 const FadedIcon = styled.img`
-    margin: 0px 5px;
     width: 85px;
     height: 62px;
     object-fit: cover;
@@ -61,7 +63,6 @@ class Item extends React.Component {
     }
 
     selectItem = () => {
-        console.log("clicked");
         if (this.props.locked !== true && this.props.clickable === true) {
             if (this.props.selected.includes(this.props.index)) {
                 this.props.dispatch(deselect(this.props.index));

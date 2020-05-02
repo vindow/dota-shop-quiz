@@ -15,13 +15,19 @@ const wrapperKeyFrame = keyframes`
 `;
 
 const Wrapper = styled.div`
+    margin: 15px 8px;
+    border: 2px #343434 solid;
+    height: 62px;
     &.fade-in {
+        z-index: -1;
         animation: ${wrapperKeyFrame} 0.3s ease-in-out 0s 1;
     }
 `;
 
 const Icon = styled.img `
-    margin: 0px 5px;
+    width: 85px;
+    height: 62px;
+    object-fit: cover;
 `;
 
 const ItemInfo = styled.div`
