@@ -2,8 +2,7 @@
     border: 2px rgb(70, 70, 70) groove;
     background-color: #333333;
     color: #cccccc;
-    width: 300px;
-    z-index: 1;
+    width: 310px;
     text-align: left;
 }
 .itemHeader {

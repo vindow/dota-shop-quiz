@@ -1,5 +1,5 @@
 import React from 'react';
-// Eventually store the items data into redux, pass array index into items
+import { connect } from 'react-redux';
 import items from '../../data/items.json';
 import './itemHover.css';
 
@@ -160,35 +160,56 @@ class ItemHover extends React.Component {
                 </div>
             );
         } else {
-            return (
-                <div className="item">
-                    <div className="itemHeader">
-                        <div>
-                            <img alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + items[this.props.index].id + "_lg.png"} />
+            if (this.props.easy) {
+                return (
+                    <div className="item">
+                        <div className="itemHeader">
+                            <div>
+                                <img alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + items[this.props.index].id + "_lg.png"} />
+                            </div>
+                            <div className="itemHeaderText">
+                                <span className="itemName">{items[this.props.index].dname}</span>
+                                <span className="itemPrice">
+                                    <img className="itemSymbol" alt="" src={"http://cdn.dota2.com/apps/dota2/images/tooltips/gold.png"} />
+                                    {items[this.props.index].cost}
+                                </span>
+                            </div>
                         </div>
-                        <div className="itemHeaderText">
-                            <span className="itemName">{items[this.props.index].dname}</span>
-                            <span className="itemPrice">
-                                <img className="itemSymbol" alt="" src={"http://cdn.dota2.com/apps/dota2/images/tooltips/gold.png"} />
-                                {items[this.props.index].cost}
-                            </span>
+                        <div className="itemAttrib">
+                            {this.renderAttributes()}
+                        </div>
+                        {this.renderUpgrade()}
+                        {this.renderToggle()}
+                        {this.renderActive()}
+                        {this.renderPassive()}
+                        {this.renderUse()}
+                        <div className="itemLore">
+                            {items[this.props.index].lore}
                         </div>
                     </div>
-                    <div className="itemAttrib">
-                        {this.renderAttributes()}
+                );
+            } else {
+                return (
+                    <div className="item">
+                        <div className="itemHeader">
+                            <div>
+                                <img alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + items[this.props.index].id + "_lg.png"} />
+                            </div>
+                            <div className="itemHeaderText">
+                                <span className="itemName">{items[this.props.index].dname}</span>
+                            </div>
+                        </div>
                     </div>
-                    {this.renderUpgrade()}
-                    {this.renderToggle()}
-                    {this.renderActive()}
-                    {this.renderPassive()}
-                    {this.renderUse()}
-                    <div className="itemLore">
-                        {items[this.props.index].lore}
-                    </div>
-                </div>
-            );
+                );
+            }
         }
     }
 }
 
-export default ItemHover;
+function mapStateToProps(state) {
+    return {
+        easy: state.easy
+    };
+}
+
+export default connect(mapStateToProps)(ItemHover);

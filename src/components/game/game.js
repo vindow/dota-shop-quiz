@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { reset } from '../../actions.js';
+import { reset, setDifficulty } from '../../actions.js';
 import Item from '../item/item';
 import MysteryIcon from '../mysteryIcon/mysteryIcon';
 import items from '../../data/items.json';
@@ -14,11 +14,11 @@ const Page = styled.div`
 const wrapperKeyFrame = keyframes`
     0% {
         opacity: 1;
-        top: -100px
+        top: -200px
     }
     100% {
         opacity 0;
-        top: -200px;
+        top: -300px;
     }
 `;
 const Wrapper = styled.div`
@@ -40,17 +40,30 @@ const StatText = styled.div`
     font-size: 1.5em;
 `;
 
+const endDialogKeyFrame = keyframes`
+    0% {
+        opacity: 0;
+        top: 100px;
+    }
+    100% {
+        opacity: 1;
+        top: 200px;
+    }
+`;
+
 const EndDialog = styled.div`
     width: 30%;
     position: absolute;
     display: block;
     text-align: center;
-    margin: 100px auto;
+    margin: 0 auto;
+    top: 200px;
     left: 0;
     right: 0;
     padding: 2em;
     background-color: #222222;
     border: 2px rgb(49, 49, 49) groove;
+    animation: ${endDialogKeyFrame} 0.5s ease-in-out 0s 1;
 `;
 
 const LargeText = styled.div`
@@ -68,12 +81,26 @@ const RestartButton = styled.button`
     margin-bottom: 0.25em;
 `;
 
-const streakNames = ["Try Again!", "Correct!", "Double Answer!", "Answering Spree!", "Dominating!", "Mega Answer!", "Unstoppable!", "Wicked Sick!", "Monster Answer!", "Godlike!", "Beyond Godlike!"]
+const DifficultyButton = styled.button`
+    background-color: #333333;
+    border: 1px solid #444444;
+    text-align: center;
+    padding: 6px 22px;
+    color: #dddddd;
+    font-size: 1.5em;
+    margin: 0em 1em 1em 1em;
+    &:disabled {
+        background-color: #222222;
+        color: #aaaaaa;
+        border: 1px solid #1a1a1a;
+    }
+`;
+
+const streakNames = ["Wrong Answer", "Correct!", "Double Answer!", "Answering Spree!", "Dominating!", "Mega Answer!", "Unstoppable!", "Wicked Sick!", "Monster Answer!", "Godlike!", "Beyond Godlike!"]
 class Game extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(items);
 
         this.wrapperRef = React.createRef();
         
@@ -92,7 +119,6 @@ class Game extends React.Component {
             itemsWithRecipe[i] = itemsWithRecipe[j];
             itemsWithRecipe[j] = tmp;
         }
-        console.log(itemsWithRecipe);
 
         // Initialize list of items that are components
         let materialIDs = [];
@@ -104,7 +130,6 @@ class Game extends React.Component {
                 }
             }
         }
-        console.log(materialIDs);
 
         // First time initialization for the very first quiz item
         // Should refactor this out so it can just be called in respective functions eventually (probably never)
@@ -231,7 +256,7 @@ class Game extends React.Component {
         // Get only items that are components (items that build into other items), exclude items included in recipe
         let filtered = items.filter((item) => {
             for (let i = 0; i < recipe.length; i++) {
-                if (recipe[i] === item.id) {
+                if (recipe[i] === item.id || this.state.itemsToQuiz[this.state.current + 1].id === item.id) {
                     return;
                 }
             }
@@ -242,10 +267,8 @@ class Game extends React.Component {
 
         // Add exception for power treads (remove band of elvenskin and robe of magi)
         if (this.state.itemsToQuiz[this.state.current + 1].id === "power_treads") {
-            console.log("PT");
             for (let i = 0; i < filtered.length; i++) {
                 if (filtered[i].id === "robe" || filtered[i].id === "boots_of_elves") {
-                    console.log("splicing");
                     filtered.splice(i, 1);
                     i--;
                 }
@@ -324,7 +347,7 @@ class Game extends React.Component {
     createQuizComponents = () => {
         let quizItems = []
         for (let i = 0; i < this.state.currentQuiz.length; i++) {
-            quizItems.push(<Item key={i} locked={this.state.frozen} id={this.state.currentQuiz[i].id} index={i} clickable={true}></Item>);
+            quizItems.push(<Item key={i} locked={this.state.frozen} id={this.state.currentQuiz[i].id} index={i} clickable={true} easy={this.state.easy}></Item>);
         }
         return quizItems;
     }
@@ -344,10 +367,10 @@ class Game extends React.Component {
         let numIcons = this.state.itemsToQuiz[this.state.current].components.length;
         let icons = [];
         for (let i = 0; i < selected.length; i++) {
-            icons.push(<MysteryIcon key={i} id={selected[i]} index={indicies[i]}></MysteryIcon>);
+            icons.push(<MysteryIcon key={i} id={selected[i]} index={indicies[i]} easy={this.state.easy}></MysteryIcon>);
         }
         for (let i = 0; i < numIcons - selected.length; i++) {
-            icons.push(<MysteryIcon key={i + selected.length} id={"unknown"} index={-1}></MysteryIcon>);
+            icons.push(<MysteryIcon key={i + selected.length} id={"unknown"} index={-1} easy={this.state.easy}></MysteryIcon>);
         }
         return icons;
     }
@@ -371,14 +394,11 @@ class Game extends React.Component {
                 currentQuiz : components
             })
         } else {
-            //TODO: Add proper win screen
-            console.log("You Win!");
             this.setState({win : true});
         }
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log(this.props.selected);
         if (!this.state.frozen) {
             // Check which items are selected
             let recipe = this.state.currentRecipe.slice();
@@ -419,7 +439,6 @@ class Game extends React.Component {
                     });
                     setTimeout(() => {
                         wrapper.classList.remove('is-test-open');
-                        console.log("Correct!");
                         this.props.dispatch(reset());
                         this.nextQuiz();
                         this.setState({frozen : false});
@@ -428,16 +447,10 @@ class Game extends React.Component {
                     let currentTries = this.state.tries;
                     currentTries -= 1;
                     if (currentTries === 0) {
-                        //TODO: Add proper game over state
-                        console.log("Game Over");
-                    }
-                    
-                    if (currentTries === 0) {
                         this.setState({
+                            streak : 0,
                             frozen : true
                         });
-                        //TODO: Add proper game over state
-                        console.log("Game Over");
                         setTimeout(() => {
                             wrapper.classList.remove('is-test-open');
                             this.setState({
@@ -452,7 +465,6 @@ class Game extends React.Component {
                         });
                         setTimeout(() => {
                             wrapper.classList.remove('is-test-open');
-                            console.log("Incorrect!");
                             this.props.dispatch(reset());
                             this.setState({frozen : false});
                         }, 1000)
@@ -514,28 +526,48 @@ class Game extends React.Component {
         });
     }
 
+    setEasy = () => {
+        this.props.dispatch(setDifficulty(true));
+        this.reset();
+    }
+
+    setHard = () => {
+        this.props.dispatch(setDifficulty(false));
+        this.reset();
+    }
+
+    // For testing
+    /*incQuiz = () => {
+        this.props.dispatch(reset());
+        this.nextQuiz();
+    }*/
+
     render() {
         let gg = <div></div>
         if (this.state.tries <= 0) {
             gg = <EndDialog>
                 <LargeText>Game Over</LargeText>
                 <LargeText>Final Score: {this.state.score}</LargeText>
-                <RestartButton onClick={this.reset}>Replay?</RestartButton>
+                <RestartButton onClick={this.reset}>Restart</RestartButton>
             </EndDialog>
         }
         if (this.state.win) {
             gg = <EndDialog>
-                <div>Game Complete</div>
-                <div>Final Score: {this.state.score}</div>
+                <LargeText>Game Complete!</LargeText>
+                <LargeText>Final Score: {this.state.score}</LargeText>
                 <RestartButton onClick={this.reset}>Replay?</RestartButton>
             </EndDialog>
         }
         return(
             <Page>
                 <h1>Shopkeeper's Quiz</h1>
+                <div>
+                    <DifficultyButton onClick={this.setEasy} disabled={this.props.easy}>Easy</DifficultyButton>
+                    <DifficultyButton onClick={this.setHard} disabled={!this.props.easy}>Hard</DifficultyButton>
+                </div>
                 <div className="game">
                     <div className="gameQuizItem">
-                        <Item id={this.state.itemsToQuiz[this.state.current].id} locked={this.state.frozen} clickable={false}></Item>
+                        <Item id={this.state.itemsToQuiz[this.state.current].id} locked={this.state.frozen} clickable={false} easy={this.state.easy}></Item>
                     </div>
                     <div className="gameMysteryRow">
                         {this.createMysteryIcons()}
@@ -544,7 +576,7 @@ class Game extends React.Component {
                         <div className="gameComponentRow">
                             {this.createQuizComponents()}
                         </div>
-                        <Item id="recipe" locked={this.state.frozen} index={8} clickable={true}></Item>
+                        <Item id="recipe" locked={this.state.frozen} index={8} clickable={true} easy={this.state.easy}></Item>
                     </div>
                     <StatText>
                         Guesses Left: {this.state.tries}
@@ -565,7 +597,8 @@ class Game extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        selected : state.selected
+        selected : state.selected,
+        easy : state.easy
     };
 }
 

@@ -24,22 +24,29 @@ const Wrapper = styled.div`
     }
 `;
 
-const Icon = styled.img`
+const Icon = styled.div.attrs(props => ({
+    url: props.url,
+}))`
     width: 85px;
     height: 62px;
-    object-fit: cover;
+    background-image: url(${props => props.url});
 `;
 
-const FadedIcon = styled.img`
+const FadedIcon = styled.div.attrs(props => ({
+    url: props.url,
+}))`
     width: 85px;
     height: 62px;
-    object-fit: cover;
     filter: saturate(10%) opacity(50%);
-    z-index: -1;
+    background-image: url(${props => props.url});
+    z-index: 0;
 `;
 
 const ItemInfo = styled.div`
     display: none;
+    z-index: 1;
+    margin-top: 3px;
+    margin-left: -2px;
     ${Wrapper}:hover & {
         display: block;
         position: absolute;
@@ -93,15 +100,9 @@ class Item extends React.Component {
         }
         let div;
         if (this.props.selected.includes(this.props.index)) {
-            div = 
-            <div onClick={this.selectItem}>
-                <FadedIcon alt="" src={imgURL} />
-            </div>
+            div = <FadedIcon url={imgURL} onClick={this.selectItem}></FadedIcon>
         } else {
-            div = 
-            <div onClick={this.selectItem}>
-                <Icon alt="" src={imgURL} />
-            </div>
+            div = <Icon url={imgURL} onClick={this.selectItem}></Icon>
         }
 
         return(

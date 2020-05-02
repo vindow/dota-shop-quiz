@@ -6,9 +6,10 @@ import './index.css';
 import Game from './components/game/game.js';
 import produce from 'immer';
 
-//TODO: Add difficulty setting
+
 const initialState = {
-    selected : []
+    selected: [],
+    easy: true
 };
 
 function reducer(state = initialState, action) {
@@ -22,7 +23,14 @@ function reducer(state = initialState, action) {
                 draft.selected.splice(draft.selected.indexOf(action.value), 1);
             })
         case 'RESET':
-            return initialState;
+            return {
+                selected: [],
+                easy: state.easy
+            }
+        case 'SET_DIFFICULTY':
+            return {
+                easy: action.value
+            }
         default:
             return state;
     }

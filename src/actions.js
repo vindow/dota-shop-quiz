@@ -17,3 +17,10 @@ export function reset() {
         type : "RESET"
     };
 }
+
+export function setDifficulty(value) {
+    return {
+        type : "SET_DIFFICULTY",
+        value
+    }
+}
