@@ -1,6 +1,7 @@
 # Dota Shop Quiz
 
-This is a remake of the nearly defunct Shopkeeper's Quiz [**seen here.**](http://www.dota2.com/quiz) 
+This is a remake of the nearly defunct Shopkeeper's Quiz [**seen here.**](http://www.dota2.com/quiz)
+
 New features include:
 * Optional full item descriptions
 * Fixing the bug that allows you to "skip" over items in the old quiz
