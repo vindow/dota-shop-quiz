@@ -31,11 +31,6 @@ const Row = styled.div`
     justify-content: center;
 `;
 
-const Components = styled.div`
-    display: flex;
-    justify-content: center;
-`;
-
 const wrapperKeyFrame = keyframes`
     0% {
         opacity: 1;
@@ -176,12 +171,13 @@ class Game extends React.Component {
         let filtered = items.filter((item) => {
             for (let i = 0; i < recipe.length; i++) {
                 if (recipe[i] === item.id) {
-                    return;
+                    return false;
                 }
             }
             if (materialIDs.includes(item.id)) {
-                return item;
+                return true;
             }
+            return false;
         });
 
         //Add exception for Power Treads
@@ -209,9 +205,10 @@ class Game extends React.Component {
         let costFiltered = filtered.filter((item) => {
             for (let i = 0; i < recipe.length; i++) {
                 if (item.cost <= (componentCosts[i] + 200) && item.cost >= (componentCosts[i] - 200)) {
-                    return item;
+                    return true;
                 }
             }
+            return false;
         });
 
         // Populate randItems with items close in cost to recipe items
@@ -281,12 +278,13 @@ class Game extends React.Component {
         let filtered = items.filter((item) => {
             for (let i = 0; i < recipe.length; i++) {
                 if (recipe[i] === item.id || this.state.itemsToQuiz[this.state.current + 1].id === item.id) {
-                    return;
+                    return false;
                 }
             }
             if (this.state.materials.includes(item.id)) {
-                return item;
+                return true;
             }
+            return false;
         });
 
         // Add exception for power treads (remove band of elvenskin and robe of magi)
@@ -315,9 +313,10 @@ class Game extends React.Component {
         let costFiltered = filtered.filter((item) => {
             for (let i = 0; i < recipe.length; i++) {
                 if (item.cost <= (componentCosts[i] + 200) && item.cost >= (componentCosts[i] - 200)) {
-                    return item;
+                    return true;
                 }
             }
+            return false;
         });
 
         // Populate randItems with items close in cost to recipe items
