@@ -249,7 +249,7 @@ class Game extends React.Component {
             components[i] = components[j];
             components[j] = tmp;
         }
-        
+
         this.state = {
             itemsToQuiz: itemsWithRecipe,
             current: 0,
@@ -277,10 +277,12 @@ class Game extends React.Component {
     // Generates the random items to fill the rest of the quiz items with wrong items
     // Tries to generate items that are close in price to the real components
     generateRandomItems = (recipe) => {
+        let curr = (this.state.current + 1 >= this.state.itemsToQuiz.length) ? 0 : this.state.current + 1;
         // Get only items that are components (items that build into other items), exclude items included in recipe
         let filtered = items.filter((item) => {
             for (let i = 0; i < recipe.length; i++) {
-                if (recipe[i] === item.id || this.state.itemsToQuiz[this.state.current + 1].id === item.id) {
+                
+                if (recipe[i] === item.id || this.state.itemsToQuiz[curr].id === item.id) {
                     return false;
                 }
             }
@@ -291,7 +293,7 @@ class Game extends React.Component {
         });
 
         // Add exception for power treads (remove band of elvenskin and robe of magi)
-        if (this.state.itemsToQuiz[this.state.current + 1].id === "power_treads") {
+        if (this.state.itemsToQuiz[curr].id === "power_treads") {
             for (let i = 0; i < filtered.length; i++) {
                 if (filtered[i].id === "robe" || filtered[i].id === "boots_of_elves") {
                     filtered.splice(i, 1);
@@ -307,7 +309,7 @@ class Game extends React.Component {
                 componentCosts.push(this.getItemData(recipe[i]).cost);
             }
         }
-        let recipeCost = this.state.itemsToQuiz[this.state.current + 1].RecipeCost;
+        let recipeCost = this.state.itemsToQuiz[curr].RecipeCost;
         if (recipeCost !== 0) {
             componentCosts.push(recipeCost);
         }
@@ -545,6 +547,9 @@ class Game extends React.Component {
         }
 
         let recipe = quiz[0].components;
+        this.setState({current : 0});
+        console.log(this.state.itemsToQuiz);
+        console.log(this.state.current);
         let components = this.getQuizComponents(recipe);
         // Shuffle the components
         for (let i = components.length - 1; i > 0; i--) {
@@ -557,7 +562,6 @@ class Game extends React.Component {
         this.props.dispatch(reset());
         this.setState({
             itemsToQuiz: quiz,
-            current: 0,
             currentRecipe : recipe,
             currentQuiz : components,
             streak : 0,
@@ -577,12 +581,6 @@ class Game extends React.Component {
         this.props.dispatch(setDifficulty(false));
         this.reset();
     }
-
-    // For testing
-    /*incQuiz = () => {
-        this.props.dispatch(reset());
-        this.nextQuiz();
-    }*/
 
     render() {
         let gg = <div></div>
