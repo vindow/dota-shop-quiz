@@ -30,7 +30,7 @@ const Row = styled.div`
     justify-content: center;
 `;
 
-const wrapperKeyFrame = keyframes`
+const PopUpTextKeyFrames = keyframes`
     0% {
         opacity: 1;
         top: -2.5em;
@@ -42,7 +42,7 @@ const wrapperKeyFrame = keyframes`
         z-index: 1;
     }
 `;
-const Wrapper = styled.div`
+const PopUpText = styled.div`
     opacity: 0;
     position: relative;
     color : #CC1400;
@@ -52,8 +52,8 @@ const Wrapper = styled.div`
     top: -2.5em;
     text-align: center;
     z-index: -1;
-    &.is-test-open {
-        animation: ${wrapperKeyFrame} 1s ease-in-out 0s 1;
+    &.play-animation {
+        animation: ${PopUpTextKeyFrames} 1s ease-in-out 0s 1;
     }
 `;
 
@@ -123,7 +123,7 @@ class Game extends React.Component {
     constructor(props) {
         super(props);
 
-        this.wrapperRef = React.createRef();
+        this.popupRef = React.createRef();
         
         // First time initialization
         //Get list of items to quiz
@@ -249,6 +249,7 @@ class Game extends React.Component {
             components[i] = components[j];
             components[j] = tmp;
         }
+        
         this.state = {
             itemsToQuiz: itemsWithRecipe,
             current: 0,
@@ -439,6 +440,7 @@ class Game extends React.Component {
 
             // Only check for correctness if all slots are filled
             if (recipe.length === selected.length) {
+                // Check for correctness
                 recipe.sort();
                 selected.sort();
                 let correct = true;
@@ -448,8 +450,11 @@ class Game extends React.Component {
                         break;
                     }
                 }
-                const wrapper = this.wrapperRef.current;
-                wrapper.classList.add('is-test-open');
+
+                // Play the popup animation
+                const popup = this.popupRef.current;
+                popup.classList.add('play-animation');
+
                 if (correct) {
                     let currentStreak = this.state.streak;
                     let currentScore = this.state.score;
@@ -462,8 +467,9 @@ class Game extends React.Component {
                         streak : currentStreak,
                         score : currentScore
                     });
+                    // Wait for pop up text animation to end before loading next quiz
                     setTimeout(() => {
-                        wrapper.classList.remove('is-test-open');
+                        popup.classList.remove('play-animation');
                         this.props.dispatch(reset());
                         this.nextQuiz();
                         this.setState({frozen : false});
@@ -471,25 +477,31 @@ class Game extends React.Component {
                 } else {
                     let currentTries = this.state.tries;
                     currentTries -= 1;
+
                     if (currentTries === 0) {
                         this.setState({
                             streak : 0,
                             frozen : true
                         });
+
+                        // Wait for pop up text animation to end before loading game over screen
                         setTimeout(() => {
-                            wrapper.classList.remove('is-test-open');
+                            popup.classList.remove('play-animation');
                             this.setState({
                                 tries : currentTries
                             });
                         }, 1000)
+
                     } else {
                         this.setState({
                             frozen : true, 
                             streak : 0,
                             tries : currentTries
                         });
+
+                        // Wait for pop up text animation to end before loading next quiz
                         setTimeout(() => {
-                            wrapper.classList.remove('is-test-open');
+                            popup.classList.remove('play-animation');
                             this.props.dispatch(reset());
                             this.setState({frozen : false});
                         }, 1000)
@@ -503,6 +515,7 @@ class Game extends React.Component {
     getStreak = () => {
         let text;
         let amount = (this.state.streak > 0) ? this.state.streak * 30 + 170 : 0;
+        // Just play the very last streak name for any streaks higher than it
         if (this.state.streak < streakNames.length) {
             text = streakNames[this.state.streak];
         } else {
@@ -520,14 +533,17 @@ class Game extends React.Component {
         );
     }
 
+    // Resets the game stat back to the start and also reshuffles the item quiz order
     reset = () => {
         let quiz = this.state.itemsToQuiz.slice();
+        // Reshuffling the quiz order
         for (let i = quiz.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
             let tmp = quiz[i];
             quiz[i] = quiz[j];
             quiz[j] = tmp;
         }
+
         let recipe = quiz[0].components;
         let components = this.getQuizComponents(recipe);
         // Shuffle the components
@@ -537,6 +553,7 @@ class Game extends React.Component {
             components[i] = components[j];
             components[j] = tmp;
         }
+
         this.props.dispatch(reset());
         this.setState({
             itemsToQuiz: quiz,
@@ -608,9 +625,9 @@ class Game extends React.Component {
                         Score: {this.state.score}
                     </StatText>
                 </GameMain>
-                <Wrapper ref={this.wrapperRef}>
+                <PopUpText ref={this.popupRef}>
                     {this.getStreak()}
-                </Wrapper>
+                </PopUpText>
                 {gg}
             </Page>
             
