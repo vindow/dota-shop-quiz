@@ -5,6 +5,8 @@ import ItemHover from '../itemHover/itemHover.js';
 import { deselect } from '../../actions.js';
 import styled , { keyframes } from 'styled-components';
 
+const imgPath = process.env.PUBLIC_URL + '/images/';
+
 const wrapperKeyFrame = keyframes`
     0% {
         opacity: 0;
@@ -85,15 +87,15 @@ class MysteryIcon extends React.Component {
     render() {
         let imgURL, hover;
         if (this.props.id === 'unknown') {
-            imgURL = "http://cdn.dota2.com/apps/dota2/images/quiz/item-slot-unknown.png"
+            imgURL = imgPath + "item-slot-unknown.png"
             hover = <div></div>;
         } else if (this.props.id === "recipe") {
-            imgURL = "http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png"
+            imgURL = imgPath + "recipe_lg.png"
             hover = <ItemInfo>
                         <ItemHover index={-1}></ItemHover>
                     </ItemInfo>
         } else {
-            imgURL = "http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"
+            imgURL = imgPath + this.props.id + "_lg.png"
             hover = <ItemInfo>
                         <ItemHover index={this.getItemIndex()}></ItemHover>
                     </ItemInfo>

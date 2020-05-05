@@ -5,6 +5,8 @@ import ItemHover from '../itemHover/itemHover.js';
 import { select, deselect} from '../../actions.js';
 import styled , { keyframes } from 'styled-components';
 
+const imgPath = process.env.PUBLIC_URL + '/images/';
+
 const wrapperKeyFrame = keyframes`
     0% {
         opacity: 0;
@@ -94,10 +96,10 @@ class Item extends React.Component {
     render() {
         let imgURL, hover;
         if (this.props.id === "recipe") {
-            imgURL = "http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png"
+            imgURL = imgPath + "recipe_lg.png"
             hover = <ItemHover index={-1}></ItemHover>
         } else {
-            imgURL = "http://cdn.dota2.com/apps/dota2/images/items/" + this.props.id + "_lg.png"
+            imgURL = imgPath + this.props.id + "_lg.png"
             hover = <ItemHover index={this.getItemIndex()}></ItemHover>
         }
         let div;

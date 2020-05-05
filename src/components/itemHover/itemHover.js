@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import items from '../../data/items.json';
 import styled from 'styled-components';
 
+const imgPath = process.env.PUBLIC_URL + '/images/';
+
 const MainBody = styled.div`
     border: 2px rgb(70, 70, 70) groove;
     background-color: #333333;
@@ -30,7 +32,8 @@ const Name = styled.div`
 
 const Price = styled.div`
     color: gold;
-    display:flex;
+    font-weight: bold;
+    display: flex;
 `;
 
 const Symbol = styled.img`
@@ -94,13 +97,13 @@ class ItemHover extends React.Component {
                         <AbilityHeaderCosts>
                             {items[this.props.index].cd !== false && 
                                 <AbilityHeaderStat>
-                                    <Symbol alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
+                                    <Symbol alt="" src={imgPath + "cooldown.png"} />
                                     {items[this.props.index].cd}
                                 </AbilityHeaderStat>
                             }
                             {items[this.props.index].mc !== false && 
                                 <AbilityHeaderStat>
-                                    <Symbol alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
+                                    <Symbol alt="" src={imgPath + "mana.png"} />
                                     {items[this.props.index].mc}
                                 </AbilityHeaderStat>
                             }
@@ -122,13 +125,13 @@ class ItemHover extends React.Component {
                         <AbilityHeaderCosts>
                             {items[this.props.index].cd !== false && 
                                 <AbilityHeaderStat>
-                                    <Symbol alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
+                                    <Symbol alt="" src={imgPath + "cooldown.png"} />
                                     {items[this.props.index].cd}
                                 </AbilityHeaderStat>
                             }
                             {items[this.props.index].mc !== false && 
                                 <AbilityHeaderStat>
-                                    <Symbol alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
+                                    <Symbol alt="" src={imgPath + "mana.png"} />
                                     {items[this.props.index].mc}
                                 </AbilityHeaderStat>
                             }
@@ -151,13 +154,13 @@ class ItemHover extends React.Component {
                         <AbilityHeaderCosts>
                             {items[this.props.index].cd !== false && 
                                 <AbilityHeaderStat>
-                                    <Symbol alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
+                                    <Symbol alt="" src={imgPath + "cooldown.png"} />
                                     {items[this.props.index].cd}
                                 </AbilityHeaderStat>
                             }
                             {items[this.props.index].mc !== false && 
                                 <AbilityHeaderStat>
-                                    <Symbol alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
+                                    <Symbol alt="" src={imgPath + "mana.png"} />
                                     {items[this.props.index].mc}
                                 </AbilityHeaderStat>
                             }
@@ -196,13 +199,13 @@ class ItemHover extends React.Component {
                         <AbilityHeaderCosts>
                             {items[this.props.index].cd !== false && 
                                 <AbilityHeaderStat>
-                                    <Symbol alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" />
+                                    <Symbol alt="" src={imgPath + "cooldown.png"} />
                                     {items[this.props.index].cd}
                                 </AbilityHeaderStat>
                             }
                             {items[this.props.index].mc !== false && 
                                 <AbilityHeaderStat>
-                                    <Symbol alt="" src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" />
+                                    <Symbol alt="" src={imgPath + "mana.png"} />
                                     {items[this.props.index].mc}
                                 </AbilityHeaderStat>
                             }
@@ -237,7 +240,7 @@ class ItemHover extends React.Component {
                 <MainBody>
                     <Header>
                         <div>
-                            <img alt="" src="http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png" />
+                            <img alt="" src={imgPath + 'recipe_lg.png'}/>
                         </div>
                         <HeaderText>
                             <Name>Recipe</Name>
@@ -251,12 +254,12 @@ class ItemHover extends React.Component {
                     <MainBody>
                         <Header>
                             <div>
-                                <img alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + items[this.props.index].id + "_lg.png"} />
+                                <img alt="" src={imgPath + items[this.props.index].id + "_lg.png"} />
                             </div>
                             <HeaderText>
                                 <Name>{items[this.props.index].dname}</Name>
                                 <Price>
-                                    <Symbol alt="" src={"http://cdn.dota2.com/apps/dota2/images/tooltips/gold.png"} />
+                                    <Symbol alt="" src={imgPath + "gold.png"} />
                                     {items[this.props.index].cost}
                                 </Price>
                             </HeaderText>
@@ -279,7 +282,7 @@ class ItemHover extends React.Component {
                     <MainBody>
                         <Header>
                             <div>
-                                <img alt="" src={"http://cdn.dota2.com/apps/dota2/images/items/" + items[this.props.index].id + "_lg.png"} />
+                                <img alt="" src={imgPath + items[this.props.index].id + "_lg.png"} />
                             </div>
                             <HeaderText>
                                 <Name>{items[this.props.index].dname}</Name>
