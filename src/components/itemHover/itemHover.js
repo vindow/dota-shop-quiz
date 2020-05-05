@@ -40,6 +40,7 @@ const Symbol = styled.img`
 
 const Ability = styled.div`
     background-color:#212b3d;
+    margin-top: 1em;
 `;
 
 const AbilityHeader = styled.div`
@@ -63,12 +64,14 @@ const AbilityHeaderStat = styled.span`
 
 const AbilityText = styled.div`
     padding: 5px;
+    white-space: pre-wrap;
 `;
 
 const Attributes = styled.div`
     display: flex;
     flex-direction: column;
     padding: 5px;
+    margin-bottom: -0.5em;
 `;
 
 const AttributeNumber = styled.span`
