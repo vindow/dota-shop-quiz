@@ -9,7 +9,7 @@ New features include:
 
 ## Demo
 
-No live version available yet (soon)
+Check out the live version [**here.**](https://vindow.github.io/dota-shop-quiz/)
 
 ## Downloading
 
