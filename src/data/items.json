@@ -7,9 +7,7 @@
          }
       ],
       "id":"blink",
-      "img":"/apps/dota2/images/items/blink_lg.png?t=1584472485163",
       "dname":"Blink Dagger",
-      "qual":"component",
       "cost":2250,
       "notes":"Self-casting will cause you to teleport in the direction of your team's fountain.\nIf you used Blink to teleport to a distance over the maximum range, you'll be teleported 4/5 of the maximum range instead.",
       "attrib":[
@@ -19,16 +17,13 @@
       "cd":15,
       "lore":"The fabled dagger used by the fastest assassin ever to walk the lands.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"blades_of_attack",
-      "img":"/apps/dota2/images/items/blades_of_attack_lg.png?t=1584472485163",
       "dname":"Blades of Attack",
-      "qual":"component",
-      "cost":430,
+      "cost":450,
       "notes":"",
       "attrib":[
          {
@@ -42,15 +37,12 @@
       "cd":false,
       "lore":"The damage of these small, concealable blades should not be underestimated.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"broadsword",
-      "img":"/apps/dota2/images/items/broadsword_lg.png?t=1584472485163",
       "dname":"Broadsword",
-      "qual":"component",
       "cost":1000,
       "notes":"",
       "attrib":[
@@ -65,15 +57,12 @@
       "cd":false,
       "lore":"The classic weapon of choice for knights, this blade is sturdy and reliable for slaying enemies.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"chainmail",
-      "img":"/apps/dota2/images/items/chainmail_lg.png?t=1584472485163",
       "dname":"Chainmail",
-      "qual":"component",
       "cost":550,
       "notes":"",
       "attrib":[
@@ -88,15 +77,12 @@
       "cd":false,
       "lore":"A medium weave of metal chains.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"claymore",
-      "img":"/apps/dota2/images/items/claymore_lg.png?t=1584472485163",
       "dname":"Claymore",
-      "qual":"component",
       "cost":1400,
       "notes":"",
       "attrib":[
@@ -111,15 +97,12 @@
       "cd":false,
       "lore":"A sword that can cut through armor, it's a commonly chosen first weapon for budding swordsmen.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"helm_of_iron_will",
-      "img":"/apps/dota2/images/items/helm_of_iron_will_lg.png?t=1584472485163",
       "dname":"Helm of Iron Will",
-      "qual":"component",
       "cost":925,
       "notes":"",
       "attrib":[
@@ -140,7 +123,6 @@
       "cd":false,
       "lore":"The helmet of a legendary warrior who fell in battle.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -152,9 +134,7 @@
          }
       ],
       "id":"javelin",
-      "img":"/apps/dota2/images/items/javelin_lg.png?t=1584472485163",
       "dname":"Javelin",
-      "qual":"component",
       "cost":1100,
       "notes":"",
       "attrib":[
@@ -164,15 +144,12 @@
       "cd":false,
       "lore":"A rather typical spear that can sometimes pierce through an enemy's armor when used to attack.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"mithril_hammer",
-      "img":"/apps/dota2/images/items/mithril_hammer_lg.png?t=1584472485163",
       "dname":"Mithril Hammer",
-      "qual":"component",
       "cost":1600,
       "notes":"",
       "attrib":[
@@ -187,15 +164,12 @@
       "cd":false,
       "lore":"A hammer forged of pure mithril.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"platemail",
-      "img":"/apps/dota2/images/items/platemail_lg.png?t=1584472485163",
       "dname":"Platemail",
-      "qual":"secret_shop",
       "cost":1400,
       "notes":"",
       "attrib":[
@@ -210,15 +184,12 @@
       "cd":false,
       "lore":"Thick metal plates that protect the entire upper body. Avoid dropping on feet.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"quarterstaff",
-      "img":"/apps/dota2/images/items/quarterstaff_lg.png?t=1584472485163",
       "dname":"Quarterstaff",
-      "qual":"component",
       "cost":875,
       "notes":"",
       "attrib":[
@@ -239,7 +210,6 @@
       "cd":false,
       "lore":"A basic staff that allows you to strike quickly.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -257,9 +227,7 @@
          }
       ],
       "id":"quelling_blade",
-      "img":"/apps/dota2/images/items/quelling_blade_lg.png?t=1584472485163",
       "dname":"Quelling Blade",
-      "qual":"component",
       "cost":150,
       "notes":"Effects of multiple quelling blades do not stack.",
       "attrib":[
@@ -269,7 +237,6 @@
       "cd":4,
       "lore":"The axe of a fallen gnome, it allows you to effectively maneuver the forest.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -281,9 +248,7 @@
          }
       ],
       "id":"faerie_fire",
-      "img":"/apps/dota2/images/items/faerie_fire_lg.png?t=1584472485163",
       "dname":"Faerie Fire",
-      "qual":"consumable",
       "cost":70,
       "notes":"",
       "attrib":[
@@ -298,7 +263,6 @@
       "cd":5,
       "lore":"The ethereal flames from the ever-burning ruins of Kindertree ignite across realities.",
       "components":null,
-      "created":false,
       "charges":1,
       "RecipeCost":0
    },
@@ -310,9 +274,7 @@
          }
       ],
       "id":"infused_raindrop",
-      "img":"/apps/dota2/images/items/infused_raindrop_lg.png?t=1584472485163",
       "dname":"Infused Raindrops",
-      "qual":"component",
       "cost":225,
       "notes":"Uses at most one charge per damage instance.",
       "attrib":[
@@ -327,7 +289,6 @@
       "cd":7,
       "lore":"Elemental protection from magical assaults.",
       "components":null,
-      "created":false,
       "charges":6,
       "RecipeCost":0
    },
@@ -336,9 +297,7 @@
          "Bonuses from multiple Wind Laces do not stack."
       ],
       "id":"wind_lace",
-      "img":"/apps/dota2/images/items/wind_lace_lg.png?t=1584472485163",
       "dname":"Wind Lace",
-      "qual":"component",
       "cost":250,
       "notes":"",
       "attrib":[
@@ -353,15 +312,12 @@
       "cd":false,
       "lore":"Hasten to battle on wind-touched heels.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"ring_of_protection",
-      "img":"/apps/dota2/images/items/ring_of_protection_lg.png?t=1584472485163",
       "dname":"Ring of Protection",
-      "qual":"component",
       "cost":150,
       "notes":"",
       "attrib":[
@@ -376,7 +332,6 @@
       "cd":false,
       "lore":"A glimmering ring that defends its bearer.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -388,9 +343,7 @@
          }
       ],
       "id":"stout_shield",
-      "img":"/apps/dota2/images/items/stout_shield_lg.png?t=1584472485163",
       "dname":"Stout Shield",
-      "qual":"component",
       "cost":100,
       "notes":"Multiple sources of damage block do not stack.",
       "attrib":[
@@ -400,7 +353,6 @@
       "cd":false,
       "lore":"One man's wine barrel bottom is another man's shield.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -418,9 +370,7 @@
          }
       ],
       "id":"moon_shard",
-      "img":"/apps/dota2/images/items/moon_shard_lg.png?t=1584472485163",
       "dname":"Moon Shard",
-      "qual":"consumable",
       "cost":4000,
       "notes":"The bonus night vision works during Night Stalker's Darkness ability.",
       "attrib":[
@@ -438,15 +388,12 @@
          "hyperstone",
          "hyperstone"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"gauntlets",
-      "img":"/apps/dota2/images/items/gauntlets_lg.png?t=1584472485163",
       "dname":"Gauntlets of Strength",
-      "qual":"component",
       "cost":145,
       "notes":"",
       "attrib":[
@@ -461,15 +408,12 @@
       "cd":false,
       "lore":"Studded leather gloves that add brute strength.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"slippers",
-      "img":"/apps/dota2/images/items/slippers_lg.png?t=1584472485163",
       "dname":"Slippers of Agility",
-      "qual":"component",
       "cost":145,
       "notes":"",
       "attrib":[
@@ -484,15 +428,12 @@
       "cd":false,
       "lore":"Light boots made from spider skin that tingles your senses.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"mantle",
-      "img":"/apps/dota2/images/items/mantle_lg.png?t=1584472485163",
       "dname":"Mantle of Intelligence",
-      "qual":"component",
       "cost":145,
       "notes":"",
       "attrib":[
@@ -507,7 +448,6 @@
       "cd":false,
       "lore":"A beautiful sapphire mantle worn by generations of queens.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -519,9 +459,7 @@
          }
       ],
       "id":"branches",
-      "img":"/apps/dota2/images/items/branches_lg.png?t=1584472485163",
       "dname":"Iron Branch",
-      "qual":"consumable",
       "cost":50,
       "notes":"",
       "attrib":[
@@ -536,15 +474,12 @@
       "cd":false,
       "lore":"A seemingly ordinary branch, its ironlike qualities are bestowed upon the bearer.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"belt_of_strength",
-      "img":"/apps/dota2/images/items/belt_of_strength_lg.png?t=1584472485163",
       "dname":"Belt of Strength",
-      "qual":"component",
       "cost":450,
       "notes":"",
       "attrib":[
@@ -559,15 +494,12 @@
       "cd":false,
       "lore":"A valued accessory for improving vitality.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"boots_of_elves",
-      "img":"/apps/dota2/images/items/boots_of_elves_lg.png?t=1584472485163",
       "dname":"Band of Elvenskin",
-      "qual":"component",
       "cost":450,
       "notes":"",
       "attrib":[
@@ -582,15 +514,12 @@
       "cd":false,
       "lore":"A tensile fabric often used for its light weight and ease of movement.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"robe",
-      "img":"/apps/dota2/images/items/robe_lg.png?t=1584472485163",
       "dname":"Robe of the Magi",
-      "qual":"component",
       "cost":450,
       "notes":"",
       "attrib":[
@@ -605,15 +534,12 @@
       "cd":false,
       "lore":"This robe corrupts the soul of the user, but provides wisdom in return.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"circlet",
-      "img":"/apps/dota2/images/items/circlet_lg.png?t=1584472485163",
       "dname":"Circlet",
-      "qual":"component",
       "cost":155,
       "notes":"",
       "attrib":[
@@ -628,15 +554,12 @@
       "cd":false,
       "lore":"An elegant circlet designed for human princesses.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"crown",
-      "img":"/apps/dota2/images/items/crown_lg.png?t=1584472485163",
       "dname":"Crown",
-      "qual":"component",
       "cost":450,
       "notes":"",
       "attrib":[
@@ -651,15 +574,12 @@
       "cd":false,
       "lore":"",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"ogre_axe",
-      "img":"/apps/dota2/images/items/ogre_axe_lg.png?t=1584472485163",
       "dname":"Ogre Axe",
-      "qual":"component",
       "cost":1000,
       "notes":"",
       "attrib":[
@@ -674,15 +594,12 @@
       "cd":false,
       "lore":"You grow stronger just by holding it.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"blade_of_alacrity",
-      "img":"/apps/dota2/images/items/blade_of_alacrity_lg.png?t=1584472485163",
       "dname":"Blade of Alacrity",
-      "qual":"component",
       "cost":1000,
       "notes":"",
       "attrib":[
@@ -697,15 +614,12 @@
       "cd":false,
       "lore":"A long blade imbued with time magic.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"staff_of_wizardry",
-      "img":"/apps/dota2/images/items/staff_of_wizardry_lg.png?t=1584472485163",
       "dname":"Staff of Wizardry",
-      "qual":"component",
       "cost":1000,
       "notes":"",
       "attrib":[
@@ -720,15 +634,12 @@
       "cd":false,
       "lore":"A staff of magical powers passed down from the eldest mages.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"ultimate_orb",
-      "img":"/apps/dota2/images/items/ultimate_orb_lg.png?t=1584472485163",
       "dname":"Ultimate Orb",
-      "qual":"secret_shop",
       "cost":2150,
       "notes":"",
       "attrib":[
@@ -743,16 +654,13 @@
       "cd":false,
       "lore":"A mystical orb containing the essence of life.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"gloves",
-      "img":"/apps/dota2/images/items/gloves_lg.png?t=1584472485163",
       "dname":"Gloves of Haste",
-      "qual":"component",
-      "cost":400,
+      "cost":450,
       "notes":"",
       "attrib":[
          {
@@ -766,7 +674,6 @@
       "cd":false,
       "lore":"A pair of magical gloves that seems to render weapons weightless.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -778,9 +685,7 @@
          }
       ],
       "id":"lifesteal",
-      "img":"/apps/dota2/images/items/lifesteal_lg.png?t=1584472485163",
       "dname":"Morbid Mask",
-      "qual":"component",
       "cost":900,
       "notes":"",
       "attrib":[
@@ -790,22 +695,19 @@
       "cd":false,
       "lore":"A mask that drains the energy of those caught in its gaze.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"ring_of_regen",
-      "img":"/apps/dota2/images/items/ring_of_regen_lg.png?t=1584472485163",
       "dname":"Ring of Regen",
-      "qual":"component",
       "cost":225,
       "notes":"",
       "attrib":[
          {
             "key":"bonus_health_regen",
             "header":"+",
-            "value":"2",
+            "value":"1.75",
             "footer":"HP Regeneration"
          }
       ],
@@ -813,16 +715,13 @@
       "cd":false,
       "lore":"This ring is considered a good luck charm among the Gnomes.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"ring_of_tarrasque",
-      "img":"/apps/dota2/images/items/ring_of_tarrasque_lg.png?t=1584472485163",
       "dname":"Ring of Tarrasque",
-      "qual":"component",
-      "cost":600,
+      "cost":650,
       "notes":"",
       "attrib":[
          {
@@ -834,7 +733,7 @@
          {
             "key":"bonus_health_regen",
             "header":"+",
-            "value":"4.5",
+            "value":"4",
             "footer":"HP Regeneration"
          }
       ],
@@ -842,15 +741,12 @@
       "cd":false,
       "lore":"",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"sobi_mask",
-      "img":"/apps/dota2/images/items/sobi_mask_lg.png?t=1584472485163",
       "dname":"Sage's Mask",
-      "qual":"component",
       "cost":225,
       "notes":"",
       "attrib":[
@@ -865,7 +761,6 @@
       "cd":false,
       "lore":"A mask commonly used by mages and warlocks for various rituals.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -874,16 +769,14 @@
          "Movement speed bonuses from multiple pairs of boots do not stack."
       ],
       "id":"boots",
-      "img":"/apps/dota2/images/items/boots_lg.png?t=1584472485163",
       "dname":"Boots of Speed",
-      "qual":"component",
       "cost":500,
       "notes":"",
       "attrib":[
          {
             "key":"bonus_movement_speed",
             "header":"+",
-            "value":"15%",
+            "value":"45",
             "footer":"Movement Speed"
          }
       ],
@@ -891,7 +784,6 @@
       "cd":false,
       "lore":"Fleet footwear, increasing movement.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -907,9 +799,7 @@
          }
       ],
       "id":"gem",
-      "img":"/apps/dota2/images/items/gem_lg.png?t=1584472485163",
       "dname":"Gem of True Sight",
-      "qual":"component",
       "cost":900,
       "notes":"Disabled while on a courier.",
       "attrib":[
@@ -919,15 +809,12 @@
       "cd":false,
       "lore":"Not one thrall creature of the depths,\r\nNor spirit bound in drowning's keep,\r\nNor Maelrawn the Tentacular,\r\nShall rest till seas, gem comes to sleep.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"cloak",
-      "img":"/apps/dota2/images/items/cloak_lg.png?t=1584472485163",
       "dname":"Cloak",
-      "qual":"component",
       "cost":550,
       "notes":"Stacks multiplicatively with other sources of spell resistance.",
       "attrib":[
@@ -942,15 +829,12 @@
       "cd":false,
       "lore":"A cloak made of a magical material that works to dispel any magic cast on it.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"talisman_of_evasion",
-      "img":"/apps/dota2/images/items/talisman_of_evasion_lg.png?t=1584472485163",
       "dname":"Talisman of Evasion",
-      "qual":"secret_shop",
       "cost":1400,
       "notes":"Stacks diminishingly with other sources of Evasion.",
       "attrib":[
@@ -965,7 +849,6 @@
       "cd":false,
       "lore":"A necklace that allows you to anticipate enemy attacks.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -977,9 +860,7 @@
          }
       ],
       "id":"cheese",
-      "img":"/apps/dota2/images/items/cheese_lg.png?t=1584472485163",
       "dname":"Cheese",
-      "qual":"consumable",
       "cost":1000,
       "notes":"Cheese is shareable.",
       "attrib":[
@@ -989,7 +870,6 @@
       "cd":40,
       "lore":"Made from the milk of a long lost Furbolg vendor, it restores the vitality of those who taste it.",
       "components":null,
-      "created":false,
       "charges":1,
       "RecipeCost":0
    },
@@ -997,13 +877,11 @@
       "active":[
          {
             "name":"Energy Charge",
-            "desc":"Instantly restores 15 health and mana per charge stored.\n\n Max 10 charges. Gains a charge whenever a visible enemy within 1200 range uses an ability."
+            "desc":"Instantly restores 15 health and mana per charge stored.\n\nMax 10 charges. Gains a charge whenever a visible enemy within 1200 range uses an ability."
          }
       ],
       "id":"magic_stick",
-      "img":"/apps/dota2/images/items/magic_stick_lg.png?t=1584472485163",
       "dname":"Magic Stick",
-      "qual":"component",
       "cost":200,
       "notes":"Gains charges for spells cast by visible enemies in 1200 range.\nCertain abilities and item abilities will not add charges.",
       "attrib":[
@@ -1013,7 +891,6 @@
       "cd":13,
       "lore":"A simple wand used to channel magic energies, it is favored by apprentice wizards and great warlocks alike.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -1025,9 +902,7 @@
          }
       ],
       "id":"magic_wand",
-      "img":"/apps/dota2/images/items/magic_wand_lg.png?t=1584472485163",
       "dname":"Magic Wand",
-      "qual":"common",
       "cost":450,
       "notes":"Gains charges for spells cast by visible enemies in 1200 range.\nCertain abilities and item abilities will not add charges.",
       "attrib":[
@@ -1047,7 +922,6 @@
          "branches",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":150
    },
@@ -1059,9 +933,7 @@
          }
       ],
       "id":"ghost",
-      "img":"/apps/dota2/images/items/ghost_lg.png?t=1584472485163",
       "dname":"Ghost Scepter",
-      "qual":"component",
       "cost":1500,
       "notes":"Ends if you become Spell Immune, and will have no effect if you are already Spell Immune.\nShares cooldown with Ethereal Blade.",
       "attrib":[
@@ -1076,7 +948,6 @@
       "cd":20,
       "lore":"Imbues the wielder with a ghostly presence, allowing them to evade physical damage.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -1088,9 +959,7 @@
          }
       ],
       "id":"clarity",
-      "img":"/apps/dota2/images/items/clarity_lg.png?t=1584472485163",
       "dname":"Clarity",
-      "qual":"consumable",
       "cost":50,
       "notes":"",
       "attrib":[
@@ -1100,7 +969,6 @@
       "cd":false,
       "lore":"Clear water that enhances the ability to meditate.",
       "components":null,
-      "created":false,
       "charges":1,
       "RecipeCost":0
    },
@@ -1112,9 +980,7 @@
          }
       ],
       "id":"enchanted_mango",
-      "img":"/apps/dota2/images/items/enchanted_mango_lg.png?t=1584472485163",
       "dname":"Enchanted Mango",
-      "qual":"consumable",
       "cost":70,
       "notes":"Hold Control to use on a nearby allied hero.",
       "attrib":[
@@ -1129,7 +995,6 @@
       "cd":false,
       "lore":"The bittersweet flavors of Jidi Isle are irresistible to amphibians.",
       "components":null,
-      "created":false,
       "charges":1,
       "RecipeCost":0
    },
@@ -1137,13 +1002,11 @@
       "use":[
          {
             "name":"Salve",
-            "desc":"Grants 50 health regeneration to the target for 8 seconds.\n\nIf the unit is attacked by an enemy hero or Roshan, the effect is lost.\n\nRange: 250"
+            "desc":"Grants 40 health regeneration to the target for 10 seconds.\n\nIf the unit is attacked by an enemy hero or Roshan, the effect is lost.\n\nRange: 250"
          }
       ],
       "id":"flask",
-      "img":"/apps/dota2/images/items/flask_lg.png?t=1584472485163",
       "dname":"Healing Salve",
-      "qual":"consumable",
       "cost":110,
       "notes":"",
       "attrib":[
@@ -1153,7 +1016,6 @@
       "cd":false,
       "lore":"A magical salve that can quickly mend even the deepest of wounds.",
       "components":null,
-      "created":false,
       "charges":1,
       "RecipeCost":0
    },
@@ -1165,10 +1027,8 @@
          }
       ],
       "id":"dust",
-      "img":"/apps/dota2/images/items/dust_lg.png?t=1584472485163",
       "dname":"Dust of Appearance",
-      "qual":"consumable",
-      "cost":90,
+      "cost":80,
       "notes":"Places a debuff on enemy units in the area that reveals them when they are invisible.",
       "attrib":[
 
@@ -1177,7 +1037,6 @@
       "cd":30,
       "lore":"One may hide visage, but never volume.",
       "components":null,
-      "created":false,
       "charges":1,
       "RecipeCost":0
    },
@@ -1195,9 +1054,7 @@
          }
       ],
       "id":"bottle",
-      "img":"/apps/dota2/images/items/bottle_lg.png?t=1584472485163",
       "dname":"Bottle",
-      "qual":"common",
       "cost":625,
       "notes":"Bottle is shareable. Stored runes cannot be shared.\nIf Bottle does not have full charges and is placed on a courier, the courier's movement speed will be slowed by 30%.",
       "attrib":[
@@ -1207,112 +1064,7 @@
       "cd":false,
       "lore":"An old bottle that survived the ages, the contents placed inside become enchanted.",
       "components":null,
-      "created":false,
       "charges":3,
-      "RecipeCost":0
-   },
-   {
-      "use":[
-         {
-            "name":"Plant",
-            "desc":"Plants an Observer Ward, an invisible watcher that gives ground vision in a 1400 radius to your team. Lasts 6 minutes.\n\nHold Control to give one Observer Ward to an allied hero.\n\nRange: 500"
-         }
-      ],
-      "id":"ward_observer",
-      "img":"/apps/dota2/images/items/ward_observer_lg.png?t=1584472485163",
-      "dname":"Observer Ward",
-      "qual":"consumable",
-      "cost":0,
-      "notes":"",
-      "attrib":[
-         {
-            "key":"lifetime",
-            "header":"LIFETIME:",
-            "value":"360",
-            "generated":true
-         }
-      ],
-      "mc":false,
-      "cd":1,
-      "lore":"A form of half-sentient plant, often cultivated by apprentice wizards.",
-      "components":null,
-      "created":false,
-      "charges":1,
-      "RecipeCost":0
-   },
-   {
-      "use":[
-         {
-            "name":"Plant",
-            "desc":"Plants a Sentry Ward, an invisible watcher that grants True Sight, the ability to see invisible enemy units and wards, to any existing allied vision within a 1000 radius.\nLasts 8 minutes.\n\nDoes not grant ground vision.\nHold Control to give one Sentry Ward to an allied hero.\n\nRange: 500"
-         }
-      ],
-      "id":"ward_sentry",
-      "img":"/apps/dota2/images/items/ward_sentry_lg.png?t=1584472485163",
-      "dname":"Sentry Ward",
-      "qual":"consumable",
-      "cost":75,
-      "notes":"",
-      "attrib":[
-         {
-            "key":"lifetime",
-            "header":"LIFETIME:",
-            "value":"480",
-            "generated":true
-         }
-      ],
-      "mc":false,
-      "cd":1,
-      "lore":"A form of plant originally grown in the garden of a fearful king.",
-      "components":null,
-      "created":false,
-      "charges":1,
-      "RecipeCost":0
-   },
-   {
-      "use":[
-         {
-            "name":"Plant",
-            "desc":"Plant the currently active ward.  Double-Click to switch the currently active ward.\n\nRange: 500"
-         }
-      ],
-      "id":"ward_dispenser",
-      "img":"/apps/dota2/images/items/ward_dispenser_lg.png?t=1584472485163",
-      "dname":"Observer and Sentry Wards",
-      "qual":"common",
-      "cost":75,
-      "notes":"Hold Control to give one ward to an allied hero.",
-      "attrib":[
-         {
-            "key":"observer_vision_range_tooltip",
-            "header":"OBSERVER VISION RANGE:",
-            "value":"1400"
-         },
-         {
-            "key":"observer_duration_minutes_tooltip",
-            "header":"OBSERVER DURATION (MINUTES):",
-            "value":"6"
-         },
-         {
-            "key":"true_sight_range",
-            "header":"SENTRY TRUE SIGHT RANGE:",
-            "value":"1000"
-         },
-         {
-            "key":"sentry_duration_minutes_tooltip",
-            "header":"SENTRY DURATION (MINUTES):",
-            "value":"8"
-         }
-      ],
-      "mc":false,
-      "cd":false,
-      "lore":"Advancements in stacking efficiency have made wards easier to carry than ever.",
-      "components":[
-         "ward_sentry",
-         "ward_observer"
-      ],
-      "created":true,
-      "charges":false,
       "RecipeCost":0
    },
    {
@@ -1323,9 +1075,7 @@
          }
       ],
       "id":"tango",
-      "img":"/apps/dota2/images/items/tango_lg.png?t=1584472485163",
       "dname":"Tango",
-      "qual":"consumable",
       "cost":90,
       "notes":"",
       "attrib":[
@@ -1335,7 +1085,6 @@
       "cd":false,
       "lore":"Forage to survive on the battlefield.",
       "components":null,
-      "created":false,
       "charges":3,
       "RecipeCost":0
    },
@@ -1347,9 +1096,7 @@
          }
       ],
       "id":"tango_single",
-      "img":"/apps/dota2/images/items/tango_single_lg.png?t=1584472485163",
       "dname":"Tango (Shared)",
-      "qual":"consumable",
       "cost":30,
       "notes":"",
       "attrib":[
@@ -1359,7 +1106,6 @@
       "cd":60,
       "lore":"Om nom nom.",
       "components":null,
-      "created":false,
       "charges":1,
       "RecipeCost":0
    },
@@ -1371,9 +1117,7 @@
          }
       ],
       "id":"courier",
-      "img":"/apps/dota2/images/items/courier_lg.png?t=1584472485163",
       "dname":"Animal Courier",
-      "qual":"consumable",
       "cost":50,
       "notes":"",
       "attrib":[
@@ -1383,7 +1127,6 @@
       "cd":false,
       "lore":"Losing the courier is punishable by death.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -1395,9 +1138,7 @@
          }
       ],
       "id":"flying_courier",
-      "img":"/apps/dota2/images/items/flying_courier_lg.png?t=1584472485163",
       "dname":"Flying Courier",
-      "qual":"consumable",
       "cost":100,
       "notes":"",
       "attrib":[
@@ -1407,7 +1148,6 @@
       "cd":false,
       "lore":"The faithful mount upon which soar the fortunes of battle.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -1419,9 +1159,7 @@
          }
       ],
       "id":"tpscroll",
-      "img":"/apps/dota2/images/items/tpscroll_lg.png?t=1584472485163",
       "dname":"Town Portal Scroll",
-      "qual":"consumable",
       "cost":90,
       "notes":"If multiple heroes teleport to the same location in succession, the channeling time will be increased for each successive hero.\nTeleport can be prevented or canceled by Root abilities.",
       "attrib":[
@@ -1431,7 +1169,6 @@
       "cd":80,
       "lore":"What a hero truly needs.",
       "components":null,
-      "created":false,
       "charges":1,
       "RecipeCost":0
    },
@@ -1446,16 +1183,14 @@
          "Movement speed bonuses from multiple pairs of boots do not stack."
       ],
       "id":"travel_boots",
-      "img":"/apps/dota2/images/items/travel_boots_lg.png?t=1584472485163",
       "dname":"Boots of Travel",
-      "qual":"common",
       "cost":2500,
       "notes":"",
       "attrib":[
          {
             "key":"bonus_movement_speed",
             "header":"+",
-            "value":"38%",
+            "value":"110",
             "footer":"Movement Speed"
          },
          {
@@ -1471,7 +1206,6 @@
          "boots",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":2000
    },
@@ -1486,16 +1220,14 @@
          "Movement speed bonuses from multiple pairs of boots do not stack."
       ],
       "id":"travel_boots_2",
-      "img":"/apps/dota2/images/items/travel_boots_2_lg.png?t=1584472485163",
       "dname":"Boots of Travel",
-      "qual":"common",
       "cost":4500,
       "notes":"",
       "attrib":[
          {
             "key":"bonus_movement_speed",
             "header":"+",
-            "value":"44%",
+            "value":"130",
             "footer":"Movement Speed"
          },
          {
@@ -1511,7 +1243,6 @@
          "travel_boots",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":2000
    },
@@ -1519,34 +1250,34 @@
       "active":[
          {
             "name":"Phase",
-            "desc":"Gives 22% increased movement speed on melee heroes, and 10% on ranged heroes, and lets you move through units and turn more quickly for 3 seconds."
+            "desc":"Gives 20% increased movement speed on melee heroes, and 10% on ranged heroes, and lets you move through units and turn more quickly for 3 seconds."
          }
       ],
       "hint":[
          "Movement speed bonuses from multiple pairs of boots do not stack."
       ],
       "id":"phase_boots",
-      "img":"/apps/dota2/images/items/phase_boots_lg.png?t=1584472485163",
       "dname":"Phase Boots",
-      "qual":"common",
-      "cost":1480,
+      "cost":1500,
       "notes":"",
       "attrib":[
          {
             "key":"bonus_movement_speed",
             "header":"+",
-            "value":"15%",
+            "value":"45",
             "footer":"Movement Speed"
          },
          {
             "key":"bonus_damage_melee",
-            "header":"+Damage (MELEE)",
-            "value":"18"
+            "header":"+",
+            "value":"18",
+            "footer":"Damage (MELEE)"
          },
          {
             "key":"bonus_damage_range",
-            "header":"+Damage (RANGED)",
-            "value":"12"
+            "header":"+",
+            "value":"12",
+            "footer":"Damage (RANGED)"
          },
          {
             "key":"bonus_armor",
@@ -1563,15 +1294,12 @@
          "chainmail",
          "blades_of_attack"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"demon_edge",
-      "img":"/apps/dota2/images/items/demon_edge_lg.png?t=1584472485163",
       "dname":"Demon Edge",
-      "qual":"secret_shop",
       "cost":2200,
       "notes":"",
       "attrib":[
@@ -1586,15 +1314,12 @@
       "cd":false,
       "lore":"One of the oldest weapons forged by the Demon-Smith Abzidian, it killed its maker when he tested its edge.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"eagle",
-      "img":"/apps/dota2/images/items/eagle_lg.png?t=1584472485163",
       "dname":"Eaglesong",
-      "qual":"secret_shop",
       "cost":3000,
       "notes":"",
       "attrib":[
@@ -1609,15 +1334,12 @@
       "cd":false,
       "lore":"Capturing the majestic call of an eagle, this mystical horn brings limitless dexterity to those who hear it.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"reaver",
-      "img":"/apps/dota2/images/items/reaver_lg.png?t=1584472485163",
       "dname":"Reaver",
-      "qual":"secret_shop",
       "cost":3000,
       "notes":"",
       "attrib":[
@@ -1632,15 +1354,12 @@
       "cd":false,
       "lore":"A massive axe capable of tearing whole mountains down.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"relic",
-      "img":"/apps/dota2/images/items/relic_lg.png?t=1584472485163",
       "dname":"Sacred Relic",
-      "qual":"secret_shop",
       "cost":3800,
       "notes":"",
       "attrib":[
@@ -1655,15 +1374,12 @@
       "cd":false,
       "lore":"An ancient weapon that often turns the tides of war.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"hyperstone",
-      "img":"/apps/dota2/images/items/hyperstone_lg.png?t=1584472485163",
       "dname":"Hyperstone",
-      "qual":"secret_shop",
       "cost":2000,
       "notes":"",
       "attrib":[
@@ -1678,15 +1394,12 @@
       "cd":false,
       "lore":"A mystical, carved stone that boosts the fervor of the holder.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"ring_of_health",
-      "img":"/apps/dota2/images/items/ring_of_health_lg.png?t=1584472485163",
       "dname":"Ring of Health",
-      "qual":"component",
       "cost":825,
       "notes":"",
       "attrib":[
@@ -1701,15 +1414,12 @@
       "cd":false,
       "lore":"A shiny ring found beneath a fat halfling's corpse.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"void_stone",
-      "img":"/apps/dota2/images/items/void_stone_lg.png?t=1584472485163",
       "dname":"Void Stone",
-      "qual":"component",
       "cost":825,
       "notes":"",
       "attrib":[
@@ -1724,15 +1434,12 @@
       "cd":false,
       "lore":"Jewelry that was once used to channel nether realm magic, this ring pulses with energy.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"mystic_staff",
-      "img":"/apps/dota2/images/items/mystic_staff_lg.png?t=1584472485163",
       "dname":"Mystic Staff",
-      "qual":"secret_shop",
       "cost":2700,
       "notes":"",
       "attrib":[
@@ -1747,15 +1454,12 @@
       "cd":false,
       "lore":"Enigmatic staff made of only the most expensive crystals.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"energy_booster",
-      "img":"/apps/dota2/images/items/energy_booster_lg.png?t=1584472485163",
       "dname":"Energy Booster",
-      "qual":"secret_shop",
       "cost":900,
       "notes":"",
       "attrib":[
@@ -1770,15 +1474,12 @@
       "cd":false,
       "lore":"This lapis gemstone is commonly added to the collection of wizards seeking to improve their presence in combat.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"point_booster",
-      "img":"/apps/dota2/images/items/point_booster_lg.png?t=1584472485163",
       "dname":"Point Booster",
-      "qual":"secret_shop",
       "cost":1200,
       "notes":"",
       "attrib":[
@@ -1799,15 +1500,12 @@
       "cd":false,
       "lore":"A perfectly formed amethyst that nourishes body and mind when held.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"vitality_booster",
-      "img":"/apps/dota2/images/items/vitality_booster_lg.png?t=1584472485163",
       "dname":"Vitality Booster",
-      "qual":"secret_shop",
       "cost":1100,
       "notes":"",
       "attrib":[
@@ -1822,7 +1520,6 @@
       "cd":false,
       "lore":"A ruby gemstone that has been passed down through generations of warrior kin.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -1837,16 +1534,14 @@
          "Movement speed bonuses from multiple pairs of boots do not stack."
       ],
       "id":"power_treads",
-      "img":"/apps/dota2/images/items/power_treads_lg.png?t=1584472485163",
       "dname":"Power Treads",
-      "qual":"common",
-      "cost":1350,
+      "cost":1400,
       "notes":"Power Treads can be built using a Belt of Strength, Band of Elvenskin, or a Robe of the Magi.",
       "attrib":[
          {
             "key":"bonus_movement_speed",
             "header":"+",
-            "value":"15%",
+            "value":"45",
             "footer":"Movement Speed"
          },
          {
@@ -1870,7 +1565,6 @@
          "gloves",
          "belt_of_strength"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -1878,14 +1572,12 @@
       "active":[
          {
             "name":"Transmute",
-            "desc":"Kills a non-hero target for 160 gold and 1.85x experience. \n\n Cannot be used on Ancient Creeps.\n\nRange: 600"
+            "desc":"Kills a non-hero target for 160 gold and 1.85x experience. \n\nCannot be used on Ancient Creeps.\n\nRange: 600"
          }
       ],
       "id":"hand_of_midas",
-      "img":"/apps/dota2/images/items/hand_of_midas_lg.png?t=1584472485163",
       "dname":"Hand of Midas",
-      "qual":"common",
-      "cost":2250,
+      "cost":2300,
       "notes":"The gold given is reliable gold (you do not get the normal creep bounty).\nExperience gained by using Transmute is not shared.",
       "attrib":[
          {
@@ -1902,15 +1594,12 @@
          "gloves",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1850
    },
    {
       "id":"oblivion_staff",
-      "img":"/apps/dota2/images/items/oblivion_staff_lg.png?t=1584472485163",
       "dname":"Oblivion Staff",
-      "qual":"common",
       "cost":1550,
       "notes":"",
       "attrib":[
@@ -1947,15 +1636,12 @@
          "sobi_mask",
          "robe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"pers",
-      "img":"/apps/dota2/images/items/pers_lg.png?t=1584472485163",
       "dname":"Perseverance",
-      "qual":"common",
       "cost":1650,
       "notes":"",
       "attrib":[
@@ -1979,15 +1665,12 @@
          "ring_of_health",
          "void_stone"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"bracer",
-      "img":"/apps/dota2/images/items/bracer_lg.png?t=1584472485163",
       "dname":"Bracer",
-      "qual":"common",
       "cost":510,
       "notes":"",
       "attrib":[
@@ -2024,15 +1707,12 @@
          "gauntlets",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":210
    },
    {
       "id":"wraith_band",
-      "img":"/apps/dota2/images/items/wraith_band_lg.png?t=1584472485163",
       "dname":"Wraith Band",
-      "qual":"common",
       "cost":510,
       "notes":"",
       "attrib":[
@@ -2069,15 +1749,12 @@
          "slippers",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":210
    },
    {
       "id":"null_talisman",
-      "img":"/apps/dota2/images/items/null_talisman_lg.png?t=1584472485163",
       "dname":"Null Talisman",
-      "qual":"common",
       "cost":510,
       "notes":"",
       "attrib":[
@@ -2101,8 +1778,9 @@
          },
          {
             "key":"bonus_spell_amp",
-            "header":"+Spell Amplification",
-            "value":"3%"
+            "header":"+",
+            "value":"3%",
+            "footer":"Spell Amplification"
          }
       ],
       "mc":false,
@@ -2113,7 +1791,6 @@
          "mantle",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":210
    },
@@ -2127,14 +1804,12 @@
       "passive":[
          {
             "name":"Mekansm Aura",
-            "desc":"Grants 2.5 health regeneration to allied units in a 1200 radius."
+            "desc":"Grants 2 health regeneration to allied units in a 1200 radius."
          }
       ],
       "id":"mekansm",
-      "img":"/apps/dota2/images/items/mekansm_lg.png?t=1584472485163",
       "dname":"Mekansm",
-      "qual":"rare",
-      "cost":1875,
+      "cost":1975,
       "notes":"Restore does not affect units that have been affected by Restore in the last 25 seconds.\nMultiple instances of Mekansm Aura do not stack.",
       "attrib":[
          {
@@ -2158,22 +1833,19 @@
          "chainmail",
          "recipe"
       ],
-      "created":true,
       "charges":false,
-      "RecipeCost":950
+      "RecipeCost":1000
    },
    {
       "passive":[
          {
             "name":"Vladmir's Aura",
-            "desc":"Grants 25% lifesteal, 1.5 mana regeneration, and 3 armor to nearby allies. \n\nRadius: 1200"
+            "desc":"Grants 20% lifesteal, 1.5 mana regeneration, and 3 armor to nearby allies. \n\nRadius: 1200"
          }
       ],
       "id":"vladmir",
-      "img":"/apps/dota2/images/items/vladmir_lg.png?t=1584472485163",
       "dname":"Vladmir's Offering",
-      "qual":"rare",
-      "cost":2100,
+      "cost":2300,
       "notes":"",
       "attrib":[
          {
@@ -2192,9 +1864,8 @@
          "lifesteal",
          "recipe"
       ],
-      "created":true,
       "charges":false,
-      "RecipeCost":450
+      "RecipeCost":600
    },
    {
       "passive":[
@@ -2204,9 +1875,7 @@
          }
       ],
       "id":"buckler",
-      "img":"/apps/dota2/images/items/buckler_lg.png?t=1584472485163",
       "dname":"Buckler",
-      "qual":"rare",
       "cost":375,
       "notes":"",
       "attrib":[
@@ -2219,7 +1888,6 @@
          "ring_of_protection",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":225
    },
@@ -2231,10 +1899,8 @@
          }
       ],
       "id":"ring_of_basilius",
-      "img":"/apps/dota2/images/items/ring_of_basilius_lg.png?t=1584472485163",
       "dname":"Ring of Basilius",
-      "qual":"rare",
-      "cost":375,
+      "cost":425,
       "notes":"",
       "attrib":[
 
@@ -2246,9 +1912,8 @@
          "sobi_mask",
          "recipe"
       ],
-      "created":true,
       "charges":false,
-      "RecipeCost":150
+      "RecipeCost":200
    },
    {
       "active":[
@@ -2267,9 +1932,7 @@
          }
       ],
       "id":"holy_locket",
-      "img":"/apps/dota2/images/items/holy_locket_lg.png?t=1584472485163",
       "dname":"Holy Locket",
-      "qual":"rare",
       "cost":2450,
       "notes":"",
       "attrib":[
@@ -2307,7 +1970,6 @@
          "magic_wand",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":500
    },
@@ -2321,14 +1983,12 @@
       "passive":[
          {
             "name":"Insight Aura",
-            "desc":"Gives allied units 2.5 health regeneration and 10% magic resistance.\n\nRadius: 1200"
+            "desc":"Gives allied units 2 health regeneration and 10% magic resistance.\n\nRadius: 1200"
          }
       ],
       "id":"pipe",
-      "img":"/apps/dota2/images/items/pipe_lg.png?t=1584472485163",
       "dname":"Pipe of Insight",
-      "qual":"rare",
-      "cost":2775,
+      "cost":3425,
       "notes":"Multiple instances of Barrier do not stack.\nStacks multiplicatively with other sources of magic resistance.",
       "attrib":[
          {
@@ -2352,9 +2012,8 @@
          "headdress",
          "recipe"
       ],
-      "created":true,
       "charges":false,
-      "RecipeCost":800
+      "RecipeCost":1200
    },
    {
       "active":[
@@ -2364,9 +2023,7 @@
          }
       ],
       "id":"urn_of_shadows",
-      "img":"/apps/dota2/images/items/urn_of_shadows_lg.png?t=1584472485163",
       "dname":"Urn of Shadows",
-      "qual":"rare",
       "cost":840,
       "notes":"Empty urns gain 2 charges.\nIf used on a hero with Soul Release already active on them, it will refresh its duration.",
       "attrib":[
@@ -2398,7 +2055,6 @@
          "ring_of_protection",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":310
    },
@@ -2406,14 +2062,12 @@
       "passive":[
          {
             "name":"Regeneration Aura",
-            "desc":"Grants 2.5 health regeneration to allies.\n\nRadius: 1200"
+            "desc":"Grants 2 health regeneration to allies.\n\nRadius: 1200"
          }
       ],
       "id":"headdress",
-      "img":"/apps/dota2/images/items/headdress_lg.png?t=1584472485163",
       "dname":"Headdress",
-      "qual":"rare",
-      "cost":375,
+      "cost":425,
       "notes":"",
       "attrib":[
 
@@ -2425,9 +2079,8 @@
          "ring_of_regen",
          "recipe"
       ],
-      "created":true,
       "charges":false,
-      "RecipeCost":150
+      "RecipeCost":200
    },
    {
       "active":[
@@ -2437,9 +2090,7 @@
          }
       ],
       "id":"sheepstick",
-      "img":"/apps/dota2/images/items/sheepstick_lg.png?t=1584472485163",
       "dname":"Scythe of Vyse",
-      "qual":"rare",
       "cost":5675,
       "notes":"The target will have a base movement speed of %sheep_movement_speed%, but buffs granting maximum movement speed won't be disabled.",
       "attrib":[
@@ -2476,7 +2127,6 @@
          "ultimate_orb",
          "void_stone"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -2488,9 +2138,7 @@
          }
       ],
       "id":"orchid",
-      "img":"/apps/dota2/images/items/orchid_lg.png?t=1584472485163",
       "dname":"Orchid Malevolence",
-      "qual":"rare",
       "cost":3875,
       "notes":"",
       "attrib":[
@@ -2527,7 +2175,6 @@
          "oblivion_staff",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":775
    },
@@ -2539,9 +2186,7 @@
          }
       ],
       "id":"bloodthorn",
-      "img":"/apps/dota2/images/items/bloodthorn_lg.png?t=1584472485163",
       "dname":"Bloodthorn",
-      "qual":"epic",
       "cost":6875,
       "notes":"Critical Strike does not work against buildings.",
       "attrib":[
@@ -2578,7 +2223,6 @@
          "hyperstone",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1000
    },
@@ -2590,9 +2234,7 @@
          }
       ],
       "id":"echo_sabre",
-      "img":"/apps/dota2/images/items/echo_sabre_lg.png?t=1584472485163",
       "dname":"Echo Sabre",
-      "qual":"artifact",
       "cost":2550,
       "notes":"",
       "attrib":[
@@ -2634,7 +2276,6 @@
          "ogre_axe",
          "oblivion_staff"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -2646,9 +2287,7 @@
          }
       ],
       "id":"cyclone",
-      "img":"/apps/dota2/images/items/cyclone_lg.png?t=1584472485163",
       "dname":"Eul's Scepter of Divinity",
-      "qual":"rare",
       "cost":2725,
       "notes":"You cannot cyclone allies.\nCyclones cast on yourself go through spell immunity.\nCyclone can purge some buffs and debuffs.",
       "attrib":[
@@ -2680,7 +2319,6 @@
          "wind_lace",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":650
    },
@@ -2692,9 +2330,7 @@
          }
       ],
       "id":"aether_lens",
-      "img":"/apps/dota2/images/items/aether_lens_lg.png?t=1584472485163",
       "dname":"Aether Lens",
-      "qual":"rare",
       "cost":2325,
       "notes":"Passive does not stack.",
       "attrib":[
@@ -2719,7 +2355,6 @@
          "void_stone",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":600
    },
@@ -2731,9 +2366,7 @@
          }
       ],
       "id":"force_staff",
-      "img":"/apps/dota2/images/items/force_staff_lg.png?t=1584472485163",
       "dname":"Force Staff",
-      "qual":"rare",
       "cost":2225,
       "notes":"Self-cast will cause you to use Force on yourself.\nForce Staff doesn't interrupt the target's actions.\nWill not work on a unit inside Chronosphere, Duel, or Black Hole.",
       "attrib":[
@@ -2758,7 +2391,6 @@
          "ring_of_regen",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1000
    },
@@ -2776,9 +2408,7 @@
          }
       ],
       "id":"hurricane_pike",
-      "img":"/apps/dota2/images/items/hurricane_pike_lg.png?t=1584472485163",
       "dname":"Hurricane Pike",
-      "qual":"epic",
       "cost":4575,
       "notes":"Self-cast will use Hurricane Pike on yourself.\nHurricane Pike doesn't interrupt the target's actions.\nWill not work on a unit inside Chronosphere, Duel, or Black Hole.",
       "attrib":[
@@ -2815,7 +2445,6 @@
          "dragon_lance",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":450
    },
@@ -2827,9 +2456,7 @@
          }
       ],
       "id":"dagon",
-      "img":"/apps/dota2/images/items/dagon_lg.png?t=1584472485163",
       "dname":"Dagon",
-      "qual":"rare",
       "cost":2700,
       "notes":"Instantly kills illusions.",
       "attrib":[
@@ -2860,7 +2487,6 @@
          "crown",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1250
    },
@@ -2868,13 +2494,11 @@
       "active":[
          {
             "name":"Demonic Summoning",
-            "desc":"Summons a Warrior and an Archer to fight for you for 60 seconds.\n\n<h1>Warrior:</h1>Burns mana every hit, and deals magical damage to whoever kills it.  Gains True Sight at level 3.\nHealth: 700,800,900\nDamage: 75,100,125\nMana Break Damage: 30,40,50\nLast Will Damage: 600,700,800\n\n<h1>Archer:</h1>Has a passive movement and attack speed aura. Gains Purge at Level 3.\nHealth: 700,800,900\nDamage: 60,90,120\nAura Move Speed: 5,7,9\nAura Attack Speed: 5,7,9\nAura Radius: 1200"
+            "desc":"Summons a Warrior and an Archer to fight for you for 60 seconds.\n\nWarrior:\nBurns mana every hit, and deals magical damage to whoever kills it.  Gains True Sight at level 3.\n\nHealth: 700,800,900\nDamage: 75,100,125\nMana Break Damage: 30,40,50\nLast Will Damage: 600,700,800\n\nArcher:\nHas a passive movement and attack speed aura. Gains Purge at Level 3.\n\nHealth: 700,800,900\nDamage: 60,90,120\nAura Move Speed: 5,7,9\nAura Attack Speed: 5,7,9\nAura Radius: 1200"
          }
       ],
       "id":"necronomicon",
-      "img":"/apps/dota2/images/items/necronomicon_lg.png?t=1584472485163",
       "dname":"Necronomicon",
-      "qual":"rare",
       "cost":2150,
       "notes":"",
       "attrib":[
@@ -2882,9 +2506,9 @@
             "key":"bonus_strength",
             "header":"+",
             "value":[
-               "10",
-               "15",
-               "20"
+               "6",
+               "12",
+               "18"
             ],
             "footer":"Strength"
          },
@@ -2899,7 +2523,7 @@
             "footer":"Mana Regeneration"
          }
       ],
-      "mc":50,
+      "mc":150,
       "cd":90,
       "lore":"Considered the ultimate in necromancy and demonology, a powerful malefic force is locked within its pages.",
       "components":[
@@ -2908,7 +2532,6 @@
          "belt_of_strength",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1250
    },
@@ -2920,9 +2543,7 @@
          }
       ],
       "id":"ultimate_scepter",
-      "img":"/apps/dota2/images/items/ultimate_scepter_lg.png?t=1584472485163",
       "dname":"Aghanim's Scepter",
-      "qual":"rare",
       "cost":4200,
       "notes":"",
       "attrib":[
@@ -2954,7 +2575,6 @@
          "ogre_axe",
          "blade_of_alacrity"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -2966,9 +2586,7 @@
          }
       ],
       "id":"refresher",
-      "img":"/apps/dota2/images/items/refresher_lg.png?t=1584472485163",
       "dname":"Refresher Orb",
-      "qual":"rare",
       "cost":5000,
       "notes":"",
       "attrib":[
@@ -2993,7 +2611,6 @@
          "pers",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1700
    },
@@ -3005,9 +2622,7 @@
          }
       ],
       "id":"assault",
-      "img":"/apps/dota2/images/items/assault_lg.png?t=1584472485163",
       "dname":"Assault Cuirass",
-      "qual":"epic",
       "cost":5075,
       "notes":"",
       "attrib":[
@@ -3039,7 +2654,6 @@
          "buckler",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1300
    },
@@ -3051,9 +2665,7 @@
          }
       ],
       "id":"heart",
-      "img":"/apps/dota2/images/items/heart_lg.png?t=1584472485163",
       "dname":"Heart of Tarrasque",
-      "qual":"epic",
       "cost":5100,
       "notes":"",
       "attrib":[
@@ -3071,8 +2683,9 @@
          },
          {
             "key":"hp_regen_amp",
-            "header":"+Health Regen Amplification",
-            "value":"50%"
+            "header":"+",
+            "value":"50%",
+            "footer":"Health Regen Amplification"
          },
          {
             "key":"fixed_health_regen",
@@ -3090,7 +2703,6 @@
          "reaver",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":400
    },
@@ -3102,9 +2714,7 @@
          }
       ],
       "id":"black_king_bar",
-      "img":"/apps/dota2/images/items/black_king_bar_lg.png?t=1584472485163",
       "dname":"Black King Bar",
-      "qual":"epic",
       "cost":4050,
       "notes":"Purchasing another Black King Bar will not reset its immunity duration.\nUsing Black King Bar may remove some positive buffs.",
       "attrib":[
@@ -3129,33 +2739,8 @@
          "mithril_hammer",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1450
-   },
-   {
-      "passive":[
-         {
-            "name":"Reincarnation",
-            "desc":"Brings you to life with full health and mana 5 seconds after you die, at the location where you died. \n\nReincarnation must be used within 5 minutes or Aegis of the Immortal disappears. If it expires, it will heal you over 5 seconds (dispels on damage)."
-         }
-      ],
-      "id":"aegis",
-      "img":"/apps/dota2/images/items/aegis_lg.png?t=1584472485163",
-      "dname":"Aegis of the Immortal",
-      "qual":"artifact",
-      "cost":0,
-      "notes":"Pronounced as ayy jis.",
-      "attrib":[
-
-      ],
-      "mc":false,
-      "cd":false,
-      "lore":"The Immortal was said to own a shield that protected him from death itself.",
-      "components":null,
-      "created":false,
-      "charges":false,
-      "RecipeCost":0
    },
    {
       "active":[
@@ -3171,9 +2756,7 @@
          }
       ],
       "id":"shivas_guard",
-      "img":"/apps/dota2/images/items/shivas_guard_lg.png?t=1584472485163",
       "dname":"Shiva's Guard",
-      "qual":"epic",
       "cost":4750,
       "notes":"The wave extends at a speed of %blast_speed% to a max size of %blast_radius%.\nThe Arctic Blast follows its caster.\nMultiple instances of Freezing Aura do not stack.",
       "attrib":[
@@ -3198,7 +2781,6 @@
          "mystic_staff",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":650
    },
@@ -3216,9 +2798,7 @@
          }
       ],
       "id":"bloodstone",
-      "img":"/apps/dota2/images/items/bloodstone_lg.png?t=1584472485163",
       "dname":"Bloodstone",
-      "qual":"epic",
       "cost":5250,
       "notes":"",
       "attrib":[
@@ -3242,13 +2822,15 @@
          },
          {
             "key":"manacost_reduction",
-            "header":"+Manacost and Manaloss Reduction",
-            "value":"12%"
+            "header":"+",
+            "value":"12%",
+            "footer":"Manacost and Manaloss Reduction"
          },
          {
             "key":"spell_amp",
-            "header":"+Base Spell Amplification",
-            "value":"8%"
+            "header":"+",
+            "value":"8%",
+            "footer":"Base Spell Amplification"
          }
       ],
       "mc":false,
@@ -3258,7 +2840,6 @@
          "kaya",
          "soul_booster"
       ],
-      "created":true,
       "charges":14,
       "RecipeCost":0
    },
@@ -3276,9 +2857,7 @@
          }
       ],
       "id":"sphere",
-      "img":"/apps/dota2/images/items/sphere_lg.png?t=1584472485163",
       "dname":"Linken's Sphere",
-      "qual":"epic",
       "cost":5000,
       "notes":"",
       "attrib":[
@@ -3309,7 +2888,6 @@
          "pers",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1200
    },
@@ -3321,9 +2899,7 @@
          }
       ],
       "id":"lotus_orb",
-      "img":"/apps/dota2/images/items/lotus_orb_lg.png?t=1584472485163",
       "dname":"Lotus Orb",
-      "qual":"epic",
       "cost":3950,
       "notes":"",
       "attrib":[
@@ -3352,7 +2928,7 @@
             "footer":"Mana"
          }
       ],
-      "mc":150,
+      "mc":175,
       "cd":15,
       "lore":"The jewel at its center still reflects a pale image of its creator.",
       "components":[
@@ -3360,7 +2936,6 @@
          "platemail",
          "energy_booster"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -3372,9 +2947,7 @@
          }
       ],
       "id":"meteor_hammer",
-      "img":"/apps/dota2/images/items/meteor_hammer_lg.png?t=1584472485163",
       "dname":"Meteor Hammer",
-      "qual":"epic",
       "cost":2450,
       "notes":"",
       "attrib":[
@@ -3405,14 +2978,13 @@
       ],
       "mc":125,
       "cd":28,
-      "lore":"",
+      "lore":"An enchanted hammer forged of metals discovered in the ruins of a village destroyed by a great star storm.",
       "components":[
          "ogre_axe",
          "staff_of_wizardry",
          "ring_of_regen",
          "sobi_mask"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -3424,9 +2996,7 @@
          }
       ],
       "id":"nullifier",
-      "img":"/apps/dota2/images/items/nullifier_lg.png?t=1584472485163",
       "dname":"Nullifier",
-      "qual":"epic",
       "cost":4725,
       "notes":"",
       "attrib":[
@@ -3451,12 +3021,11 @@
       ],
       "mc":75,
       "cd":11,
-      "lore":"",
+      "lore":"A dangerous weapon pilfered from an inverse dimension.",
       "components":[
          "relic",
          "helm_of_iron_will"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -3468,9 +3037,7 @@
          }
       ],
       "id":"aeon_disk",
-      "img":"/apps/dota2/images/items/aeon_disk_lg.png?t=1584472485163",
       "dname":"Aeon Disk",
-      "qual":"epic",
       "cost":3100,
       "notes":"",
       "attrib":[
@@ -3489,21 +3056,18 @@
       ],
       "mc":false,
       "cd":105,
-      "lore":"",
+      "lore":"A powerful artifact long ago smuggled out of the Ivory Incubarium. Or so many believe.",
       "components":[
          "vitality_booster",
          "energy_booster",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1100
    },
    {
       "id":"kaya",
-      "img":"/apps/dota2/images/items/kaya_lg.png?t=1584472485163",
       "dname":"Kaya",
-      "qual":"epic",
       "cost":2050,
       "notes":"",
       "attrib":[
@@ -3515,78 +3079,43 @@
          },
          {
             "key":"manacost_reduction",
-            "header":"+Manacost and Manaloss Reduction",
-            "value":"12%"
+            "header":"+",
+            "value":"12%",
+            "footer":"Manacost and Manaloss Reduction"
          },
          {
             "key":"spell_amp",
-            "header":"+Spell Amplification",
-            "value":"8%"
+            "header":"+",
+            "value":"8%",
+            "footer":"Spell Amplification"
          }
       ],
       "mc":false,
       "cd":false,
-      "lore":"",
+      "lore":"The staff of a renowned sorceress, lost for countless millennia.",
       "components":[
          "staff_of_wizardry",
          "robe",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":600
-   },
-   {
-      "id":"combo_breaker",
-      "img":"/apps/dota2/images/items/combo_breaker_lg.png?t=1584472485163",
-      "cost":null,
-      "notes":"",
-      "attrib":[
-
-      ],
-      "mc":false,
-      "cd":false,
-      "lore":"",
-      "components":null,
-      "created":false,
-      "charges":false,
-      "RecipeCost":0
-   },
-   {
-      "use":[
-         {
-            "name":"Reset Cooldowns",
-            "desc":"Resets the cooldowns of all your items and abilities."
-         }
-      ],
-      "id":"refresher_shard",
-      "img":"/apps/dota2/images/items/refresher_shard_lg.png?t=1584472485163",
-      "dname":"Refresher Shard",
-      "qual":"consumable",
-      "cost":1000,
-      "notes":"Refresher Shard is shareable.",
-      "attrib":[
-
-      ],
-      "mc":false,
-      "cd":200,
-      "lore":"",
-      "components":null,
-      "created":false,
-      "charges":1,
-      "RecipeCost":0
    },
    {
       "active":[
          {
             "name":"Soul Release",
-            "desc":"When used against enemies, it reduces health by 4% of current health per second, and reduces HP regeneration and healing by 60%. Deals 25 damage per second. \n\nWhen used on allies, it provides 30 health regeneration per second. \n\nLasts 8 seconds.  \n\nGains charges every time an enemy hero dies within 1400 units.  Only the closest Spirit Vessel to the dying hero will gain a charge.\n\nCast Range: 950 "
+            "desc":"When used against enemies, it reduces health by 4% of current health per second, and reduces HP regeneration and healing by 35%. Deals 25 damage per second. \n\nWhen used on allies, it provides 30 health regeneration per second. \n\nLasts 8 seconds.  \n\nGains charges every time an enemy hero dies within 1400 units.  Only the closest Spirit Vessel to the dying hero will gain a charge.\n\nCast Range: 950 "
+         }
+      ],
+      "passive":[
+         {
+            "name":"Spirit Vessel Degen Aura",
+            "desc":"Reduces heals, regeneration and lifesteal of nearby enemies by 20%.\n\nRadius: 1200"
          }
       ],
       "id":"spirit_vessel",
-      "img":"/apps/dota2/images/items/spirit_vessel_lg.png?t=1584472485163",
       "dname":"Spirit Vessel",
-      "qual":"rare",
       "cost":2940,
       "notes":"",
       "attrib":[
@@ -3595,12 +3124,6 @@
             "header":"+",
             "value":"250",
             "footer":"Health"
-         },
-         {
-            "key":"bonus_movement_speed",
-            "header":"+",
-            "value":"20",
-            "footer":"Movement Speed"
          },
          {
             "key":"bonus_mana_regen",
@@ -3623,16 +3146,14 @@
       ],
       "mc":false,
       "cd":7,
-      "lore":"",
+      "lore":"Forged by a god to entrap the soul of another.",
       "components":[
          "urn_of_shadows",
          "vitality_booster",
-         "wind_lace",
          "recipe"
       ],
-      "created":true,
       "charges":false,
-      "RecipeCost":750
+      "RecipeCost":1000
    },
    {
       "passive":[
@@ -3642,9 +3163,7 @@
          }
       ],
       "id":"vanguard",
-      "img":"/apps/dota2/images/items/vanguard_lg.png?t=1584472485163",
       "dname":"Vanguard",
-      "qual":"epic",
       "cost":1925,
       "notes":"Multiple sources of damage block do not stack.",
       "attrib":[
@@ -3668,7 +3187,6 @@
          "ring_of_health",
          "vitality_booster"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -3686,9 +3204,7 @@
          }
       ],
       "id":"crimson_guard",
-      "img":"/apps/dota2/images/items/crimson_guard_lg.png?t=1584472485163",
       "dname":"Crimson Guard",
-      "qual":"epic",
       "cost":3800,
       "notes":"Multiple sources of damage block do not stack.",
       "attrib":[
@@ -3725,7 +3241,6 @@
          "helm_of_iron_will",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":950
    },
@@ -3737,9 +3252,7 @@
          }
       ],
       "id":"blade_mail",
-      "img":"/apps/dota2/images/items/blade_mail_lg.png?t=1584472485163",
       "dname":"Blade Mail",
-      "qual":"epic",
       "cost":2000,
       "notes":"Damage Return is calculated before any kind of reduction.\nDamage Return doesn't reflect damage from other forms of Blade Mail.\nReturned damage type is the same as it was received.",
       "attrib":[
@@ -3758,7 +3271,7 @@
          {
             "key":"bonus_intellect",
             "header":"+",
-            "value":"10",
+            "value":"8",
             "footer":"Intelligence"
          }
       ],
@@ -3770,15 +3283,12 @@
          "chainmail",
          "robe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"soul_booster",
-      "img":"/apps/dota2/images/items/soul_booster_lg.png?t=1584472485163",
       "dname":"Soul Booster",
-      "qual":"epic",
       "cost":3200,
       "notes":"",
       "attrib":[
@@ -3803,7 +3313,6 @@
          "energy_booster",
          "point_booster"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -3815,10 +3324,8 @@
          }
       ],
       "id":"hood_of_defiance",
-      "img":"/apps/dota2/images/items/hood_of_defiance_lg.png?t=1584472485163",
       "dname":"Hood of Defiance",
-      "qual":"epic",
-      "cost":1600,
+      "cost":1800,
       "notes":"Stacks multiplicatively with other sources of spell resistance.",
       "attrib":[
          {
@@ -3840,11 +3347,11 @@
       "components":[
          "ring_of_health",
          "cloak",
-         "ring_of_regen"
+         "ring_of_regen",
+         "recipe"
       ],
-      "created":true,
       "charges":false,
-      "RecipeCost":0
+      "RecipeCost":200
    },
    {
       "passive":[
@@ -3861,9 +3368,7 @@
          ""
       ],
       "id":"rapier",
-      "img":"/apps/dota2/images/items/rapier_lg.png?t=1584472485163",
       "dname":"Divine Rapier",
-      "qual":"epic",
       "cost":6000,
       "notes":"If Divine Rapier is dropped and picked up by an enemy of its original owner, it cannot be dropped again except by death.",
       "attrib":[
@@ -3881,7 +3386,6 @@
          "relic",
          "demon_edge"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -3893,9 +3397,7 @@
          }
       ],
       "id":"monkey_king_bar",
-      "img":"/apps/dota2/images/items/monkey_king_bar_lg.png?t=1584472485163",
       "dname":"Monkey King Bar",
-      "qual":"epic",
       "cost":4175,
       "notes":"",
       "attrib":[
@@ -3920,7 +3422,6 @@
          "javelin",
          "quarterstaff"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -3932,9 +3433,7 @@
          }
       ],
       "id":"radiance",
-      "img":"/apps/dota2/images/items/radiance_lg.png?t=1584472485163",
       "dname":"Radiance",
-      "qual":"epic",
       "cost":5150,
       "notes":"",
       "attrib":[
@@ -3952,15 +3451,12 @@
          "relic",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1350
    },
    {
       "id":"butterfly",
-      "img":"/apps/dota2/images/items/butterfly_lg.png?t=1584472485163",
       "dname":"Butterfly",
-      "qual":"epic",
       "cost":5275,
       "notes":"Stacks diminishingly with other sources of Evasion.",
       "attrib":[
@@ -3997,7 +3493,6 @@
          "talisman_of_evasion",
          "quarterstaff"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -4009,10 +3504,8 @@
          }
       ],
       "id":"greater_crit",
-      "img":"/apps/dota2/images/items/greater_crit_lg.png?t=1584472485163",
       "dname":"Daedalus",
-      "qual":"epic",
-      "cost":5330,
+      "cost":5350,
       "notes":"Critical Strike does not work against buildings.",
       "attrib":[
          {
@@ -4030,7 +3523,6 @@
          "demon_edge",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1000
    },
@@ -4042,9 +3534,7 @@
          }
       ],
       "id":"basher",
-      "img":"/apps/dota2/images/items/basher_lg.png?t=1584472485163",
       "dname":"Skull Basher",
-      "qual":"epic",
       "cost":2950,
       "notes":"Does not stack with other sources of Bash, however it will stack with Mini-Bash.\nThe following heroes cannot trigger Bash on this item: Spirit Breaker, Faceless Void, and Slardar.",
       "attrib":[
@@ -4069,7 +3559,6 @@
          "belt_of_strength",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":900
    },
@@ -4091,9 +3580,7 @@
          }
       ],
       "id":"bfury",
-      "img":"/apps/dota2/images/items/bfury_lg.png?t=1584472485163",
       "dname":"Battle Fury",
-      "qual":"epic",
       "cost":4400,
       "notes":"Cleave damage is reduced by armor type but not by armor value.\nCleave damage goes through spell immunity.\nIf multiple sources of Cleave are present, each Cleave's damage is applied separately.",
       "attrib":[
@@ -4125,7 +3612,6 @@
          "pers",
          "quelling_blade"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -4137,9 +3623,7 @@
          }
       ],
       "id":"manta",
-      "img":"/apps/dota2/images/items/manta_lg.png?t=1584472485163",
       "dname":"Manta Style",
-      "qual":"epic",
       "cost":4700,
       "notes":"Has a %invuln_duration% second cast time during which you are invulnerable.\nMany effects are removed upon using Manta.\nYasha based movement speed bonuses from multiple items do not stack.",
       "attrib":[
@@ -4170,7 +3654,7 @@
          {
             "key":"bonus_movement_speed",
             "header":"+",
-            "value":"20",
+            "value":"8%",
             "footer":"Movement Speed"
          }
       ],
@@ -4182,7 +3666,6 @@
          "ultimate_orb",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":500
    },
@@ -4194,10 +3677,8 @@
          }
       ],
       "id":"lesser_crit",
-      "img":"/apps/dota2/images/items/lesser_crit_lg.png?t=1584472485163",
       "dname":"Crystalys",
-      "qual":"epic",
-      "cost":2130,
+      "cost":2150,
       "notes":"Critical Strike does not work against buildings.",
       "attrib":[
          {
@@ -4215,7 +3696,6 @@
          "blades_of_attack",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":700
    },
@@ -4227,9 +3707,7 @@
          }
       ],
       "id":"dragon_lance",
-      "img":"/apps/dota2/images/items/dragon_lance_lg.png?t=1584472485163",
       "dname":"Dragon Lance",
-      "qual":"artifact",
       "cost":1900,
       "notes":"Passive does not stack.",
       "attrib":[
@@ -4254,7 +3732,6 @@
          "boots_of_elves",
          "boots_of_elves"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -4262,14 +3739,12 @@
       "toggle":[
          {
             "name":"Unholy Strength",
-            "desc":"When active, Unholy Strength grants +31 damage, +25 strength and +4 armor, but drains 54 health per second.\n\n You cannot die from the health drain when Unholy Strength is activated, nor from the strength loss when Unholy Strength is deactivated."
+            "desc":"When active, Unholy Strength grants +31 damage, +25 strength and +4 armor, but drains 54 health per second.\n\nYou cannot die from the health drain when Unholy Strength is activated, nor from the strength loss when Unholy Strength is deactivated."
          }
       ],
       "id":"armlet",
-      "img":"/apps/dota2/images/items/armlet_lg.png?t=1584472485163",
       "dname":"Armlet of Mordiggian",
-      "qual":"epic",
-      "cost":2405,
+      "cost":2475,
       "notes":"The strength change will affect both maximum and current HP, but you cannot die from the change.\nThe strength change occurs over 0.6 seconds.\nActivating or deactivating Unholy Strength does not interrupt channeling.",
       "attrib":[
          {
@@ -4306,7 +3781,6 @@
          "blades_of_attack",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":650
    },
@@ -4318,9 +3792,7 @@
          }
       ],
       "id":"invis_sword",
-      "img":"/apps/dota2/images/items/invis_sword_lg.png?t=1584472485163",
       "dname":"Shadow Blade",
-      "qual":"epic",
       "cost":2800,
       "notes":"Has a %windwalk_fade_time% second fade time.\nIf the invisibility ends without attacking, the bonus damage is lost.",
       "attrib":[
@@ -4344,7 +3816,6 @@
          "shadow_amulet",
          "claymore"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -4352,13 +3823,11 @@
       "active":[
          {
             "name":"Shadow Walk",
-            "desc":"Makes you invisible for 14 seconds, or until you attack or cast a spell.  While invisible, you move 25% faster and can move through units.  \n\nAttacking to end the invisibility will deal 175 bonus physical damage to the target, and for 4 seconds, disable their passive abilities and heal and regeneration by 50%."
+            "desc":"Makes you invisible for 14 seconds, or until you attack or cast a spell.  While invisible, you move 25% faster and can move through units.  \n\nAttacking to end the invisibility will deal 175 bonus physical damage to the target, and for 4 seconds, disable their passive abilities."
          }
       ],
       "id":"silver_edge",
-      "img":"/apps/dota2/images/items/silver_edge_lg.png?t=1584472485163",
       "dname":"Silver Edge",
-      "qual":"epic",
       "cost":5550,
       "notes":"Backstab cannot miss.\nBackstab does not pierce spell immunity.",
       "attrib":[
@@ -4389,15 +3858,12 @@
          "ultimate_orb",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":600
    },
    {
       "id":"sange_and_yasha",
-      "img":"/apps/dota2/images/items/sange_and_yasha_lg.png?t=1584472485163",
       "dname":"Sange and Yasha",
-      "qual":"artifact",
       "cost":4100,
       "notes":"Yasha-based movement speed bonuses from multiple items do not stack.",
       "attrib":[
@@ -4415,8 +3881,9 @@
          },
          {
             "key":"status_resistance",
-            "header":"+Status Resistance",
-            "value":"20%"
+            "header":"+",
+            "value":"20%",
+            "footer":"Status Resistance"
          },
          {
             "key":"bonus_attack_speed",
@@ -4427,13 +3894,14 @@
          {
             "key":"movement_speed_percent_bonus",
             "header":"+",
-            "value":"30",
+            "value":"10%",
             "footer":"Movement Speed"
          },
          {
             "key":"hp_regen_amp",
-            "header":"+Self HP Regen and Lifesteal Amp",
-            "value":"30%"
+            "header":"+",
+            "value":"30%",
+            "footer":"Self HP Regen and Lifesteal Amp"
          }
       ],
       "mc":false,
@@ -4443,15 +3911,12 @@
          "yasha",
          "sange"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"kaya_and_sange",
-      "img":"/apps/dota2/images/items/kaya_and_sange_lg.png?t=1584472485163",
       "dname":"Kaya and Sange",
-      "qual":"artifact",
       "cost":4100,
       "notes":"",
       "attrib":[
@@ -4469,23 +3934,27 @@
          },
          {
             "key":"status_resistance",
-            "header":"+Status Resistance",
-            "value":"20%"
+            "header":"+",
+            "value":"20%",
+            "footer":"Status Resistance"
          },
          {
             "key":"manacost_reduction",
-            "header":"+Manacost and Manaloss Reduction",
-            "value":"18%"
+            "header":"+",
+            "value":"18%",
+            "footer":"Manacost and Manaloss Reduction"
          },
          {
             "key":"spell_amp",
-            "header":"+Spell Amplification",
-            "value":"14%"
+            "header":"+",
+            "value":"14%",
+            "footer":"Spell Amplification"
          },
          {
             "key":"hp_regen_amp",
-            "header":"+Self HP Regen and Lifesteal Amp",
-            "value":"30%"
+            "header":"+",
+            "value":"30%",
+            "footer":"Self HP Regen and Lifesteal Amp"
          }
       ],
       "mc":false,
@@ -4495,15 +3964,12 @@
          "sange",
          "kaya"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"yasha_and_kaya",
-      "img":"/apps/dota2/images/items/yasha_and_kaya_lg.png?t=1584472485163",
       "dname":"Yasha and Kaya",
-      "qual":"artifact",
       "cost":4100,
       "notes":"",
       "attrib":[
@@ -4527,19 +3993,21 @@
          },
          {
             "key":"manacost_reduction",
-            "header":"+Manacost and Manaloss Reduction",
-            "value":"18%"
+            "header":"+",
+            "value":"18%",
+            "footer":"Manacost and Manaloss Reduction"
          },
          {
             "key":"movement_speed_percent_bonus",
             "header":"+",
-            "value":"30",
+            "value":"10%",
             "footer":"Movement Speed"
          },
          {
             "key":"spell_amp",
-            "header":"+Spell Amplification",
-            "value":"14%"
+            "header":"+",
+            "value":"14%",
+            "footer":"Spell Amplification"
          }
       ],
       "mc":false,
@@ -4549,7 +4017,6 @@
          "kaya",
          "yasha"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -4567,9 +4034,7 @@
          }
       ],
       "id":"satanic",
-      "img":"/apps/dota2/images/items/satanic_lg.png?t=1584472485163",
       "dname":"Satanic",
-      "qual":"artifact",
       "cost":5300,
       "notes":"",
       "attrib":[
@@ -4587,8 +4052,9 @@
          },
          {
             "key":"status_resistance",
-            "header":"+Status Resistance",
-            "value":"30%"
+            "header":"+",
+            "value":"30%",
+            "footer":"Status Resistance"
          }
       ],
       "mc":false,
@@ -4599,7 +4065,6 @@
          "claymore",
          "reaver"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -4617,9 +4082,7 @@
          }
       ],
       "id":"mjollnir",
-      "img":"/apps/dota2/images/items/mjollnir_lg.png?t=1584472485163",
       "dname":"Mjollnir",
-      "qual":"artifact",
       "cost":5600,
       "notes":"Static Charge cannot trigger more than once per second.\nStatic Charge's shock deals magical damage centered on hero with the Static Charge. Static Charge's targets cannot be more than %static_seconary_radius% range away.\nStatic Charge procs will not bounce to heroes that are invisible or hidden by Fog of War.",
       "attrib":[
@@ -4644,7 +4107,6 @@
          "hyperstone",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":900
    },
@@ -4656,9 +4118,7 @@
          }
       ],
       "id":"skadi",
-      "img":"/apps/dota2/images/items/skadi_lg.png?t=1584472485163",
       "dname":"Eye of Skadi",
-      "qual":"artifact",
       "cost":5500,
       "notes":"",
       "attrib":[
@@ -4689,15 +4149,12 @@
          "ultimate_orb",
          "point_booster"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"sange",
-      "img":"/apps/dota2/images/items/sange_lg.png?t=1584472485163",
       "dname":"Sange",
-      "qual":"artifact",
       "cost":2050,
       "notes":"",
       "attrib":[
@@ -4709,13 +4166,15 @@
          },
          {
             "key":"status_resistance",
-            "header":"+Status Resistance",
-            "value":"16%"
+            "header":"+",
+            "value":"16%",
+            "footer":"Status Resistance"
          },
          {
             "key":"hp_regen_amp",
-            "header":"+Self HP Regen and Lifesteal Amp",
-            "value":"24%"
+            "header":"+",
+            "value":"24%",
+            "footer":"Self HP Regen and Lifesteal Amp"
          }
       ],
       "mc":false,
@@ -4726,7 +4185,6 @@
          "belt_of_strength",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":600
    },
@@ -4740,13 +4198,11 @@
       "passive":[
          {
             "name":"Dominator Aura",
-            "desc":"Increases nearby allied hero and player units base damage by 20%  and health regen by 5. Has a 50%  bigger effect on player units.\n\nRadius: 1200"
+            "desc":"Increases nearby allied hero and player units base damage by 20%  and health regen by 4.25. Has a 50%  bigger effect on player units.\n\nRadius: 1200"
          }
       ],
       "id":"helm_of_the_dominator",
-      "img":"/apps/dota2/images/items/helm_of_the_dominator_lg.png?t=1584472485163",
       "dname":"Helm of the Dominator",
-      "qual":"artifact",
       "cost":2125,
       "notes":"Cannot dominate more than one unit at a time.  If a new unit is dominated, the old one will die.\nCan also Dominate enemy lane creeps and summoned units.\nSelling Helm of the Dominator will cause dominated units to die.",
       "attrib":[
@@ -4766,7 +4222,6 @@
          "crown",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":300
    },
@@ -4778,9 +4233,7 @@
          }
       ],
       "id":"maelstrom",
-      "img":"/apps/dota2/images/items/maelstrom_lg.png?t=1584472485163",
       "dname":"Maelstrom",
-      "qual":"artifact",
       "cost":2700,
       "notes":"",
       "attrib":[
@@ -4798,7 +4251,6 @@
          "mithril_hammer",
          "javelin"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -4810,9 +4262,7 @@
          }
       ],
       "id":"desolator",
-      "img":"/apps/dota2/images/items/desolator_lg.png?t=1584472485163",
       "dname":"Desolator",
-      "qual":"artifact",
       "cost":3500,
       "notes":"Armor reduction works on buildings.",
       "attrib":[
@@ -4831,15 +4281,12 @@
          "mithril_hammer",
          "blight_stone"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
    {
       "id":"yasha",
-      "img":"/apps/dota2/images/items/yasha_lg.png?t=1584472485163",
       "dname":"Yasha",
-      "qual":"artifact",
       "cost":2050,
       "notes":"Yasha-based movement speed bonuses from multiple items do not stack.",
       "attrib":[
@@ -4858,7 +4305,7 @@
          {
             "key":"movement_speed_percent_bonus",
             "header":"+",
-            "value":"20",
+            "value":"8%",
             "footer":"Movement Speed"
          }
       ],
@@ -4870,7 +4317,6 @@
          "boots_of_elves",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":600
    },
@@ -4888,9 +4334,7 @@
          }
       ],
       "id":"mask_of_madness",
-      "img":"/apps/dota2/images/items/mask_of_madness_lg.png?t=1584472485163",
       "dname":"Mask of Madness",
-      "qual":"artifact",
       "cost":1775,
       "notes":"",
       "attrib":[
@@ -4914,7 +4358,6 @@
          "lifesteal",
          "quarterstaff"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -4932,9 +4375,7 @@
          }
       ],
       "id":"diffusal_blade",
-      "img":"/apps/dota2/images/items/diffusal_blade_lg.png?t=1584472485163",
       "dname":"Diffusal Blade",
-      "qual":"artifact",
       "cost":3150,
       "notes":"Does not stack with other manabreak abilities.",
       "attrib":[
@@ -4960,7 +4401,6 @@
          "robe",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":700
    },
@@ -4968,13 +4408,11 @@
       "active":[
          {
             "name":"Ether Blast",
-            "desc":"Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and -40% more vulnerable to magic damage.  Lasts for 4 seconds on allies and 4 seconds on enemies.\n\n  Enemy targets are also slowed by -80%, and take 1.5x your primary attribute + 125 as magical damage.\n\nRange: 800"
+            "desc":"Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and -40% more vulnerable to magic damage.  Lasts for 4 seconds on allies and 4 seconds on enemies.\n\nEnemy targets are also slowed by -80%, and take 1.5x your primary attribute + 125 as magical damage.\n\nRange: 800"
          }
       ],
       "id":"ethereal_blade",
-      "img":"/apps/dota2/images/items/ethereal_blade_lg.png?t=1584472485163",
       "dname":"Ethereal Blade",
-      "qual":"epic",
       "cost":4500,
       "notes":"Shares cooldown with Ghost Scepter.\nEthereal units take 40% bonus magic damage.\nLasts an extra second on Self or Allied cast.\nUsing a Town Portal Scroll or Boots of Travel will not dispel Ethereal Form.",
       "attrib":[
@@ -5004,7 +4442,6 @@
          "eagle",
          "ghost"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -5016,10 +4453,8 @@
          }
       ],
       "id":"soul_ring",
-      "img":"/apps/dota2/images/items/soul_ring_lg.png?t=1584472485163",
       "dname":"Soul Ring",
-      "qual":"common",
-      "cost":765,
+      "cost":815,
       "notes":"If this mana is not used before the duration ends, the extra mana is lost.",
       "attrib":[
          {
@@ -5031,7 +4466,7 @@
          {
             "key":"bonus_health_regen",
             "header":"+",
-            "value":"2.5",
+            "value":"2.25",
             "footer":"HP Regeneration"
          }
       ],
@@ -5044,9 +4479,8 @@
          "gauntlets",
          "recipe"
       ],
-      "created":true,
       "charges":false,
-      "RecipeCost":250
+      "RecipeCost":300
    },
    {
       "active":[
@@ -5059,16 +4493,14 @@
          "Movement speed bonuses from multiple pairs of boots do not stack."
       ],
       "id":"arcane_boots",
-      "img":"/apps/dota2/images/items/arcane_boots_lg.png?t=1584472485163",
       "dname":"Arcane Boots",
-      "qual":"rare",
       "cost":1400,
       "notes":"Does not work on Meepo clones.",
       "attrib":[
          {
             "key":"bonus_movement",
             "header":"+",
-            "value":"15%",
+            "value":"45",
             "footer":"Movement Speed"
          },
          {
@@ -5085,7 +4517,6 @@
          "boots",
          "energy_booster"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -5101,9 +4532,7 @@
          }
       ],
       "id":"octarine_core",
-      "img":"/apps/dota2/images/items/octarine_core_lg.png?t=1584472485163",
       "dname":"Octarine Core",
-      "qual":"rare",
       "cost":5900,
       "notes":"",
       "attrib":[
@@ -5133,7 +4562,6 @@
          "mystic_staff",
          "soul_booster"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -5145,9 +4573,7 @@
          }
       ],
       "id":"orb_of_venom",
-      "img":"/apps/dota2/images/items/orb_of_venom_lg.png?t=1584472485163",
       "dname":"Orb of Venom",
-      "qual":"component",
       "cost":300,
       "notes":"",
       "attrib":[
@@ -5157,7 +4583,6 @@
       "cd":false,
       "lore":"Envenoms your veapon with the venom of a venomous viper.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -5169,9 +4594,7 @@
          }
       ],
       "id":"blight_stone",
-      "img":"/apps/dota2/images/items/blight_stone_lg.png?t=1584472485163",
       "dname":"Blight Stone",
-      "qual":"component",
       "cost":300,
       "notes":"",
       "attrib":[
@@ -5181,7 +4604,6 @@
       "cd":false,
       "lore":"An unnerving stone unearthed beneath the Fields of Endless Carnage.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -5189,7 +4611,7 @@
       "active":[
          {
             "name":"Endurance",
-            "desc":"Gives +35 attack speed and +13% movement speed to nearby allies for 6 seconds. \n\nRadius: 1200 "
+            "desc":"Gives +35 attack speed and +12% movement speed to nearby allies for 6 seconds. \n\nRadius: 1200 "
          }
       ],
       "hint":[
@@ -5202,10 +4624,8 @@
          }
       ],
       "id":"ancient_janggo",
-      "img":"/apps/dota2/images/items/ancient_janggo_lg.png?t=1584472485163",
       "dname":"Drum of Endurance",
-      "qual":"rare",
-      "cost":1900,
+      "cost":1950,
       "notes":"Re-purchasing the Drum of Endurance recipe will refresh its charges.\nMultiple instances of Swiftness Aura do not stack.",
       "attrib":[
          {
@@ -5242,7 +4662,6 @@
          "wind_lace",
          "recipe"
       ],
-      "created":true,
       "charges":6,
       "RecipeCost":800
    },
@@ -5254,9 +4673,7 @@
          }
       ],
       "id":"medallion_of_courage",
-      "img":"/apps/dota2/images/items/medallion_of_courage_lg.png?t=1584472485163",
       "dname":"Medallion of Courage",
-      "qual":"rare",
       "cost":1075,
       "notes":"",
       "attrib":[
@@ -5281,7 +4698,6 @@
          "sobi_mask",
          "blight_stone"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -5289,13 +4705,11 @@
       "active":[
          {
             "name":"Shine",
-            "desc":"When cast on an ally, grants them 8 armor, 80 attack speed, and 10% movement speed. When cast on an enemy, removes 8 armor, 80 attack speed, and 10% movement speed.\n\nRemoves the armor from the caster when used. \n\n Cannot target spell immune enemies.\n\nRange: 1000"
+            "desc":"When cast on an ally, grants them 8 armor, 80 attack speed, and 10% movement speed. When cast on an enemy, removes 8 armor, 80 attack speed, and 10% movement speed.\n\nRemoves the armor from the caster when used. \n\nCannot target spell immune enemies.\n\nRange: 1000"
          }
       ],
       "id":"solar_crest",
-      "img":"/apps/dota2/images/items/solar_crest_lg.png?t=1584472485163",
       "dname":"Solar Crest",
-      "qual":"rare",
       "cost":3875,
       "notes":"",
       "attrib":[
@@ -5333,7 +4747,6 @@
          "wind_lace",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":400
    },
@@ -5345,9 +4758,7 @@
          }
       ],
       "id":"smoke_of_deceit",
-      "img":"/apps/dota2/images/items/smoke_of_deceit_lg.png?t=1584472485163",
       "dname":"Smoke of Deceit",
-      "qual":"consumable",
       "cost":80,
       "notes":"",
       "attrib":[
@@ -5357,7 +4768,6 @@
       "cd":1,
       "lore":"The charlatan wizard Myrddin's only true contribution to the arcane arts.",
       "components":null,
-      "created":false,
       "charges":1,
       "RecipeCost":0
    },
@@ -5369,9 +4779,7 @@
          }
       ],
       "id":"tome_of_knowledge",
-      "img":"/apps/dota2/images/items/tome_of_knowledge_lg.png?t=1584472485163",
       "dname":"Tome of Knowledge",
-      "qual":"consumable",
       "cost":150,
       "notes":"",
       "attrib":[
@@ -5381,7 +4789,6 @@
       "cd":false,
       "lore":"That which raises beast to man and man to god.",
       "components":null,
-      "created":false,
       "charges":1,
       "RecipeCost":0
    },
@@ -5402,10 +4809,8 @@
          }
       ],
       "id":"veil_of_discord",
-      "img":"/apps/dota2/images/items/veil_of_discord_lg.png?t=1584472485163",
       "dname":"Veil of Discord",
-      "qual":"rare",
-      "cost":1975,
+      "cost":2025,
       "notes":"",
       "attrib":[
          {
@@ -5423,7 +4828,6 @@
          "crown",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1150
    },
@@ -5444,16 +4848,14 @@
          "Movement speed bonuses from multiple pairs of boots do not stack."
       ],
       "id":"guardian_greaves",
-      "img":"/apps/dota2/images/items/guardian_greaves_lg.png?t=1584472485163",
       "dname":"Guardian Greaves",
-      "qual":"rare",
       "cost":4875,
       "notes":"The aura boost only applies to heroes.",
       "attrib":[
          {
             "key":"bonus_movement",
             "header":"+",
-            "value":"17%",
+            "value":"50",
             "footer":"Movement Speed"
          },
          {
@@ -5483,7 +4885,6 @@
          "arcane_boots",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1600
    },
@@ -5495,9 +4896,7 @@
          }
       ],
       "id":"rod_of_atos",
-      "img":"/apps/dota2/images/items/rod_of_atos_lg.png?t=1584472485163",
       "dname":"Rod of Atos",
-      "qual":"rare",
       "cost":2750,
       "notes":"",
       "attrib":[
@@ -5529,7 +4928,6 @@
          "crown",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":850
    },
@@ -5551,9 +4949,7 @@
          }
       ],
       "id":"abyssal_blade",
-      "img":"/apps/dota2/images/items/abyssal_blade_lg.png?t=1584472485163",
       "dname":"Abyssal Blade",
-      "qual":"epic",
       "cost":6625,
       "notes":"The stun is melee range.\nDoes not stack with other bashes.\nMultiple sources of damage block do not stack.",
       "attrib":[
@@ -5590,7 +4986,6 @@
          "vanguard",
          "recipe"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":1750
    },
@@ -5602,9 +4997,7 @@
          }
       ],
       "id":"heavens_halberd",
-      "img":"/apps/dota2/images/items/heavens_halberd_lg.png?t=1584472485163",
       "dname":"Heaven's Halberd",
-      "qual":"artifact",
       "cost":3450,
       "notes":"",
       "attrib":[
@@ -5622,13 +5015,15 @@
          },
          {
             "key":"status_resistance",
-            "header":"+Status Resistance",
-            "value":"20%"
+            "header":"+",
+            "value":"20%",
+            "footer":"Status Resistance"
          },
          {
             "key":"hp_regen_amp",
-            "header":"+Self HP Regen and Lifesteal Amp",
-            "value":"30%"
+            "header":"+",
+            "value":"30%",
+            "footer":"Self HP Regen and Lifesteal Amp"
          }
       ],
       "mc":100,
@@ -5638,7 +5033,6 @@
          "sange",
          "talisman_of_evasion"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -5646,23 +5040,21 @@
       "passive":[
          {
             "name":"Break",
-            "desc":"Whenever you attack a hero or are attacked by any unit, the bonus 14 HP regen is lost and the movement speed bonus is reduced to 18% for 13 seconds."
+            "desc":"Whenever you attack a hero or are attacked by any unit, the bonus 14 HP regen is lost and the movement speed bonus is reduced to 50 for 13 seconds."
          }
       ],
       "hint":[
          "Movement speed bonuses from multiple pairs of boots do not stack."
       ],
       "id":"tranquil_boots",
-      "img":"/apps/dota2/images/items/tranquil_boots_lg.png?t=1584472485163",
       "dname":"Tranquil Boots",
-      "qual":"rare",
       "cost":975,
       "notes":"",
       "attrib":[
          {
             "key":"bonus_movement_speed",
             "header":"+",
-            "value":"26%",
+            "value":"75",
             "footer":"Movement Speed"
          },
          {
@@ -5680,7 +5072,6 @@
          "wind_lace",
          "ring_of_regen"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    },
@@ -5692,7 +5083,6 @@
          }
       ],
       "id":"shadow_amulet",
-      "img":"/apps/dota2/images/items/shadow_amulet_lg.png?t=1584472485163",
       "dname":"Shadow Amulet",
       "cost":1400,
       "notes":"",
@@ -5708,7 +5098,6 @@
       "cd":7,
       "lore":"A small talisman that clouds the senses of one's enemies when held perfectly still.",
       "components":null,
-      "created":false,
       "charges":false,
       "RecipeCost":0
    },
@@ -5720,9 +5109,7 @@
          }
       ],
       "id":"glimmer_cape",
-      "img":"/apps/dota2/images/items/glimmer_cape_lg.png?t=1584472485163",
       "dname":"Glimmer Cape",
-      "qual":"rare",
       "cost":1950,
       "notes":"",
       "attrib":[
@@ -5746,7 +5133,6 @@
          "shadow_amulet",
          "cloak"
       ],
-      "created":true,
       "charges":false,
       "RecipeCost":0
    }
