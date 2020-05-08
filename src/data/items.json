@@ -1220,7 +1220,7 @@
          "Movement speed bonuses from multiple pairs of boots do not stack."
       ],
       "id":"travel_boots_2",
-      "dname":"Boots of Travel",
+      "dname":"Boots of Travel 2",
       "cost":4500,
       "notes":"",
       "attrib":[
