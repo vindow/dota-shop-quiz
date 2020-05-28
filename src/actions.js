@@ -18,9 +18,23 @@ export function reset() {
     };
 }
 
+export function applySettings(value) {
+    return {
+        type : "APPLY_SETTINGS",
+        value
+    };
+}
+
 export function setDifficulty(value) {
     return {
         type : "SET_DIFFICULTY",
         value
-    }
+    };
+}
+
+export function setGameMode(value) {
+    return {
+        type : "SET_GAME_MODE",
+        value
+    };
 }

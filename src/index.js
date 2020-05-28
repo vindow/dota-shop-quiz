@@ -9,7 +9,8 @@ import produce from 'immer';
 
 const initialState = {
     selected: [],
-    easy: true
+    easy: true,
+    classic: true
 };
 
 function reducer(state = initialState, action) {
@@ -25,11 +26,26 @@ function reducer(state = initialState, action) {
         case 'RESET':
             return {
                 selected: [],
-                easy: state.easy
+                easy: state.easy,
+                classic: state.classic
+            }
+        case 'APPLY_SETTINGS':
+            return {
+                selected: [],
+                easy: action.value.easy,
+                classic: action.value.classic
             }
         case 'SET_DIFFICULTY':
             return {
-                easy: action.value
+                selected: state.selected,
+                easy: action.value,
+                classic: state.classic
+            }
+        case "SET_GAME_MODE":
+            return {
+                selected: state.selected,
+                easy: state.easy,
+                classic: action.value
             }
         default:
             return state;

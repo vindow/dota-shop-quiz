@@ -85,24 +85,24 @@ class MysteryIcon extends React.Component {
     }
 
     render() {
-        let imgURL, hover;
+        let icon, hover;
         if (this.props.id === 'unknown') {
-            imgURL = imgPath + "item-slot-unknown.png"
+            icon = <Icon url={imgPath + "item-slot-unknown.png"}></Icon>
             hover = <div></div>;
         } else if (this.props.id === "recipe") {
-            imgURL = imgPath + "recipe_lg.png"
+            icon = <Icon url={imgPath + "recipe_lg.png"} onClick={this.deselectItem}></Icon>
             hover = <ItemInfo>
                         <ItemHover index={-1}></ItemHover>
                     </ItemInfo>
         } else {
-            imgURL = imgPath + this.props.id + "_lg.png"
+            icon = <Icon url={imgPath + this.props.id + "_lg.png"} onClick={this.deselectItem}></Icon>
             hover = <ItemInfo>
                         <ItemHover index={this.getItemIndex()}></ItemHover>
                     </ItemInfo>
         }
         return (
             <Wrapper ref={this.wrapperRef}>
-                <Icon url={imgURL} onClick={this.deselectItem}></Icon>
+                {icon}
                 {hover}
             </Wrapper>
         );

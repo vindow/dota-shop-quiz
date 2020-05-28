@@ -83,6 +83,14 @@ class Item extends React.Component {
         }
     }
 
+    componentDidMount() {
+        const wrapper = this.wrapperRef.current;
+        wrapper.classList.add('fade-in');
+        setTimeout(() => {
+            wrapper.classList.remove('fade-in');
+        }, 300)
+    }
+
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.locked === true) {
             const wrapper = this.wrapperRef.current;

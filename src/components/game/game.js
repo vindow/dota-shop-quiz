@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { reset, setDifficulty } from '../../actions.js';
+import { reset } from '../../actions.js';
 import Item from '../item/item';
 import MysteryIcon from '../mysteryIcon/mysteryIcon';
+import Settings from '../settings/settings.js';
 import items from '../../data/items.json';
 import styled, { keyframes } from 'styled-components';
 
+//TODO: Add options panel at start
+//TODO: Add time attack
 
 const Page = styled.div`
     text-align: center;
@@ -61,7 +64,7 @@ const StatText = styled.div`
     font-size: 1.5em;
 `;
 
-const endDialogKeyFrame = keyframes`
+const dialogKeyFrame = keyframes`
     0% {
         opacity: 0;
         top: 0%;
@@ -72,7 +75,7 @@ const endDialogKeyFrame = keyframes`
     }
 `;
 
-const EndDialog = styled.div`
+const Dialog = styled.div`
     width: 30%;
     position: fixed;
     display: block;
@@ -81,10 +84,10 @@ const EndDialog = styled.div`
     top: 20%;
     left: 0;
     right: 0;
-    padding: 2em;
+    padding: 0.25em 0em 1em 0em;
     background-color: #222222;
     border: 2px rgb(49, 49, 49) groove;
-    animation: ${endDialogKeyFrame} 0.5s ease-in-out 0s 1;
+    animation: ${dialogKeyFrame} 0.5s ease-in-out 0s 1;
 `;
 
 const LargeText = styled.div`
@@ -103,19 +106,21 @@ const RestartButton = styled.button`
 `;
 
 const DifficultyButton = styled.button`
-    background-color: #333333;
-    border: 1px solid #444444;
+    background-color: #2d2d2d;
+    border: 2px groove #3d3d3d;
     text-align: center;
     padding: 6px 22px;
-    color: #dddddd;
-    font-size: 1.5em;
-    margin: 0em 1em 1em 1em;
+    color: #aaaaaa;
+    font-size: 1em;
+    margin: 0em 0.5em 0em 0.5em;
     &:disabled {
-        background-color: #222222;
-        color: #aaaaaa;
-        border: 1px solid #1a1a1a;
+        background-color: #444444;
+        color: #dddddd;
+        border: 2px solid #666666;
     }
 `;
+
+const initialTime = 10000;
 
 const streakNames = ["Wrong Answer", "Correct!", "Double Answer!", "Answering Spree!", "Dominating!", "Mega Answer!", "Unstoppable!", "Wicked Sick!", "Monster Answer!", "Godlike!", "Beyond Godlike!"]
 class Game extends React.Component {
@@ -134,12 +139,12 @@ class Game extends React.Component {
             }
         }
         // Shuffle items
-        for (let i = itemsWithRecipe.length - 1; i > 0; i--) {
+        /*for (let i = itemsWithRecipe.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
             let tmp = itemsWithRecipe[i];
             itemsWithRecipe[i] = itemsWithRecipe[j];
             itemsWithRecipe[j] = tmp;
-        }
+        }*/
 
         // Initialize list of items that are components
         let materialIDs = [];
@@ -153,9 +158,9 @@ class Game extends React.Component {
         }
 
         // First time initialization for the very first quiz item
-        // Should refactor this out so it can just be called in respective functions eventually (probably never)
+        // Can probably remove this section now!
 
-        let recipe = itemsWithRecipe[0].components;
+        /*let recipe = itemsWithRecipe[0].components;
 
         // First add the list of real components
         let components = [];
@@ -248,20 +253,27 @@ class Game extends React.Component {
             let tmp = components[i];
             components[i] = components[j];
             components[j] = tmp;
-        }
+        }*/
 
         this.state = {
             itemsToQuiz: itemsWithRecipe,
             current: 0,
-            currentRecipe : recipe,
-            currentQuiz : components,
+            //currentRecipe : recipe,
+            //currentQuiz : components,
             materials: materialIDs,
             frozen: false,
             streak : 0,
             score : 0,
             tries : 3,
-            win : false
+            timeLeft: initialTime,
+            win : false,
+            settings: false,
+            timer: null
         }
+    }
+
+    componentDidMount() {
+        this.nextQuiz();
     }
 
     // Gets the item's object for a given id
@@ -277,7 +289,7 @@ class Game extends React.Component {
     // Generates the random items to fill the rest of the quiz items with wrong items
     // Tries to generate items that are close in price to the real components
     generateRandomItems = (recipe) => {
-        let curr = (this.state.current + 1 >= this.state.itemsToQuiz.length) ? 0 : this.state.current + 1;
+        let curr = (this.state.current >= this.state.itemsToQuiz.length) ? 0 : this.state.current;
         // Get only items that are components (items that build into other items), exclude items included in recipe
         let filtered = items.filter((item) => {
             for (let i = 0; i < recipe.length; i++) {
@@ -371,63 +383,34 @@ class Game extends React.Component {
         return components.concat(this.generateRandomItems(recipe));
     }
 
-    // Generates the JSX for the quiz components
-    createQuizComponents = () => {
-        let quizItems = []
-        for (let i = 0; i < this.state.currentQuiz.length; i++) {
-            quizItems.push(<Item key={i} locked={this.state.frozen} id={this.state.currentQuiz[i].id} index={i} clickable={true} easy={this.state.easy}></Item>);
-        }
-        return quizItems;
-    }
-
-    // Generates the components for the row of mystery icon symbols that will update as items are selected
-    createMysteryIcons = () => {
-        let selected = [];
-        let indicies = [];
-        for (let i = 0; i < this.props.selected.length; i++) {
-            if (this.props.selected[i] === 8) {
-                selected.push("recipe");
-            } else {
-                selected.push(this.state.currentQuiz[this.props.selected[i]].id);
-                indicies.push(this.props.selected[i]);
-            }
-        }
-        let numIcons = this.state.itemsToQuiz[this.state.current].components.length;
-        let icons = [];
-        for (let i = 0; i < selected.length; i++) {
-            icons.push(<MysteryIcon key={i} id={selected[i]} index={indicies[i]} easy={this.state.easy}></MysteryIcon>);
-        }
-        for (let i = 0; i < numIcons - selected.length; i++) {
-            icons.push(<MysteryIcon key={i + selected.length} id={"unknown"} index={-1} easy={this.state.easy}></MysteryIcon>);
-        }
-        return icons;
-    }
-
     // Loads the next item to quiz, or the win state if there is no more items
     nextQuiz = () => {
-        let i = this.state.current + 1;
-        if (i < this.state.itemsToQuiz.length) {
-            let recipe = this.state.itemsToQuiz[i].components;
+        if (this.state.current < this.state.itemsToQuiz.length) {
+            let recipe = this.state.itemsToQuiz[this.state.current].components;
             let components = this.getQuizComponents(recipe);
             // Shuffle the components
-            for (let j = components.length - 1; j > 0; j--) {
-                let k = Math.floor(Math.random() * (j + 1));
-                let tmp = components[j];
-                components[j] = components[k];
-                components[k] = tmp;
+            for (let i = components.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                let tmp = components[i];
+                components[i] = components[j];
+                components[j] = tmp;
             }
             this.setState({
-                current: i,
                 currentRecipe : recipe,
                 currentQuiz : components
-            })
+            });
+            if (!this.props.classic) {
+                this.startTimer();
+            }
         } else {
             this.setState({win : true});
         }
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (!this.state.frozen) {
+        if (prevProps.classic !== this.props.classic || prevProps.easy !== this.props.easy) {
+            this.reset();
+        } else if (!this.state.frozen) {
             // Check which items are selected
             let recipe = this.state.currentRecipe.slice();
             let selected = [];
@@ -458,6 +441,10 @@ class Game extends React.Component {
                 popup.classList.add('play-animation');
 
                 if (correct) {
+                    //TODO: Clear interval if in time attack mode
+                    if (!this.props.classic) {
+                        clearInterval(this.state.timer);
+                    }
                     let currentStreak = this.state.streak;
                     let currentScore = this.state.score;
 
@@ -473,8 +460,12 @@ class Game extends React.Component {
                     setTimeout(() => {
                         popup.classList.remove('play-animation');
                         this.props.dispatch(reset());
+                        this.setState({
+                            frozen : false,
+                            current : this.state.current + 1
+                        });
                         this.nextQuiz();
-                        this.setState({frozen : false});
+                        
                     }, 1000)
                 } else {
                     let currentTries = this.state.tries;
@@ -510,6 +501,8 @@ class Game extends React.Component {
                     }
                 }
             }
+        } else {
+
         }
     }
 
@@ -548,8 +541,6 @@ class Game extends React.Component {
 
         let recipe = quiz[0].components;
         this.setState({current : 0});
-        console.log(this.state.itemsToQuiz);
-        console.log(this.state.current);
         let components = this.getQuizComponents(recipe);
         // Shuffle the components
         for (let i = components.length - 1; i > 0; i--) {
@@ -558,7 +549,6 @@ class Game extends React.Component {
             components[i] = components[j];
             components[j] = tmp;
         }
-
         this.props.dispatch(reset());
         this.setState({
             itemsToQuiz: quiz,
@@ -570,41 +560,98 @@ class Game extends React.Component {
             win : false,
             frozen: false
         });
+        if (!this.props.classic) {
+            this.startTimer();
+        }
     }
 
-    setEasy = () => {
-        this.props.dispatch(setDifficulty(true));
-        this.reset();
+    openSettings = () => {
+        this.setState({settings : true});
     }
 
-    setHard = () => {
-        this.props.dispatch(setDifficulty(false));
-        this.reset();
+    //TODO: can probably remove apply since settings will apply or not based on button clicked not game
+    handleSettings = (apply) => {
+        this.setState({settings : false});
+        if (apply) {
+            console.log("Settings applied!");
+        } else {
+            console.log("Settings not applied!");
+        }
+        
+    }
+
+    startTimer = () => {
+        // TODO: Maybe move this to when an item is loaded?
+        this.setState({timeLeft : initialTime});
+        
+        let time = setInterval(() => {
+            let newTime = this.state.timeLeft - 100;
+            console.log(newTime)
+            if (newTime <= 0) {
+                clearInterval(this.state.timer);
+                
+            }
+            this.setState({timeLeft : newTime});
+        }, 100);
+        this.setState({timer: time});
+    }
+
+    // Generates the components for the row of mystery icon symbols that will update as items are selected
+    createMysteryIcons = () => {
+        let selected = [];
+        let indicies = [];
+        for (let i = 0; i < this.props.selected.length; i++) {
+            if (this.props.selected[i] === 8) {
+                selected.push("recipe");
+            } else {
+                selected.push(this.state.currentQuiz[this.props.selected[i]].id);
+                indicies.push(this.props.selected[i]);
+            }
+        }
+        let numIcons = this.state.itemsToQuiz[this.state.current].components.length;
+        let icons = [];
+        for (let i = 0; i < selected.length; i++) {
+            icons.push(<MysteryIcon key={i} id={selected[i]} index={indicies[i]} easy={this.state.easy}></MysteryIcon>);
+        }
+        for (let i = 0; i < numIcons - selected.length; i++) {
+            icons.push(<MysteryIcon key={i + selected.length} id={"unknown"} index={-1} easy={this.state.easy}></MysteryIcon>);
+        }
+        return icons;
+    }
+
+    // Generates the JSX for the quiz components
+    createQuizComponents = () => {
+        let quizItems = []
+        for (let i = 0; i < this.state.currentQuiz.length; i++) {
+            quizItems.push(<Item key={i} locked={this.state.frozen} id={this.state.currentQuiz[i].id} index={i} clickable={true} easy={this.state.easy}></Item>);
+        }
+        return quizItems;
     }
 
     render() {
         let gg = <div></div>
+        let options = <div></div>
         if (this.state.tries <= 0) {
-            gg = <EndDialog>
+            gg = <Dialog>
                 <LargeText>Game Over</LargeText>
                 <LargeText>Final Score: {this.state.score}</LargeText>
                 <RestartButton onClick={this.reset}>Restart</RestartButton>
-            </EndDialog>
+            </Dialog>
         }
         if (this.state.win) {
-            gg = <EndDialog>
+            gg = <Dialog>
                 <LargeText>Game Complete!</LargeText>
                 <LargeText>Final Score: {this.state.score}</LargeText>
                 <RestartButton onClick={this.reset}>Replay?</RestartButton>
-            </EndDialog>
+            </Dialog>
+        }
+        if (this.state.settings) {
+            options = <Settings onClose={this.handleSettings}></Settings>
         }
         return(
             <Page>
                 <h1>Shopkeeper's Quiz</h1>
-                <div>
-                    <DifficultyButton onClick={this.setEasy} disabled={this.props.easy}>Easy</DifficultyButton>
-                    <DifficultyButton onClick={this.setHard} disabled={!this.props.easy}>Hard</DifficultyButton>
-                </div>
+                    <DifficultyButton onClick={this.openSettings} disabled={this.state.options}>Options</DifficultyButton>
                 <GameMain>
                     <QuizItem>
                         <Item id={this.state.itemsToQuiz[this.state.current].id} locked={this.state.frozen} clickable={false} easy={this.state.easy}></Item>
@@ -613,7 +660,7 @@ class Game extends React.Component {
                         {this.createMysteryIcons()}
                     </Row>
                     <Row>
-                        {this.createQuizComponents()}
+                        {(this.state.currentQuiz) ? this.createQuizComponents() : ""}
                         <Item id="recipe" locked={this.state.frozen} index={8} clickable={true} easy={this.state.easy}></Item>
                     </Row>
                     <StatText>
@@ -627,8 +674,8 @@ class Game extends React.Component {
                     {this.getStreak()}
                 </PopUpText>
                 {gg}
+                {options}
             </Page>
-            
         );
     }
 }
@@ -636,7 +683,8 @@ class Game extends React.Component {
 function mapStateToProps(state) {
     return {
         selected : state.selected,
-        easy : state.easy
+        easy : state.easy,
+        classic : state.classic
     };
 }
 
