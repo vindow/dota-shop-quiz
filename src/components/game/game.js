@@ -4,6 +4,7 @@ import { reset } from '../../actions.js';
 import Item from '../item/item';
 import MysteryIcon from '../mysteryIcon/mysteryIcon';
 import Settings from '../settings/settings.js';
+import ProgressBar from '../progressBar/progressBar.js';
 import items from '../../data/items.json';
 import styled, { keyframes } from 'styled-components';
 
@@ -20,7 +21,7 @@ const GameMain = styled.div`
     display: flex;
     flex-direction: column;
     border: 2px rgb(49, 49, 49) solid;
-    padding: 1em;
+    padding: 0em 0em 1em 0em;
 `;
 
 const QuizItem = styled.div`
@@ -442,15 +443,15 @@ class Game extends React.Component {
 
                 if (correct) {
                     //TODO: Clear interval if in time attack mode
-                    if (!this.props.classic) {
-                        clearInterval(this.state.timer);
-                    }
                     let currentStreak = this.state.streak;
                     let currentScore = this.state.score;
-
-                    currentScore += currentStreak * 30 + 200;
-                    currentStreak += 1;
-
+                    if (!this.props.classic) {
+                        clearInterval(this.state.timer);
+                        currentScore += Math.max(this.state.timeLeft / 20);
+                    } else {
+                        currentScore += currentStreak * 30 + 200;
+                        currentStreak += 1;
+                    }
                     this.setState({
                         frozen : true, 
                         streak : currentStreak,
@@ -466,7 +467,7 @@ class Game extends React.Component {
                         });
                         this.nextQuiz();
                         
-                    }, 1000)
+                    }, 1000);
                 } else {
                     let currentTries = this.state.tries;
                     currentTries -= 1;
@@ -507,25 +508,45 @@ class Game extends React.Component {
     }
 
     // Gets the current streak text
-    getStreak = () => {
+    getScorePopup = () => {
         let text;
-        let amount = (this.state.streak > 0) ? this.state.streak * 30 + 170 : 0;
-        // Just play the very last streak name for any streaks higher than it
-        if (this.state.streak < streakNames.length) {
-            text = streakNames[this.state.streak];
+        let amount;
+        if (this.props.classic) {
+            amount = (this.state.streak > 0) ? this.state.streak * 30 + 170 : 0;
+            // Just play the very last streak name for any streaks higher than it
+            if (this.state.streak < streakNames.length) {
+                text = streakNames[this.state.streak];
+            } else {
+                text = streakNames[streakNames.length - 1];
+            }
+            return (
+                <div>
+                    <div>
+                        {text}
+                    </div>
+                    <div>
+                        {this.state.streak > 0 ? "+" + amount : " "}
+                    </div>
+                </div>
+            );
         } else {
-            text = streakNames[streakNames.length - 1];
+            amount = Math.max(this.state.timeLeft / 20);
+            if (this.state.streak === 0) {
+                text = streakNames[this.state.streak];
+            }
+            // TODO: add flavor text for fast/slow answers
+            return (
+                <div>
+                    <div>
+                        {text}
+                    </div>
+                    <div>
+                        {this.state.streak !== 0 ? "+" + amount : " "}
+                    </div>
+                </div>
+            );
         }
-        return (
-            <div>
-                <div>
-                    {text}
-                </div>
-                <div>
-                    {this.state.streak > 0 ? "+" + amount : " "}
-                </div>
-            </div>
-        );
+        
     }
 
     // Resets the game stat back to the start and also reshuffles the item quiz order
@@ -569,7 +590,7 @@ class Game extends React.Component {
         this.setState({settings : true});
     }
 
-    //TODO: can probably remove apply since settings will apply or not based on button clicked not game
+    //TODO: freeze progress bar if settings are opened
     handleSettings = (apply) => {
         this.setState({settings : false});
         if (apply) {
@@ -586,7 +607,6 @@ class Game extends React.Component {
         
         let time = setInterval(() => {
             let newTime = this.state.timeLeft - 100;
-            console.log(newTime)
             if (newTime <= 0) {
                 clearInterval(this.state.timer);
                 
@@ -631,6 +651,7 @@ class Game extends React.Component {
     render() {
         let gg = <div></div>
         let options = <div></div>
+        let footer = <div></div>
         if (this.state.tries <= 0) {
             gg = <Dialog>
                 <LargeText>Game Over</LargeText>
@@ -648,11 +669,29 @@ class Game extends React.Component {
         if (this.state.settings) {
             options = <Settings onClose={this.handleSettings}></Settings>
         }
+        if (this.props.classic) {
+            footer = <div>
+                <StatText>
+                    Guesses Left: {this.state.tries}
+                </StatText>
+                <StatText>
+                    Score: {this.state.score}
+                </StatText>
+            </div>
+            
+        } else {
+            footer = <div>
+                <StatText>
+                    Score: {this.state.score}
+                </StatText>
+            </div>
+        }
         return(
             <Page>
                 <h1>Shopkeeper's Quiz</h1>
                     <DifficultyButton onClick={this.openSettings} disabled={this.state.options}>Options</DifficultyButton>
                 <GameMain>
+                    <ProgressBar percentage={100 * this.state.timeLeft / initialTime}></ProgressBar>
                     <QuizItem>
                         <Item id={this.state.itemsToQuiz[this.state.current].id} locked={this.state.frozen} clickable={false} easy={this.state.easy}></Item>
                     </QuizItem>
@@ -663,15 +702,10 @@ class Game extends React.Component {
                         {(this.state.currentQuiz) ? this.createQuizComponents() : ""}
                         <Item id="recipe" locked={this.state.frozen} index={8} clickable={true} easy={this.state.easy}></Item>
                     </Row>
-                    <StatText>
-                        Guesses Left: {this.state.tries}
-                    </StatText>
-                    <StatText>
-                        Score: {this.state.score}
-                    </StatText>
+                    {footer}
                 </GameMain>
                 <PopUpText ref={this.popupRef}>
-                    {this.getStreak()}
+                    {this.getScorePopup()}
                 </PopUpText>
                 {gg}
                 {options}
