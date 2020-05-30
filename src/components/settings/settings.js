@@ -6,27 +6,16 @@ import styled, { keyframes } from 'styled-components';
 const dialogKeyFrame = keyframes`
     0% {
         opacity: 0;
-        top: 0%;
     }
     100% {
         opacity: 1;
-        top: 20%;
     }
 `;
-
-const Dialog = styled.div`
-    width: 30%;
-    position: fixed;
-    display: block;
-    text-align: center;
-    margin: auto;
-    top: 20%;
-    left: 0;
-    right: 0;
-    padding: 0.25em 0em 1em 0em;
-    background-color: #222222;
-    border: 2px rgb(49, 49, 49) groove;
-    animation: ${dialogKeyFrame} 0.5s ease-in-out 0s 1;
+const Dialog = styled.div`s
+    width: 100%;
+    text-algin: center;
+    margin-top: -0.5em;
+    animation: ${dialogKeyFrame} 0.25s ease-in-out 0s 1;
 `;
 
 const OptionText = styled.div`
@@ -38,6 +27,7 @@ const WarningText = styled.div`
     font-size: 1em;
     margin: 0.5em;
     color: red;
+    min-height: 21px;
 `;
 
 const ConfirmButton = styled.button`
@@ -86,22 +76,18 @@ class Settings extends React.Component {
     }
     
     setEasy = () => {
-        console.log("set to easy");
         this.setState({isEasy : true});
     }
 
     setHard = () => {
-        console.log("set to hard");
         this.setState({isEasy : false});
     }
 
     setClassic = () => {
-        console.log("set to classic");
         this.setState({isClassic : true});
     }
 
     setTimed = () => {
-        console.log("Set to timed");
         this.setState({isClassic : false});
     }
 
@@ -119,6 +105,10 @@ class Settings extends React.Component {
     }
 
     render() {
+        let warning = "Changing options will reset game progress!";
+        if (this.state.isEasy === this.props.easy && this.state.isClassic === this.props.classic) {
+            warning = " ";
+        }
         return (
             <Dialog>
                 <OptionText>Difficulty</OptionText>
@@ -131,7 +121,7 @@ class Settings extends React.Component {
                     <DifficultyButton onClick={this.setClassic} disabled={this.state.isClassic}>Classic</DifficultyButton>
                     <DifficultyButton onClick={this.setTimed} disabled={!this.state.isClassic}>Time Attack</DifficultyButton>
                 </div>
-                <WarningText>Changing options will reset game progress!</WarningText>
+                <WarningText>{warning}</WarningText>
                 <div>
                     <ConfirmButton onClick={this.apply}>Apply</ConfirmButton>
                     <CancelButton onClick={this.close}>Cancel</CancelButton>
