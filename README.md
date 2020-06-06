@@ -6,6 +6,7 @@ New features include:
 * Optional full item descriptions
 * Fixing the bug that allows you to "skip" over items in the old quiz
 * Much better item selection for the ingredients; items are closer in price and all items are ingredients for something
+* A time attack mode
 
 ## Demo
 
