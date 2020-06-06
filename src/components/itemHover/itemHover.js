@@ -13,9 +13,18 @@ const MainBody = styled.div`
     text-align: left;
 `;
 
+const ItemImage = styled.div.attrs(props => ({
+    url: props.url,
+}))`
+    background-size: cover;
+    width: 63.75px;
+    height 48px;
+    background-image: url(${props => props.url});
+`;
+
 const Header = styled.div`
     display: flex;
-    padding: 5px 5px 0px 5px;
+    padding: 5px;
 `;
 
 const HeaderText = styled.div`
@@ -239,9 +248,7 @@ class ItemHover extends React.Component {
             return (
                 <MainBody>
                     <Header>
-                        <div>
-                            <img alt="" src={imgPath + 'recipe_lg.png'}/>
-                        </div>
+                        <ItemImage url={imgPath + 'recipe_lg.png'} />
                         <HeaderText>
                             <Name>Recipe</Name>
                         </HeaderText>
@@ -253,9 +260,7 @@ class ItemHover extends React.Component {
                 return (
                     <MainBody>
                         <Header>
-                            <div>
-                                <img alt="" src={imgPath + items[this.props.index].id + "_lg.png"} />
-                            </div>
+                            <ItemImage url={imgPath + items[this.props.index].id + "_lg.png"} />
                             <HeaderText>
                                 <Name>{items[this.props.index].dname}</Name>
                                 <Price>
@@ -281,9 +286,7 @@ class ItemHover extends React.Component {
                 return (
                     <MainBody>
                         <Header>
-                            <div>
-                                <img alt="" src={imgPath + items[this.props.index].id + "_lg.png"} />
-                            </div>
+                            <ItemImage url={imgPath + items[this.props.index].id + "_lg.png"} />
                             <HeaderText>
                                 <Name>{items[this.props.index].dname}</Name>
                             </HeaderText>

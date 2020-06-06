@@ -5,17 +5,24 @@ import Item from '../item/item';
 import MysteryIcon from '../mysteryIcon/mysteryIcon';
 import Settings from '../settings/settings.js';
 import ProgressBar from '../progressBar/progressBar.js';
+import Dialog from '../dialog/dialog.js';
 import items from '../../data/items.json';
 import styled, { keyframes } from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+
+//TODO: Responsive Design for hover/dialog/game in general
 
 const Page = styled.div`
     text-align: center;
 `;
 
 const GameMain = styled.div`
+    ${ breakpoint('xs') `width: 100%;`}
+    ${ breakpoint('md') `width: 90%;`}
+    ${ breakpoint('lg') `width: 85%;`}
+    ${ breakpoint('xl') `width: 70%;`}
     position: relative;
     margin: 0 auto;
-    width: 60%;
     display: flex;
     flex-direction: column;
     border: 2px rgb(49, 49, 49) solid;
@@ -60,9 +67,10 @@ const PopUpText = styled.div`
 `;
 
 const StatText = styled.div`
-    font-size: 1.5em;
+    ${ breakpoint('xs') `font-size: 1em;`}
+    ${ breakpoint('md') `font-size: 1.5em;`}
 `;
-
+/*
 const dialogKeyFrame = keyframes`
     0% {
         opacity: 0;
@@ -70,17 +78,18 @@ const dialogKeyFrame = keyframes`
     }
     100% {
         opacity: 1;
-        top: 20%;
+        top: 15%;
     }
 `;
 
 const Dialog = styled.div`
-    width: 30%;
+    ${ breakpoint('xs') `width: 70%;`}
+    ${ breakpoint('md') `width: 50%;`}
     position: fixed;
     display: block;
     text-align: center;
     margin: auto;
-    top: 20%;
+    top: 15%;
     left: 0;
     right: 0;
     padding: 0.25em 0em 1em 0em;
@@ -91,7 +100,19 @@ const Dialog = styled.div`
 
 const LargeText = styled.div`
     font-size: 2em;
-    margin-bottom: 0.75em;
+    margin: 0.25em;
+`;
+
+const MediumText = styled.div`
+    font-size: 1.25em;
+    margin: 0.25em;
+`;
+
+const LargeSymbolText = styled.div`
+    ${ breakpoint('xs') `font-size: 1em;`}
+    ${ breakpoint('sm') `font-size: 1.5em;`}
+    ${ breakpoint('md') `font-size: 2em;`}
+    margin: auto 0;
 `;
 
 const RestartButton = styled.button`
@@ -102,7 +123,8 @@ const RestartButton = styled.button`
     color: #dddddd;
     font-size: 1.5em;
     margin-bottom: 0.25em;
-`;
+    margin-top: 0.5em;
+`;*/
 
 const OptionButton = styled.button.attrs(props => ({
     url : props.url
@@ -593,27 +615,26 @@ class Game extends React.Component {
         return quizItems;
     }
 
+    getAnswer = () => {
+        let components = [];
+        let recipe = this.state.itemsToQuiz[this.state.current].components;
+        console.log(recipe);
+        for (let i = 0; i < recipe.length; i++) {
+            if (recipe[i] !== "recipe"){
+                components.push(<Item key={i} locked={true} clickable={false} id={recipe[i]}></Item>);
+            } else {
+                components.push(<Item id="recipe" locked={true} clickable={false}></Item>);
+            }
+        }
+        return components;
+    }
+
     render() {
-        let gg = <div></div>
         let game = <div></div>
         let footer = <div></div>
         let maxTime = initialTimeHard;
         if (this.props.easy) {
             maxTime = initialTimeEasy;
-        }
-        if ((this.state.tries <= 0 && this.props.classic) || (this.state.timeLeft <= 0 && !this.props.classic)) {
-            gg = <Dialog>
-                <LargeText>Game Over</LargeText>
-                <LargeText>Final Score: {this.state.score}</LargeText>
-                <RestartButton onClick={this.reset}>Restart</RestartButton>
-            </Dialog>
-        }
-        if (this.state.win) {
-            gg = <Dialog>
-                <LargeText>Game Complete!</LargeText>
-                <LargeText>Final Score: {this.state.score}</LargeText>
-                <RestartButton onClick={this.reset}>Replay?</RestartButton>
-            </Dialog>
         }
         
         if (this.props.classic) {
@@ -633,11 +654,26 @@ class Game extends React.Component {
                 </StatText>
             </div>
         }
-        //TODO: Settings should cover the entire game board to prevent cheating in time attack
         if (this.state.settings) {
             game = 
             <GameMain>
                 <Settings onClose={this.handleSettings}></Settings>
+            </GameMain>
+        } else if ((this.state.tries <= 0 && this.props.classic) || (this.state.timeLeft <= 0 && !this.props.classic)) {
+            game = 
+            <GameMain>
+                <Dialog 
+                    onClose={this.reset}
+                    item={this.state.itemsToQuiz[this.state.current]} 
+                    streak={this.state.current} 
+                    score={this.state.score}
+                    win={false}>
+                </Dialog>
+            </GameMain>
+        } else if (this.state.win) {
+            game = 
+            <GameMain>
+                <Dialog onClose={this.reset} score={this.state.score} win={true} />
             </GameMain>
         } else {
             game = 
@@ -664,7 +700,6 @@ class Game extends React.Component {
                 <PopUpText ref={this.popupRef}>
                     {this.getScorePopup()}
                 </PopUpText>
-                {gg}
             </Page>
         );
     }

@@ -4,6 +4,7 @@ import items from '../../data/items.json';
 import ItemHover from '../itemHover/itemHover.js';
 import { select, deselect} from '../../actions.js';
 import styled , { keyframes } from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
 const imgPath = process.env.PUBLIC_URL + '/images/';
 
@@ -29,17 +30,23 @@ const Icon = styled.div.attrs(props => ({
     url: props.url,
 }))`
     background-size: cover;
-    width: 4.4vw;
-    height: 3.21vw;
+    ${ breakpoint('xs') `width:21.25px; height 16px;`}
+    ${ breakpoint('sm') `width:42.5px; height 32px;`}
+    ${ breakpoint('md') `width: 63.75px; height 48px;`}
+    ${ breakpoint('lg') `width: 85px; height 64px;`}
+    ${ breakpoint('xl') `width: 85px; height 64px;`}
     background-image: url(${props => props.url});
 `;
 
 const FadedIcon = styled.div.attrs(props => ({
     url: props.url,
 }))`
+    ${ breakpoint('xs') `width:21.25px; height 16px;`}
+    ${ breakpoint('sm') `width:42.5px; height 32px;`}
+    ${ breakpoint('md') `width: 63.75px; height 48px;`}
+    ${ breakpoint('lg') `width: 85px; height 64px;`}
+    ${ breakpoint('xl') `width: 85px; height 64px;`}
     background-size: cover;
-    width: 4.4vw;
-    height: 3.21vw;
     filter: saturate(10%) opacity(50%);
     background-image: url(${props => props.url});
     z-index: 0;

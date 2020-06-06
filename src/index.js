@@ -5,7 +5,17 @@ import { Provider } from 'react-redux';
 import './index.css';
 import Game from './components/game/game.js';
 import produce from 'immer';
+import {ThemeProvider} from 'styled-components';
 
+const theme = {
+    breakpoints: {
+        xs: 0,
+        sm: 540,
+        md: 850,
+        lg: 1200,
+        xl: 1400
+    }
+}
 
 const initialState = {
     selected: [],
@@ -55,9 +65,11 @@ function reducer(state = initialState, action) {
 const store = createStore(reducer);
 
 const App = () => (
-    <Provider store={store}>
-        <Game></Game>
-    </Provider>
+    <ThemeProvider theme={theme}>
+        <Provider store={store}>
+            <Game></Game>
+        </Provider>
+    </ThemeProvider>
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));

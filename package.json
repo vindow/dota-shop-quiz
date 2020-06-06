@@ -14,7 +14,8 @@
     "react-scripts": "3.4.0",
     "react-transition-group": "^1.2.1",
     "redux": "^4.0.5",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "styled-components-breakpoint": "^3.0.0-preview.20"
   },
   "scripts": {
     "predeploy": "npm run build",
