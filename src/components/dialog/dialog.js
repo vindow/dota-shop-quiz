@@ -56,9 +56,6 @@ const RestartButton = styled.button`
 `;
 
 class Dialog extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     getAnswer = () => {
         let components = [];

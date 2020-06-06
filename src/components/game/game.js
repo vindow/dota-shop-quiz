@@ -10,8 +10,6 @@ import items from '../../data/items.json';
 import styled, { keyframes } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 
-//TODO: Responsive Design for hover/dialog/game in general
-
 const Page = styled.div`
     text-align: center;
 `;
@@ -52,10 +50,11 @@ const PopUpTextKeyFrames = keyframes`
     }
 `;
 const PopUpText = styled.div`
+    ${ breakpoint('xs') `font-size: 1.5em;`}
+    ${ breakpoint('md') `font-size: 3em;`}
     opacity: 0;
     position: relative;
     color : #CC1400;
-    font-size : 3em;
     font-weight: bold;
     margin : auto;
     top: -2.5em;
@@ -70,61 +69,6 @@ const StatText = styled.div`
     ${ breakpoint('xs') `font-size: 1em;`}
     ${ breakpoint('md') `font-size: 1.5em;`}
 `;
-/*
-const dialogKeyFrame = keyframes`
-    0% {
-        opacity: 0;
-        top: 0%;
-    }
-    100% {
-        opacity: 1;
-        top: 15%;
-    }
-`;
-
-const Dialog = styled.div`
-    ${ breakpoint('xs') `width: 70%;`}
-    ${ breakpoint('md') `width: 50%;`}
-    position: fixed;
-    display: block;
-    text-align: center;
-    margin: auto;
-    top: 15%;
-    left: 0;
-    right: 0;
-    padding: 0.25em 0em 1em 0em;
-    background-color: #222222;
-    border: 2px rgb(49, 49, 49) groove;
-    animation: ${dialogKeyFrame} 0.5s ease-in-out 0s 1;
-`;
-
-const LargeText = styled.div`
-    font-size: 2em;
-    margin: 0.25em;
-`;
-
-const MediumText = styled.div`
-    font-size: 1.25em;
-    margin: 0.25em;
-`;
-
-const LargeSymbolText = styled.div`
-    ${ breakpoint('xs') `font-size: 1em;`}
-    ${ breakpoint('sm') `font-size: 1.5em;`}
-    ${ breakpoint('md') `font-size: 2em;`}
-    margin: auto 0;
-`;
-
-const RestartButton = styled.button`
-    background-color: #333333;
-    border: 1px solid #444444;
-    text-align: center;
-    padding: 6px 22px;
-    color: #dddddd;
-    font-size: 1.5em;
-    margin-bottom: 0.25em;
-    margin-top: 0.5em;
-`;*/
 
 const OptionButton = styled.button.attrs(props => ({
     url : props.url
@@ -173,7 +117,6 @@ class Game extends React.Component {
             itemsWithRecipe[i] = itemsWithRecipe[j];
             itemsWithRecipe[j] = tmp;
         }
-
         // Initialize list of items that are components
         let materialIDs = [];
         for (let i = 0; i < itemsWithRecipe.length; i++) {
@@ -191,8 +134,6 @@ class Game extends React.Component {
         this.state = {
             itemsToQuiz: itemsWithRecipe,
             current: 0,
-            //currentRecipe : recipe,
-            //currentQuiz : components,
             materials: materialIDs,
             frozen: false,
             streak : 0,
@@ -246,11 +187,21 @@ class Game extends React.Component {
             }
         }
 
+        // Add a special clause for broadswords and claymores (because everyone gets them confused!)
+        let isBroadsword;
+        let isClaymore;
         // Get the costs of all items in the current recipe (including recipe cost)
         let componentCosts = [];
         for (let i = 0; i < recipe.length; i++) {
             if (recipe[i] !== "recipe") {
-                componentCosts.push(this.getItemData(recipe[i]).cost);
+                let itemdata = this.getItemData(recipe[i])
+                componentCosts.push(itemdata.cost);
+                if (itemdata.id === "broadsword") {
+                    isBroadsword = true;
+                }
+                if (itemdata.id === "claymore") {
+                    isClaymore = true;
+                }
             }
         }
         let recipeCost = this.state.itemsToQuiz[curr].RecipeCost;
@@ -276,16 +227,25 @@ class Game extends React.Component {
         } else {
             numRand -= recipe.length;
         }
+        if (isBroadsword) {
+            numRand -= 1;
+            randItems.push(this.getItemData("claymore"));
+        }
+        if (isClaymore) {
+            numRand -= 1;
+            randItems.push(this.getItemData("broadsword"));
+        }
+        
         if (costFiltered.length <= numRand) {
             // Okay to add repeats if not enough valid items
-            randItems = costFiltered;
+            randItems = randItems.concat(costFiltered);
             for (let i = 0; i < numRand - randItems.length; i++) {
                 let rand = Math.floor(Math.random() * costFiltered.length);
                 randItems.push(costFiltered[rand]);
             }
         } else {
             // Try not to add repeats if enough valid items
-            let alreadyPicked = []
+            let alreadyPicked = [];
             for (let i = 0; i < numRand; i++) {
                 let rand;
                 do {
@@ -391,12 +351,18 @@ class Game extends React.Component {
                     setTimeout(() => {
                         popup.classList.remove('play-animation');
                         this.props.dispatch(reset());
-                        this.setState({
-                            frozen : false,
-                            current : this.state.current + 1
-                        });
-                        this.nextQuiz();
-                        
+                        if (this.state.current + 1 < this.state.itemsToQuiz.length) {
+                            this.setState({
+                                frozen : false,
+                                current : this.state.current + 1
+                            });
+                            this.nextQuiz();
+                        } else {
+                            this.setState({
+                                frozen: false,
+                                win: true
+                            });
+                        }
                     }, 1000);
                 } else {
                     let currentTries = this.state.tries;
