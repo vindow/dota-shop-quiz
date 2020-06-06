@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e3681b1e440b03f4e82f1f173552d39c",
+    "revision": "69f0eb35733ec7fa8e213ffb838bc649",
     "url": "/dota-shop-quiz/index.html"
   },
   {
-    "revision": "ed01da5d80ccbe8225aa",
+    "revision": "a9804fd1dfdbccccc7af",
     "url": "/dota-shop-quiz/static/css/main.edc23d94.chunk.css"
   },
   {
-    "revision": "37b52e03d53e22400951",
-    "url": "/dota-shop-quiz/static/js/2.d0f82197.chunk.js"
+    "revision": "0e865efae986ff9f942c",
+    "url": "/dota-shop-quiz/static/js/2.bb0b543d.chunk.js"
   },
   {
     "revision": "f231859d6585c4cd5f80c344783ed269",
-    "url": "/dota-shop-quiz/static/js/2.d0f82197.chunk.js.LICENSE.txt"
+    "url": "/dota-shop-quiz/static/js/2.bb0b543d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ed01da5d80ccbe8225aa",
-    "url": "/dota-shop-quiz/static/js/main.526f3b77.chunk.js"
+    "revision": "a9804fd1dfdbccccc7af",
+    "url": "/dota-shop-quiz/static/js/main.5127fd7f.chunk.js"
   },
   {
     "revision": "af38154a6836701cb60f",
