@@ -227,11 +227,12 @@ class Game extends React.Component {
         } else {
             numRand -= recipe.length;
         }
-        if (isBroadsword) {
+        //Add exception to battlefury because it contains broadsword and claymore
+        if (isBroadsword && this.state.itemsToQuiz[curr].id != "bfury") {
             numRand -= 1;
             randItems.push(this.getItemData("claymore"));
         }
-        if (isClaymore) {
+        if (isClaymore && this.state.itemsToQuiz[curr].id != "bfury") {
             numRand -= 1;
             randItems.push(this.getItemData("broadsword"));
         }

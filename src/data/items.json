@@ -2715,8 +2715,9 @@
          },
          {
             "key": "health_regen_pct",
-            "header": "+Max Health Regen",
-            "value": "1%"
+            "header": "+",
+            "value": "1%",
+            "footer": "Max Health Regen"
          }
       ],
       "mc":false,
@@ -4698,7 +4699,8 @@
       "components":[
          "crown",
          "sobi_mask",
-         "wind_lace"
+         "wind_lace",
+         "recipe"
       ],
       "charges":6,
       "RecipeCost":600
