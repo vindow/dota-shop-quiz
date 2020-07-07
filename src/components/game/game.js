@@ -40,12 +40,12 @@ const Row = styled.div`
 const PopUpTextKeyFrames = keyframes`
     0% {
         opacity: 1;
-        top: -2.5em;
+        top: -5em;
         z-index: 1;
     }
     100% {
         opacity 0;
-        top: -4.5em;
+        top: -7em;
         z-index: 1;
     }
 `;
@@ -228,11 +228,11 @@ class Game extends React.Component {
             numRand -= recipe.length;
         }
         //Add exception to battlefury because it contains broadsword and claymore
-        if (isBroadsword && this.state.itemsToQuiz[curr].id != "bfury") {
+        if (isBroadsword && this.state.itemsToQuiz[curr].id !== "bfury") {
             numRand -= 1;
             randItems.push(this.getItemData("claymore"));
         }
-        if (isClaymore && this.state.itemsToQuiz[curr].id != "bfury") {
+        if (isClaymore && this.state.itemsToQuiz[curr].id !== "bfury") {
             numRand -= 1;
             randItems.push(this.getItemData("broadsword"));
         }
@@ -664,6 +664,7 @@ class Game extends React.Component {
             <Page>
                 <h1>Shopkeeper's Quiz</h1>
                 {game}
+                <h4>Current Dota 2 Version: 7.27a</h4>
                 <PopUpText ref={this.popupRef}>
                     {this.getScorePopup()}
                 </PopUpText>
