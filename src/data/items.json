@@ -1459,7 +1459,7 @@
    {
       "id":"hand_of_midas",
       "dname":"Hand of Midas",
-      "cost":2300,
+      "cost":2200,
       "attrib":[
          {
             "key":"bonus_attack_speed",
@@ -1475,7 +1475,7 @@
          "gloves",
          "recipe"
       ],
-      "RecipeCost":1850,
+      "RecipeCost":1750,
       "active":[
          {
             "name":"Transmute",
@@ -2000,7 +2000,7 @@
          {
             "key":"bonus_attack_speed",
             "header":"+",
-            "value":"30",
+            "value":"25",
             "footer":"Attack Speed"
          },
          {
@@ -3046,7 +3046,7 @@
          {
             "key":"bonus_armor",
             "header":"+",
-            "value":"7",
+            "value":"6",
             "footer":"Armor"
          }
       ],
@@ -3171,7 +3171,7 @@
    {
       "id":"monkey_king_bar",
       "dname":"Monkey King Bar",
-      "cost":4650,
+      "cost":4850,
       "attrib":[
          {
             "key":"bonus_damage",
@@ -3195,7 +3195,7 @@
          "blitz_knuckles",
          "recipe"
       ],
-      "RecipeCost":350,
+      "RecipeCost":550,
       "passive":[
          {
             "name":"Pierce",
