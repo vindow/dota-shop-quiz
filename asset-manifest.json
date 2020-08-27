@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/dota-shop-quiz/static/css/main.edc23d94.chunk.css",
-    "main.js": "/dota-shop-quiz/static/js/main.b57bb7c6.chunk.js",
-    "main.js.map": "/dota-shop-quiz/static/js/main.b57bb7c6.chunk.js.map",
-    "runtime-main.js": "/dota-shop-quiz/static/js/runtime-main.189064bc.js",
-    "runtime-main.js.map": "/dota-shop-quiz/static/js/runtime-main.189064bc.js.map",
-    "static/js/2.bb0b543d.chunk.js": "/dota-shop-quiz/static/js/2.bb0b543d.chunk.js",
-    "static/js/2.bb0b543d.chunk.js.map": "/dota-shop-quiz/static/js/2.bb0b543d.chunk.js.map",
+    "main.js": "/dota-shop-quiz/static/js/main.093a5386.chunk.js",
+    "main.js.map": "/dota-shop-quiz/static/js/main.093a5386.chunk.js.map",
+    "runtime-main.js": "/dota-shop-quiz/static/js/runtime-main.d94a7bae.js",
+    "runtime-main.js.map": "/dota-shop-quiz/static/js/runtime-main.d94a7bae.js.map",
+    "static/js/2.803e6584.chunk.js": "/dota-shop-quiz/static/js/2.803e6584.chunk.js",
+    "static/js/2.803e6584.chunk.js.map": "/dota-shop-quiz/static/js/2.803e6584.chunk.js.map",
     "index.html": "/dota-shop-quiz/index.html",
-    "precache-manifest.b3d069a0bf41144a9653ce4ca7356ea6.js": "/dota-shop-quiz/precache-manifest.b3d069a0bf41144a9653ce4ca7356ea6.js",
+    "precache-manifest.64a43fe11f9f6638e6a4a31eb49d9154.js": "/dota-shop-quiz/precache-manifest.64a43fe11f9f6638e6a4a31eb49d9154.js",
     "service-worker.js": "/dota-shop-quiz/service-worker.js",
     "static/css/main.edc23d94.chunk.css.map": "/dota-shop-quiz/static/css/main.edc23d94.chunk.css.map",
-    "static/js/2.bb0b543d.chunk.js.LICENSE.txt": "/dota-shop-quiz/static/js/2.bb0b543d.chunk.js.LICENSE.txt"
+    "static/js/2.803e6584.chunk.js.LICENSE.txt": "/dota-shop-quiz/static/js/2.803e6584.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.189064bc.js",
-    "static/js/2.bb0b543d.chunk.js",
+    "static/js/runtime-main.d94a7bae.js",
+    "static/js/2.803e6584.chunk.js",
     "static/css/main.edc23d94.chunk.css",
-    "static/js/main.b57bb7c6.chunk.js"
+    "static/js/main.093a5386.chunk.js"
   ]
 }
