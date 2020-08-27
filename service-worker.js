@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/dota-shop-quiz/precache-manifest.0128b7b371e880fc4774a40cfb15871b.js"
+  "/dota-shop-quiz/precache-manifest.b3d069a0bf41144a9653ce4ca7356ea6.js"
 );
 
 self.addEventListener('message', (event) => {

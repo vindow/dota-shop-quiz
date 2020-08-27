@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "39554a127fc6dfa3acd3f9cb5e48a38b",
+    "revision": "2d11f2e67440e334817e4ec3683f5fc7",
     "url": "/dota-shop-quiz/index.html"
   },
   {
-    "revision": "593a07546b86c37f473c",
+    "revision": "ded988babc17d12938c2",
     "url": "/dota-shop-quiz/static/css/main.edc23d94.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dota-shop-quiz/static/js/2.bb0b543d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "593a07546b86c37f473c",
-    "url": "/dota-shop-quiz/static/js/main.81b882f3.chunk.js"
+    "revision": "ded988babc17d12938c2",
+    "url": "/dota-shop-quiz/static/js/main.b57bb7c6.chunk.js"
   },
   {
     "revision": "af38154a6836701cb60f",
