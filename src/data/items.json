@@ -3998,7 +3998,7 @@
       "active":[
          {
             "name":"Dominate",
-            "desc":"Takes control of one neutral, non-ancient target unit and sets its movement speed to 425 and max health to a minimum of 1500. Also provides the unit with +425base attack damage, +12 health regen and +4 mana regenDominated units with a max health of greater than 1500 retain their original max health.\n\nDominated unit's bounty is set to 200 gold.\n\nRange: 700"
+            "desc":"Takes control of one neutral, non-ancient target unit and sets its movement speed to 425 and max health to a minimum of 1000. Also provides the unit with +425 base attack damage, +12 health regen, +4 armor, and +4 mana regen\nDominated units with a max health of greater than 1500 retain their original max health.\n\nDominated unit's bounty is set to 200 gold.\n\nRange: 700"
          }
       ]
    },
@@ -4213,7 +4213,7 @@
    {
       "id":"soul_ring",
       "dname":"Soul Ring",
-      "cost":815,
+      "cost":740,
       "attrib":[
          {
             "key":"bonus_strength",
@@ -4237,7 +4237,7 @@
          "gauntlets",
          "recipe"
       ],
-      "RecipeCost":350,
+      "RecipeCost":275,
       "active":[
          {
             "name":"Sacrifice",
@@ -4374,7 +4374,7 @@
          {
             "key":"bonus_all_stats",
             "header":"+",
-            "value":"6",
+            "value":"4",
             "footer":"All Attributes"
          },
          {
@@ -4694,7 +4694,7 @@
    {
       "id":"heavens_halberd",
       "dname":"Heaven's Halberd",
-      "cost":3450,
+      "cost":3850,
       "attrib":[
          {
             "key":"bonus_evasion",
@@ -4726,9 +4726,10 @@
       "lore":"This halberd moves with the speed of a smaller weapon, allowing the bearer to win duels that a heavy edge would not.",
       "components":[
          "sange",
-         "talisman_of_evasion"
+         "talisman_of_evasion",
+         "recipe"
       ],
-      "RecipeCost":0,
+      "RecipeCost":400,
       "active":[
          {
             "name":"Disarm",
