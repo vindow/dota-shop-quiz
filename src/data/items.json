@@ -4,7 +4,7 @@
       "dname":"Blink Dagger",
       "cost":2250,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":15,
@@ -15,6 +15,90 @@
          {
             "name":"Blink",
             "desc":"Teleport to a target point up to 1200 units away. Blink Dagger cannot be used for 3 seconds after taking damage from an enemy hero or Roshan."
+         }
+      ]
+   },
+   {
+      "id":"overwhelming_blink",
+      "dname":"Overwhelming Blink",
+      "cost":6800,
+      "attrib":[
+         {
+            "key":"bonus_strength",
+            "header":"+",
+            "value":"25",
+            "footer":"Strength"
+         }
+      ],
+      "mc":false,
+      "cd":15,
+      "lore":"A horrifying dagger forged in the chaos maw and nigh untouchable by mortal hands.",
+      "components":[
+         "blink",
+         "reaver",
+         "recipe"
+      ],
+      "RecipeCost":1750,
+      "active":[
+         {
+            "name":"Overwhelming Blink",
+            "desc":"Teleport to a target point up to 1200 units away.\n\nAfter teleportation, all enemies in a 800 AoE have 50% movement speed slow and 50 attack speed slow for 6 seconds, and take damage equal to 200 + 100% of your strength. Overwhelming Blink cannot be used for 3 seconds after taking damage from an enemy hero or Roshan."
+         }
+      ]
+   },
+   {
+      "id":"swift_blink",
+      "dname":"Swift Blink",
+      "cost":6800,
+      "attrib":[
+         {
+            "key":"bonus_agility",
+            "header":"+",
+            "value":"25",
+            "footer":"Agility"
+         }
+      ],
+      "mc":false,
+      "cd":15,
+      "lore":"A cunning blade able to anticipate and enable its bearer's movements.",
+      "components":[
+         "blink",
+         "eagle",
+         "recipe"
+      ],
+      "RecipeCost":1750,
+      "active":[
+         {
+            "name":"Swift Blink",
+            "desc":"Teleport to a target point up to 1200 units away.\n\nAfter teleportation, you gain 40% phased movement speed, +50 Attack Speed, and +50 Attack Damage for 6 seconds. Swift Blink cannot be used for 3 seconds after taking damage from an enemy hero or Roshan."
+         }
+      ]
+   },
+   {
+      "id":"arcane_blink",
+      "dname":"Arcane Blink",
+      "cost":6800,
+      "attrib":[
+         {
+            "key":"bonus_intellect",
+            "header":"+",
+            "value":"25",
+            "footer":"Intelligence"
+         }
+      ],
+      "mc":false,
+      "cd":15,
+      "lore":"A revitalizing tool to help bear the weight of arcane expenditure.",
+      "components":[
+         "blink",
+         "mystic_staff",
+         "recipe"
+      ],
+      "RecipeCost":1750,
+      "active":[
+         {
+            "name":"Arcane Blink",
+            "desc":"Teleport to a target point up to 1200 units away.\n\nAfter teleportation, you gain 25% Ability Cooldown Reduction and 50% Cast Point reduction for 6 seconds. Arcane Blink cannot be used for 3 seconds after taking damage from an enemy hero or Roshan."
          }
       ]
    },
@@ -75,12 +159,12 @@
    {
       "id":"claymore",
       "dname":"Claymore",
-      "cost":1400,
+      "cost":1350,
       "attrib":[
          {
             "key":"bonus_damage",
             "header":"+",
-            "value":"21",
+            "value":"20",
             "footer":"Damage"
          }
       ],
@@ -119,7 +203,7 @@
       "dname":"Javelin",
       "cost":1100,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -129,7 +213,7 @@
       "passive":[
          {
             "name":"Pierce",
-            "desc":"Grants each attack a 25% chance to pierce through evasion and deal 80 bonus magical damage."
+            "desc":"Grants each attack a 30% chance to pierce through evasion and deal 70 bonus magical damage."
          }
       ]
    },
@@ -198,7 +282,7 @@
       "dname":"Quelling Blade",
       "cost":130,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":4,
@@ -214,7 +298,7 @@
       "passive":[
          {
             "name":"Quell",
-            "desc":"Increases attack damage against non-hero units by 15 for melee heroes, and 6 for ranged."
+            "desc":"Increases attack damage against non-hero units by 13 for melee heroes, and 6 for ranged."
          }
       ]
    },
@@ -307,7 +391,7 @@
       "dname":"Stout Shield",
       "cost":100,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -518,7 +602,7 @@
       ],
       "mc":false,
       "cd":false,
-      "lore":"",
+      "lore":"A stately crown created to ensure a well-meaning but ungifted heir could fend off usurpers and govern with a strong hand.",
       "components":null,
       "RecipeCost":0
    },
@@ -626,7 +710,7 @@
       ],
       "mc":false,
       "cd":false,
-      "lore":"",
+      "lore":"An underground arcanist's update of a back-alley classic.",
       "components":null,
       "RecipeCost":0
    },
@@ -635,7 +719,7 @@
       "dname":"Morbid Mask",
       "cost":900,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -652,19 +736,19 @@
    {
       "id":"voodoo_mask",
       "dname":"Voodoo Mask",
-      "cost":900,
+      "cost":700,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
-      "lore":"",
+      "lore":"A mask tuned to sip the arcane bindings that pass between caster and foe.",
       "components":null,
       "RecipeCost":0,
       "passive":[
          {
             "name":"Spell Lifesteal",
-            "desc":"12% of spell damage dealt to enemy heroes is returned to the caster as health, regardless of spell damage type.\n\nLifesteal reduced to 2.5% against creeps."
+            "desc":"10% of spell damage dealt to enemy heroes is returned to the caster as health, regardless of spell damage type.\n\nLifesteal reduced to 2% against creeps."
          }
       ]
    },
@@ -676,7 +760,7 @@
          {
             "key":"bonus_health_regen",
             "header":"+",
-            "value":"1.5",
+            "value":"1.25",
             "footer":"HP Regeneration"
          }
       ],
@@ -706,7 +790,7 @@
       ],
       "mc":false,
       "cd":false,
-      "lore":"",
+      "lore":"An ageless ring forged with an otherwise simple blood magic amplified by the presumed source of its key component.",
       "components":null,
       "RecipeCost":0
    },
@@ -718,7 +802,7 @@
          {
             "key":"bonus_mana_regen",
             "header":"+",
-            "value":"0.6",
+            "value":"0.7",
             "footer":"Mana Regeneration"
          }
       ],
@@ -751,7 +835,7 @@
       "dname":"Gem of True Sight",
       "cost":900,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -772,7 +856,7 @@
    {
       "id":"cloak",
       "dname":"Cloak",
-      "cost":450,
+      "cost":500,
       "attrib":[
          {
             "key":"tooltip_resist",
@@ -810,7 +894,7 @@
       "dname":"Magic Stick",
       "cost":200,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":13,
@@ -882,7 +966,7 @@
       "dname":"Clarity",
       "cost":50,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -916,7 +1000,7 @@
       "use":[
          {
             "name":"Eat Mango",
-            "desc":"Instantly restores 110 mana.\n\nRange: 400"
+            "desc":"Instantly restores 100 mana.\n\nRange: 400"
          }
       ]
    },
@@ -925,7 +1009,7 @@
       "dname":"Healing Salve",
       "cost":110,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -944,7 +1028,7 @@
       "dname":"Dust of Appearance",
       "cost":80,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":30,
@@ -963,7 +1047,7 @@
       "dname":"Bottle",
       "cost":625,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -1012,7 +1096,7 @@
       "dname":"Tango",
       "cost":90,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -1031,7 +1115,7 @@
       "dname":"Tango (Shared)",
       "cost":30,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":60,
@@ -1050,7 +1134,7 @@
       "dname":"Animal Courier",
       "cost":50,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -1069,7 +1153,7 @@
       "dname":"Flying Courier",
       "cost":100,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -1088,7 +1172,7 @@
       "dname":"Town Portal Scroll",
       "cost":90,
       "attrib":[
-
+         
       ],
       "mc":75,
       "cd":80,
@@ -1220,7 +1304,7 @@
          {
             "key":"bonus_damage",
             "header":"+",
-            "value":"42",
+            "value":"40",
             "footer":"Damage"
          }
       ],
@@ -1233,7 +1317,7 @@
    {
       "id":"eagle",
       "dname":"Eaglesong",
-      "cost":3000,
+      "cost":2800,
       "attrib":[
          {
             "key":"bonus_agility",
@@ -1251,7 +1335,7 @@
    {
       "id":"reaver",
       "dname":"Reaver",
-      "cost":3000,
+      "cost":2800,
       "attrib":[
          {
             "key":"bonus_strength",
@@ -1341,7 +1425,7 @@
    {
       "id":"mystic_staff",
       "dname":"Mystic Staff",
-      "cost":2700,
+      "cost":2800,
       "attrib":[
          {
             "key":"bonus_intellect",
@@ -1417,6 +1501,24 @@
       "RecipeCost":0
    },
    {
+      "id":"fluffy_hat",
+      "dname":"Fluffy Hat",
+      "cost":250,
+      "attrib":[
+         {
+            "key":"bonus_health",
+            "header":"+",
+            "value":"125",
+            "footer":"Health"
+         }
+      ],
+      "mc":false,
+      "cd":false,
+      "lore":"Fine and functional foppery for the fashion-forward fighter.",
+      "components":null,
+      "RecipeCost":0
+   },
+   {
       "id":"power_treads",
       "dname":"Power Treads",
       "cost":1400,
@@ -1455,6 +1557,19 @@
             "desc":"Switches between +10 Strength, +10 Agility, or +10 Intelligence."
          }
       ]
+   },
+   {
+      "id":"grandmasters_glaive",
+      "dname":"Grandmaster's Glaive",
+      "cost":5000,
+      "attrib":[
+         
+      ],
+      "mc":false,
+      "cd":false,
+      "lore":"",
+      "components":null,
+      "RecipeCost":0
    },
    {
       "id":"hand_of_midas",
@@ -1522,6 +1637,53 @@
          "robe"
       ],
       "RecipeCost":0
+   },
+   {
+      "id":"witch_blade",
+      "dname":"Witch Blade",
+      "cost":2600,
+      "attrib":[
+         {
+            "key":"bonus_attack_speed",
+            "header":"+",
+            "value":"35",
+            "footer":"Attack Speed"
+         },
+         {
+            "key":"bonus_intellect",
+            "header":"+",
+            "value":"12",
+            "footer":"Intelligence"
+         },
+         {
+            "key":"bonus_armor",
+            "header":"+",
+            "value":"6",
+            "footer":"Armor"
+         },
+         {
+            "key":"projectile_speed",
+            "header":"+",
+            "value":"300",
+            "footer":"Projectile Speed"
+         }
+      ],
+      "mc":false,
+      "cd":9,
+      "lore":"A spiteful blade inadvertently possessed by the soul of its incautious creator.",
+      "components":[
+         "blitz_knuckles",
+         "robe",
+         "chainmail",
+         "recipe"
+      ],
+      "RecipeCost":600,
+      "passive":[
+         {
+            "name":"Witch Blade",
+            "desc":"Causes your next attack to apply a poison for 3 seconds, slowing by 25% and dealing 1x your intelligence as damage every second."
+         }
+      ]
    },
    {
       "id":"pers",
@@ -1691,7 +1853,7 @@
    {
       "id":"mekansm",
       "dname":"Mekansm",
-      "cost":1975,
+      "cost":1875,
       "attrib":[
          {
             "key":"bonus_armor",
@@ -1700,15 +1862,15 @@
             "footer":"Armor"
          }
       ],
-      "mc":225,
+      "mc":200,
       "cd":65,
       "lore":"A glowing jewel formed out of assorted parts that somehow fit together perfectly.",
       "components":[
          "headdress",
-         "buckler",
+         "chainmail",
          "recipe"
       ],
-      "RecipeCost":1175,
+      "RecipeCost":900,
       "active":[
          {
             "name":"Restore",
@@ -1718,21 +1880,22 @@
       "passive":[
          {
             "name":"Mekansm Aura",
-            "desc":"Grants 2 health regeneration and 3 armor to allied units in a 1200 radius."
+            "desc":"Grants 2 health regeneration to allied units in a 1200 radius."
          }
       ]
    },
    {
       "id":"vladmir",
       "dname":"Vladmir's Offering",
-      "cost":2375,
+      "cost":2750,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
       "lore":"An eerie mask that is haunted with the malice of a fallen vampire.",
       "components":[
+         "buckler",
          "ring_of_basilius",
          "lifesteal",
          "blades_of_attack",
@@ -1742,7 +1905,7 @@
       "passive":[
          {
             "name":"Vladmir's Aura",
-            "desc":"Grants 15% lifesteal, 18% bonus damage, and 2 mana regeneration to nearby allies. Radius: 1200"
+            "desc":"Grants 15% lifesteal, 18% bonus damage, 1.4 mana regeneration, and 3 armor to nearby allies. Radius: 1200"
          }
       ]
    },
@@ -1751,7 +1914,7 @@
       "dname":"Buckler",
       "cost":375,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -1773,7 +1936,7 @@
       "dname":"Ring of Basilius",
       "cost":425,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -1808,12 +1971,6 @@
             "footer":"Mana"
          },
          {
-            "key":"health_regen",
-            "header":"+",
-            "value":"4.5",
-            "footer":"HP Regeneration"
-         },
-         {
             "key":"bonus_all_stats",
             "header":"+",
             "value":"3",
@@ -1822,25 +1979,36 @@
       ],
       "mc":false,
       "cd":13,
-      "lore":"",
+      "lore":"A prized relic long thought lost forever in a failed crusade.",
       "components":[
-         "ring_of_tarrasque",
+         "headdress",
+         "fluffy_hat",
          "energy_booster",
          "magic_wand",
          "recipe"
       ],
-      "RecipeCost":500,
+      "RecipeCost":475,
       "active":[
          {
             "name":"Energy Charge",
-            "desc":"Target an allied unit to instantly restores 15 health and mana per charge stored. Max 20 charges. Gains a charge whenever a visible enemy within 1200 range uses an ability."
+            "desc":"Target an allied unit to instantly restore 15 health and mana per charge stored. Max 20 charges. Automatically gains a charge every 15 seconds and whenever a visible enemy within 1200 range uses an ability."
+         }
+      ],
+      "passive":[
+         {
+            "name":"Holy Blessing",
+            "desc":"Amplifies heals you provide by 35%."
+         },
+         {
+            "name":"Regeneration Aura",
+            "desc":"Grants 3 health regeneration to allies.\n\nRadius: 1200"
          }
       ]
    },
    {
       "id":"pipe",
       "dname":"Pipe of Insight",
-      "cost":3425,
+      "cost":3475,
       "attrib":[
          {
             "key":"health_regen",
@@ -1863,7 +2031,7 @@
          "headdress",
          "recipe"
       ],
-      "RecipeCost":1250,
+      "RecipeCost":1550,
       "active":[
          {
             "name":"Barrier",
@@ -1923,7 +2091,7 @@
       "dname":"Headdress",
       "cost":425,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -1943,7 +2111,7 @@
    {
       "id":"sheepstick",
       "dname":"Scythe of Vyse",
-      "cost":5575,
+      "cost":5675,
       "attrib":[
          {
             "key":"bonus_strength",
@@ -2046,7 +2214,7 @@
          {
             "key":"bonus_attack_speed",
             "header":"+",
-            "value":"85",
+            "value":"90",
             "footer":"Attack Speed"
          },
          {
@@ -2110,7 +2278,7 @@
          {
             "key":"bonus_mana_regen",
             "header":"+",
-            "value":"1.25",
+            "value":"2.25",
             "footer":"Mana Regeneration"
          }
       ],
@@ -2143,7 +2311,7 @@
          {
             "key":"bonus_mana_regen",
             "header":"+",
-            "value":"5",
+            "value":"3.5",
             "footer":"Mana Regeneration"
          },
          {
@@ -2171,6 +2339,46 @@
       ]
    },
    {
+      "id":"wind_waker",
+      "dname":"Wind Waker",
+      "cost":7125,
+      "attrib":[
+         {
+            "key":"bonus_movement_speed",
+            "header":"+",
+            "value":"50",
+            "footer":"Movement Speed"
+         },
+         {
+            "key":"bonus_mana_regen",
+            "header":"+",
+            "value":"6",
+            "footer":"Mana Regeneration"
+         },
+         {
+            "key":"bonus_intellect",
+            "header":"+",
+            "value":"35",
+            "footer":"Intelligence"
+         }
+      ],
+      "mc":175,
+      "cd":23,
+      "lore":"Proof enough to some that unseen forces manipulate the happenings of the material plane.",
+      "components":[
+         "cyclone",
+         "mystic_staff",
+         "recipe"
+      ],
+      "RecipeCost":1600,
+      "active":[
+         {
+            "name":"Cyclone",
+            "desc":"Sweeps a target unit up into a cyclone, making them invulnerable for 2.5 seconds. Cyclone can be cast on yourself, enemy units or allied units.\n\nEnemy units take 50 magical damage upon landing.\n\nRange: 575\nDispel Type: Basic Dispel"
+         }
+      ]
+   },
+   {
       "id":"aether_lens",
       "dname":"Aether Lens",
       "cost":2275,
@@ -2178,7 +2386,7 @@
          {
             "key":"bonus_mana",
             "header":"+",
-            "value":"450",
+            "value":"300",
             "footer":"Mana"
          },
          {
@@ -2293,10 +2501,22 @@
    {
       "id":"dagon",
       "dname":"Dagon",
-      "cost":2650,
+      "cost":2750,
       "attrib":[
          {
-            "key":"bonus_all_stats",
+            "key":"bonus_int",
+            "header":"+",
+            "value":[
+               "14",
+               "16",
+               "18",
+               "20",
+               "22"
+            ],
+            "footer":"Intelligence"
+         },
+         {
+            "key":"bonus_str",
             "header":"+",
             "value":[
                "6",
@@ -2305,16 +2525,27 @@
                "12",
                "14"
             ],
-            "footer":"All Attributes"
+            "footer":"Strength"
+         },
+         {
+            "key":"bonus_agi",
+            "header":"+",
+            "value":[
+               "6",
+               "8",
+               "10",
+               "12",
+               "14"
+            ],
+            "footer":"Agility"
          }
       ],
       "mc":120,
       "cd":35,
       "lore":"A lesser wand that grows in power the longer it is used, it brings magic to the fingertips of the user.",
       "components":[
-         "belt_of_strength",
-         "boots_of_elves",
-         "robe",
+         "staff_of_wizardry",
+         "crown",
          "recipe"
       ],
       "RecipeCost":1300,
@@ -2352,7 +2583,7 @@
          }
       ],
       "mc":150,
-      "cd":90,
+      "cd":80,
       "lore":"Considered the ultimate in necromancy and demonology, a powerful malefic force is locked within its pages.",
       "components":[
          "sobi_mask",
@@ -2364,7 +2595,7 @@
       "active":[
          {
             "name":"Demonic Summoning",
-            "desc":"Summons a Warrior and an Archer to fight for you for 60 seconds.\n\nWarrior:Burns mana every hit, and deals magical damage to whoever kills it.\nGains True Sight at level 3.\nHealth: 700,800,900\nDamage: 48,62,78\nMana Break Damage: 30,40,50\nLast Will Damage: 600,700,800\n\nArcher:Gains Purge at Level 3.\nHealth: 700,800,900\nDamage: 37,57,75"
+            "desc":"Summons a Warrior and an Archer to fight for you for 60 seconds.\n\nWarrior:Burns mana every hit, and deals magical damage to whoever kills it.\n\nGains True Sight at level 3.\n\nHealth: 700,800,900\nDamage: 48,62,78\nMana Break Damage: 30,40,50\nLast Will Damage: 600,700,800\nArcher:Has a passive movement and attack speed aura. Gains Purge at Level 3.\n\nHealth: 700,800,900\nDamage: 37,57,75\nAura Move Speed: 5,7,9\nAura Radius: 1200"
          }
       ]
    },
@@ -2410,6 +2641,25 @@
       ]
    },
    {
+      "id":"aghanims_shard",
+      "dname":"Aghanim's Shard",
+      "cost":1400,
+      "attrib":[
+         
+      ],
+      "mc":false,
+      "cd":false,
+      "lore":"With origins known only to a single wizard, fragments of this impossible crystal are nearly as coveted as the renowned scepter itself.",
+      "components":null,
+      "RecipeCost":0,
+      "passive":[
+         {
+            "name":"Ability Upgrade",
+            "desc":"Upgrades one of your abilities."
+         }
+      ]
+   },
+   {
       "id":"refresher",
       "dname":"Refresher Orb",
       "cost":5000,
@@ -2427,8 +2677,8 @@
             "footer":"Mana Regeneration"
          }
       ],
-      "mc":375,
-      "cd":180,
+      "mc":300,
+      "cd":160,
       "lore":"A powerful artifact created for wizards.",
       "components":[
          "pers",
@@ -2481,43 +2731,36 @@
    {
       "id":"heart",
       "dname":"Heart of Tarrasque",
-      "cost":5400,
+      "cost":4800,
       "attrib":[
          {
             "key":"bonus_strength",
             "header":"+",
-            "value":"40",
+            "value":"45",
             "footer":"Strength"
          },
          {
             "key":"bonus_health",
             "header":"+",
-            "value":"400",
+            "value":"250",
             "footer":"Health"
          },
          {
             "key":"health_regen_pct",
             "header":"+",
-            "value":"1%",
+            "value":"1.6%",
             "footer":"Max Health Regen"
          }
       ],
       "mc":false,
-      "cd":7,
+      "cd":false,
       "lore":"Preserved heart of an extinct monster, it bolsters the bearer's fortitude.",
       "components":[
-         "ring_of_tarrasque",
          "vitality_booster",
          "reaver",
          "recipe"
       ],
-      "RecipeCost":650,
-      "passive":[
-         {
-            "name":"Regeneration Amplification",
-            "desc":"Increases all passive health regeneration by 50%. If damage is taken from an enemy hero or Roshan, this amplification is disabled for 5 seconds for melee heroes, or 7 seconds for ranged heroes."
-         }
-      ]
+      "RecipeCost":900
    },
    {
       "id":"black_king_bar",
@@ -2549,7 +2792,7 @@
       "active":[
          {
             "name":"Avatar Grants Spell Immunity.",
-            "desc":"Duration decreases with each use.\nDuration: 10,9,8,7,6,5\nDispel Type: Basic Dispel"
+            "desc":"Duration decreases with each use.\n\nDuration: 10,9,8,7,6,5\nDispel Type: Basic Dispel"
          }
       ]
    },
@@ -2579,7 +2822,7 @@
          "mystic_staff",
          "recipe"
       ],
-      "RecipeCost":750,
+      "RecipeCost":650,
       "active":[
          {
             "name":"Arctic Blast",
@@ -2596,7 +2839,7 @@
    {
       "id":"bloodstone",
       "dname":"Bloodstone",
-      "cost":5250,
+      "cost":5950,
       "attrib":[
          {
             "key":"bonus_health",
@@ -2611,22 +2854,10 @@
             "footer":"Mana"
          },
          {
-            "key":"bonus_magical_armor",
-            "header":"+",
-            "value":"10%",
-            "footer":"Magic Resistance"
-         },
-         {
             "key":"bonus_intellect",
             "header":"+",
             "value":"16",
             "footer":"Intelligence"
-         },
-         {
-            "key":"spell_amp",
-            "header":"+",
-            "value":"8%",
-            "footer":"Spell Amplification"
          },
          {
             "key":"mana_regen_multiplier",
@@ -2635,16 +2866,35 @@
             "footer":"Mana Regen Amplification"
          },
          {
+            "key":"spell_amp",
+            "header":"+",
+            "value":"8%",
+            "footer":"Spell Amplification"
+         },
+         {
             "key":"spell_lifesteal_amp",
             "header":"+",
             "value":"30%",
             "footer":"Spell Lifesteal Amplification"
+         },
+         {
+            "key":"hero_lifesteal",
+            "header":"+",
+            "value":"15%",
+            "footer":"Spell Lifesteal (Hero)"
+         },
+         {
+            "key":"creep_lifesteal",
+            "header":"+",
+            "value":"3%",
+            "footer":"Spell Lifesteal (Creep)"
          }
       ],
       "mc":false,
       "cd":85,
       "lore":"The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit.",
       "components":[
+         "voodoo_mask",
          "kaya",
          "soul_booster"
       ],
@@ -2921,7 +3171,7 @@
          {
             "key":"bonus_mana_regen",
             "header":"+",
-            "value":"1.5",
+            "value":"1.75",
             "footer":"Mana Regeneration"
          },
          {
@@ -3022,7 +3272,7 @@
       "active":[
          {
             "name":"Guard",
-            "desc":"For 12 seconds, grant nearby allied heroes and buildings a 100% chance to block 60 damage from each incoming attack.\n\nUnits may only be affected by Guard once every 40 seconds.\n\nRadius: 1200"
+            "desc":"For 12 seconds, grant nearby allied heroes and buildings a 100% chance to block 70 damage from each incoming attack.\n\nUnits may only be affected by Guard once every 40 seconds.\n\nRadius: 1200"
          }
       ],
       "passive":[
@@ -3035,7 +3285,7 @@
    {
       "id":"blade_mail",
       "dname":"Blade Mail",
-      "cost":2050,
+      "cost":2225,
       "attrib":[
          {
             "key":"bonus_damage",
@@ -3058,7 +3308,7 @@
          "chainmail",
          "recipe"
       ],
-      "RecipeCost":500,
+      "RecipeCost":675,
       "active":[
          {
             "name":"Damage Return",
@@ -3088,12 +3338,6 @@
             "header":"+",
             "value":"425",
             "footer":"Mana"
-         },
-         {
-            "key":"bonus_magical_armor",
-            "header":"+",
-            "value":"10%",
-            "footer":"Magic Resistance"
          }
       ],
       "mc":false,
@@ -3109,7 +3353,7 @@
    {
       "id":"hood_of_defiance",
       "dname":"Hood of Defiance",
-      "cost":1750,
+      "cost":1500,
       "attrib":[
          {
             "key":"bonus_health_regen",
@@ -3120,7 +3364,7 @@
          {
             "key":"tooltip_resist",
             "header":"+",
-            "value":"25%",
+            "value":"20%",
             "footer":"Magic Resistance"
          }
       ],
@@ -3133,11 +3377,57 @@
          "ring_of_regen",
          "recipe"
       ],
-      "RecipeCost":300,
+      "RecipeCost":null,
       "active":[
          {
             "name":"Barrier",
             "desc":"Creates a spell shield that absorbs up to 325 magical damage.\n\nLasts 12 seconds."
+         }
+      ]
+   },
+   {
+      "id":"eternal_shroud",
+      "dname":"Eternal Shroud",
+      "cost":3300,
+      "attrib":[
+         {
+            "key":"bonus_spell_resist",
+            "header":"+",
+            "value":"20%",
+            "footer":"Magic Resistance"
+         },
+         {
+            "key":"bonus_health_regen",
+            "header":"+",
+            "value":"8.5",
+            "footer":"HP Regeneration"
+         },
+         {
+            "key":"hero_lifesteal",
+            "header":"+",
+            "value":"20%",
+            "footer":"Spell Lifesteal (Heroes)"
+         },
+         {
+            "key":"creep_lifesteal",
+            "header":"+",
+            "value":"4%",
+            "footer":"Spell Lifesteal (Creeps)"
+         }
+      ],
+      "mc":50,
+      "cd":60,
+      "lore":"A pristine hood that feeds upon strife to empower its owner.",
+      "components":[
+         "voodoo_mask",
+         "hood_of_defiance",
+         "recipe"
+      ],
+      "RecipeCost":1100,
+      "active":[
+         {
+            "name":"Shroud",
+            "desc":"Creates a spell shield that absorbs up to 400 magical damage, converting damage taken into mana.\n\nLasts 12 seconds."
          }
       ]
    },
@@ -3149,7 +3439,7 @@
          {
             "key":"bonus_damage",
             "header":"+",
-            "value":"330",
+            "value":"300",
             "footer":"Damage"
          }
       ],
@@ -3165,18 +3455,22 @@
          {
             "name":"Everlasting",
             "desc":"Dropped on death, and cannot be destroyed. Becomes unusable if picked up by an ally of its owner until it is returned to its owner. It is immediately usable by anybody if an enemy of the owner picks it up and is killed. A dropped Rapier cannot be picked up by a courier."
+         },
+         {
+            "name":"True Strike",
+            "desc":"Your attacks cannot miss."
          }
       ]
    },
    {
       "id":"monkey_king_bar",
       "dname":"Monkey King Bar",
-      "cost":4850,
+      "cost":4975,
       "attrib":[
          {
             "key":"bonus_damage",
             "header":"+",
-            "value":"42",
+            "value":"40",
             "footer":"Damage"
          },
          {
@@ -3195,11 +3489,11 @@
          "blitz_knuckles",
          "recipe"
       ],
-      "RecipeCost":550,
+      "RecipeCost":675,
       "passive":[
          {
             "name":"Pierce",
-            "desc":"Grants each attack a 75% chance to pierce through evasion and deal 100 bonus magical damage."
+            "desc":"Grants each attack a 75% chance to pierce through evasion and deal 70 bonus magical damage."
          }
       ]
    },
@@ -3233,7 +3527,7 @@
    {
       "id":"butterfly",
       "dname":"Butterfly",
-      "cost":5275,
+      "cost":5075,
       "attrib":[
          {
             "key":"bonus_agility",
@@ -3335,7 +3629,7 @@
    {
       "id":"bfury",
       "dname":"Battle Fury",
-      "cost":4180,
+      "cost":4130,
       "attrib":[
          {
             "key":"bonus_damage",
@@ -3375,7 +3669,7 @@
       "passive":[
          {
             "name":"Quell",
-            "desc":"Increases attack damage against non-hero units by 18 for melee heroes, and 5 for ranged."
+            "desc":"Increases attack damage against non-hero units by 18 for melee heroes, and 6 for ranged."
          },
          {
             "name":"Cleave",
@@ -3540,7 +3834,7 @@
       "toggle":[
          {
             "name":"Unholy Strength",
-            "desc":"When active, Unholy Strength grants +31 damage, +25 strength and +4 armor, but drains 54 health per second. You cannot die from the health drain when Unholy Strength is activated, nor from the strength loss when Unholy Strength is deactivated."
+            "desc":"When active, Unholy Strength grants +35 damage, +25 strength and +4 armor, but drains 50 health per second. You cannot die from the health drain when Unholy Strength is activated, nor from the strength loss when Unholy Strength is deactivated."
          }
       ]
    },
@@ -3581,7 +3875,7 @@
    {
       "id":"silver_edge",
       "dname":"Silver Edge",
-      "cost":6100,
+      "cost":5600,
       "attrib":[
          {
             "key":"bonus_damage",
@@ -3592,14 +3886,8 @@
          {
             "key":"bonus_attack_speed",
             "header":"+",
-            "value":"35",
+            "value":"45",
             "footer":"Attack Speed"
-         },
-         {
-            "key":"bonus_strength",
-            "header":"+",
-            "value":"12",
-            "footer":"Strength"
          },
          {
             "key":"bonus_intellect",
@@ -3610,29 +3898,23 @@
          {
             "key":"bonus_mana_regen",
             "header":"+",
-            "value":"1.5",
+            "value":"3",
             "footer":"Mana Regeneration"
          }
       ],
       "mc":75,
-      "cd":22,
+      "cd":18,
       "lore":"Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath.",
       "components":[
          "invis_sword",
-         "echo_sabre",
+         "oblivion_staff",
          "recipe"
       ],
-      "RecipeCost":600,
+      "RecipeCost":1100,
       "active":[
          {
             "name":"Shadow Walk",
             "desc":"Makes you invisible for 14 seconds, or until you attack or cast a spell.\n\nWhile invisible, you move 25% faster and can move through units.\n\nAttacking to end the invisibility will deal 175 bonus physical damage to the target, and disable their passive abilities for 4 seconds."
-         }
-      ],
-      "passive":[
-         {
-            "name":"Echo Strike",
-            "desc":"Causes melee attacks to attack twice in quick succession. The double attacks apply a 100% movement slow for 0.8 seconds on each strike."
          }
       ]
    },
@@ -3656,7 +3938,7 @@
          {
             "key":"status_resistance",
             "header":"+",
-            "value":"20%",
+            "value":"25%",
             "footer":"Status Resistance"
          },
          {
@@ -3707,7 +3989,7 @@
          {
             "key":"status_resistance",
             "header":"+",
-            "value":"20%",
+            "value":"25%",
             "footer":"Status Resistance"
          },
          {
@@ -3737,7 +4019,7 @@
       ],
       "mc":false,
       "cd":false,
-      "lore":"",
+      "lore":"Two of three known items of unimaginable power that many believe were crafted at the same enchanter's forge.",
       "components":[
          "sange",
          "kaya"
@@ -3794,7 +4076,7 @@
       ],
       "mc":false,
       "cd":false,
-      "lore":"",
+      "lore":"Yasha and Kaya when paired together share a natural resonance.",
       "components":[
          "kaya",
          "yasha"
@@ -3804,7 +4086,7 @@
    {
       "id":"satanic",
       "dname":"Satanic",
-      "cost":5800,
+      "cost":5050,
       "attrib":[
          {
             "key":"bonus_strength",
@@ -3815,14 +4097,8 @@
          {
             "key":"bonus_damage",
             "header":"+",
-            "value":"25",
+            "value":"55",
             "footer":"Damage"
-         },
-         {
-            "key":"status_resistance",
-            "header":"+",
-            "value":"30%",
-            "footer":"Status Resistance"
          }
       ],
       "mc":false,
@@ -3831,14 +4107,13 @@
       "components":[
          "lifesteal",
          "claymore",
-         "reaver",
-         "recipe"
+         "reaver"
       ],
-      "RecipeCost":500,
+      "RecipeCost":0,
       "active":[
          {
             "name":"Unholy RageIncreases",
-            "desc":"Lifesteal percentage to 200% for 5 seconds."
+            "desc":"Lifesteal percentage to 200% for 6 seconds."
          }
       ],
       "passive":[
@@ -3884,7 +4159,7 @@
       "passive":[
          {
             "name":"Chain Lightning",
-            "desc":"Grants a 25% chance on attack to release a bolt of electricity that leaps between 12 targets within a 650 radius, dealing 170 magical damage to each. Lightning proc pierces evasion."
+            "desc":"Grants a 30% chance on attack to release a bolt of electricity that leaps between 12 targets within a 650 radius, dealing 170 magical damage to each. Lightning proc pierces evasion."
          }
       ]
    },
@@ -3902,13 +4177,13 @@
          {
             "key":"bonus_health",
             "header":"+",
-            "value":"225",
+            "value":"200",
             "footer":"Health"
          },
          {
             "key":"bonus_mana",
             "header":"+",
-            "value":"250",
+            "value":"200",
             "footer":"Mana"
          }
       ],
@@ -3998,7 +4273,47 @@
       "active":[
          {
             "name":"Dominate",
-            "desc":"Takes control of one neutral, non-ancient target unit and sets its movement speed to 425 and max health to a minimum of 1000. Also provides the unit with +425 base attack damage, +12 health regen, +4 armor, and +4 mana regen\nDominated units with a max health of greater than 1500 retain their original max health.\n\nDominated unit's bounty is set to 200 gold.\n\nRange: 700"
+            "desc":"Takes control of one neutral, non-ancient target unit and sets its movement speed to 425 and max health to a minimum of 1000. Also provides the unit with +25 base attack damage, +12 health regen, +4 mana regen and +4 armor. Dominated units with a max health of greater than 1000 retain their original max health.\n\nDominated unit's bounty is set to 200 gold.\n\nRange: 700"
+         }
+      ]
+   },
+   {
+      "id":"helm_of_the_dominator_2",
+      "dname":"Helm of the Dominator",
+      "cost":6000,
+      "attrib":[
+         {
+            "key":"bonus_stats",
+            "header":"+",
+            "value":"20",
+            "footer":"All Attributes"
+         },
+         {
+            "key":"bonus_armor",
+            "header":"+",
+            "value":"8",
+            "footer":"Armor"
+         },
+         {
+            "key":"bonus_regen",
+            "header":"+",
+            "value":"8",
+            "footer":"HP Regeneration"
+         }
+      ],
+      "mc":false,
+      "cd":45,
+      "lore":"The powerful headpiece of a dead necromancer.",
+      "components":[
+         "helm_of_the_dominator",
+         "ultimate_orb",
+         "recipe"
+      ],
+      "RecipeCost":1600,
+      "active":[
+         {
+            "name":"Dominate",
+            "desc":"Takes control of one neutral target unit and sets its movement speed to 425 and max health to a minimum of 1800. Also provides the unit with +25 base attack damage, +12 health regen, +4 mana regen and +4 armor. Dominated units with a max health of greater than 1800 retain their original max health.\n\nDominated unit's bounty is set to 200 gold.\n\nRange: 700"
          }
       ]
    },
@@ -4025,7 +4340,59 @@
       "passive":[
          {
             "name":"Chain Lightning",
-            "desc":"Grants a 25% chance on attack to release a bolt of electricity that leaps between 4 targets within a 650 radius, dealing 140 magical damage to each. Lightning proc pierces evasion."
+            "desc":"Grants a 30% chance on attack to release a bolt of electricity that leaps between 4 targets within a 650 radius, dealing 140 magical damage to each. Lightning proc pierces evasion."
+         }
+      ]
+   },
+   {
+      "id":"gungir",
+      "dname":"Gleipnir",
+      "cost":6150,
+      "attrib":[
+         {
+            "key":"bonus_damage",
+            "header":"+",
+            "value":"30",
+            "footer":"Damage"
+         },
+         {
+            "key":"bonus_intellect",
+            "header":"+",
+            "value":"20",
+            "footer":"Intelligence"
+         },
+         {
+            "key":"bonus_strength",
+            "header":"+",
+            "value":"12",
+            "footer":"Strength"
+         },
+         {
+            "key":"bonus_agility",
+            "header":"+",
+            "value":"12",
+            "footer":"Agility"
+         }
+      ],
+      "mc":200,
+      "cd":18,
+      "lore":"Bindings forged by impossible means to leash an ancient evil.",
+      "components":[
+         "maelstrom",
+         "rod_of_atos",
+         "recipe"
+      ],
+      "RecipeCost":700,
+      "active":[
+         {
+            "name":"Eternal Chains",
+            "desc":"Roots all enemies in a target 450 radius for 2 seconds and deals 220 damage.\n\nRange: 1100"
+         }
+      ],
+      "passive":[
+         {
+            "name":"Chain Lightning",
+            "desc":"Grants a 30% chance on attack to release a bolt of electricity that leaps between 4 targets within a 650 radius, dealing 160 magical damage to each. Lightning proc pierces evasion."
          }
       ]
    },
@@ -4037,7 +4404,7 @@
          {
             "key":"bonus_damage",
             "header":"+",
-            "value":"60",
+            "value":"55",
             "footer":"Damage"
          }
       ],
@@ -4099,7 +4466,7 @@
          {
             "key":"bonus_damage",
             "header":"+",
-            "value":"15",
+            "value":"10",
             "footer":"Damage"
          },
          {
@@ -4174,7 +4541,7 @@
    {
       "id":"ethereal_blade",
       "dname":"Ethereal Blade",
-      "cost":4500,
+      "cost":4300,
       "attrib":[
          {
             "key":"bonus_agility",
@@ -4281,8 +4648,14 @@
    {
       "id":"octarine_core",
       "dname":"Octarine Core",
-      "cost":5000,
+      "cost":5475,
       "attrib":[
+         {
+            "key":"cast_range_bonus",
+            "header":"+",
+            "value":"250",
+            "footer":"Cast Range"
+         },
          {
             "key":"bonus_health",
             "header":"+",
@@ -4292,42 +4665,37 @@
          {
             "key":"bonus_mana",
             "header":"+",
-            "value":"425",
+            "value":"725",
             "footer":"Mana"
          },
          {
-            "key":"bonus_magical_armor",
+            "key":"bonus_mana_regen",
             "header":"+",
-            "value":"10%",
-            "footer":"Magic Resistance"
+            "value":"3",
+            "footer":"Mana Regeneration"
          }
       ],
       "mc":false,
       "cd":false,
       "lore":"At the core of spellcraft are spectrums only the very gifted can sense.",
       "components":[
-         "voodoo_mask",
-         "soul_booster",
-         "recipe"
+         "aether_lens",
+         "soul_booster"
       ],
-      "RecipeCost":900,
+      "RecipeCost":0,
       "passive":[
          {
             "name":"Cooldown Reduction",
             "desc":"Reduces the cooldown time of all spells and items by 25%."
-         },
-         {
-            "name":"Spell Lifesteal",
-            "desc":"25% of spell damage dealt to enemy heroes is returned to the caster as health, regardless of spell damage type.\n\nLifesteal reduced to 5% against creeps."
          }
       ]
    },
    {
       "id":"orb_of_venom",
       "dname":"Orb of Venom",
-      "cost":300,
+      "cost":275,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -4337,7 +4705,7 @@
       "passive":[
          {
             "name":"Poison Attack",
-            "desc":"Poisons the target, dealing 2 magical damage per second and slowing movement by -15% if the equipped hero is melee, or by -4% if they are ranged. Lasts for 2 seconds."
+            "desc":"Poisons the target, dealing 2 magical damage per second and slowing movement by -13% if the equipped hero is melee, or by -4% if they are ranged. Lasts for 2 seconds."
          }
       ]
    },
@@ -4346,7 +4714,7 @@
       "dname":"Blight Stone",
       "cost":300,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -4361,43 +4729,148 @@
       ]
    },
    {
-      "id":"ancient_janggo",
-      "dname":"Drum of Endurance",
-      "cost":1475,
+      "id":"orb_of_corrosion",
+      "dname":"Orb of Corrosion",
+      "cost":925,
       "attrib":[
          {
-            "key":"bonus_movement_speed",
+            "key":"health_bonus",
             "header":"+",
-            "value":"20",
-            "footer":"Movement Speed"
-         },
+            "value":"150",
+            "footer":"Health"
+         }
+      ],
+      "mc":false,
+      "cd":false,
+      "lore":"Seepage from the wounds of a warrior deity, sealed in an arcanist's orb following a campaign of vicious slaughter.",
+      "components":[
+         "orb_of_venom",
+         "blight_stone",
+         "fluffy_hat",
+         "recipe"
+      ],
+      "RecipeCost":100,
+      "passive":[
          {
-            "key":"bonus_all_stats",
+            "name":"Corrosion",
+            "desc":"Dealing 3 damage per second, reducing armor by 3, and slowing movement by 13% if the equipped hero is melee, or by 4% if they are ranged.\n\nLasts for 3 seconds."
+         }
+      ]
+   },
+   {
+      "id":"falcon_blade",
+      "dname":"Falcon Blade",
+      "cost":1100,
+      "attrib":[
+         {
+            "key":"bonus_health",
             "header":"+",
-            "value":"4",
-            "footer":"All Attributes"
+            "value":"175",
+            "footer":"Health"
          },
          {
             "key":"bonus_mana_regen",
             "header":"+",
-            "value":"1.5",
+            "value":"1.8",
             "footer":"Mana Regeneration"
+         },
+         {
+            "key":"bonus_damage",
+            "header":"+",
+            "value":"10",
+            "footer":"Damage"
+         }
+      ],
+      "mc":false,
+      "cd":false,
+      "lore":"An enchanted blade that long ago raised a hopeless urchin from pauper to king.",
+      "components":[
+         "fluffy_hat",
+         "sobi_mask",
+         "blades_of_attack",
+         "recipe"
+      ],
+      "RecipeCost":225
+   },
+   {
+      "id":"mage_slayer",
+      "dname":"Mage Slayer",
+      "cost":3450,
+      "attrib":[
+         {
+            "key":"bonus_magical_armor",
+            "header":"+",
+            "value":"20%",
+            "footer":"Magic Resistance"
+         },
+         {
+            "key":"bonus_agility",
+            "header":"+",
+            "value":"20",
+            "footer":"Agility"
+         },
+         {
+            "key":"bonus_damage",
+            "header":"+",
+            "value":"20",
+            "footer":"Damage"
+         }
+      ],
+      "mc":false,
+      "cd":false,
+      "lore":"Forged by a secret order in The Third Age of Praxa'cia to fell the False King.",
+      "components":[
+         "cloak",
+         "blade_of_alacrity",
+         "claymore",
+         "recipe"
+      ],
+      "RecipeCost":600,
+      "passive":[
+         {
+            "name":"Mage Slayer",
+            "desc":"Places a debuff when you attack enemies, causing them to do 35% less spell damage for 4 seconds."
+         }
+      ]
+   },
+   {
+      "id":"ancient_janggo",
+      "dname":"Drum of Endurance",
+      "cost":1700,
+      "attrib":[
+         {
+            "key":"bonus_str",
+            "header":"+",
+            "value":"6",
+            "footer":"Strength"
+         },
+         {
+            "key":"bonus_int",
+            "header":"+",
+            "value":"6",
+            "footer":"Intelligence"
          }
       ],
       "mc":false,
       "cd":30,
       "lore":"A relic that enchants the bodies of those around it for swifter movement in times of crisis.",
       "components":[
-         "crown",
-         "sobi_mask",
+         "belt_of_strength",
+         "robe",
          "wind_lace",
          "recipe"
       ],
-      "RecipeCost":600,
+      "RecipeCost":550,
       "active":[
          {
             "name":"Endurance",
-            "desc":"Gives +45 attack speed and +13% movement speed to nearby allies for 6 seconds. Radius: 1200"
+            "desc":"Consumes a charge and gives +45 attack speed and +13% movement speed to nearby allies for 6 seconds. Comes with 8 charges.\n\nRadius: 1200"
+         }
+      ],
+      "passive":[
+         {
+            "name":"Swiftness Aura",
+            "desc":"Grants 20 movement speed to allies.\n\nRadius: 1200"
          }
       ]
    },
@@ -4415,12 +4888,12 @@
          {
             "key":"bonus_mana_regen_pct",
             "header":"+",
-            "value":"1.25",
+            "value":"1.5",
             "footer":"Mana Regeneration"
          }
       ],
       "mc":false,
-      "cd":7,
+      "cd":12,
       "lore":"The bearer has no fear of combat.",
       "components":[
          "chainmail",
@@ -4466,7 +4939,7 @@
          }
       ],
       "mc":false,
-      "cd":7,
+      "cd":12,
       "lore":"A talisman forged to honor the daytime sky.",
       "components":[
          "medallion_of_courage",
@@ -4487,7 +4960,7 @@
       "dname":"Smoke of Deceit",
       "cost":50,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":1,
@@ -4506,7 +4979,7 @@
       "dname":"Tome of Knowledge",
       "cost":75,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":false,
@@ -4533,7 +5006,7 @@
          }
       ],
       "mc":50,
-      "cd":20,
+      "cd":25,
       "lore":"The headwear of corrupt magi.",
       "components":[
          "ring_of_basilius",
@@ -4544,14 +5017,20 @@
       "active":[
          {
             "name":"Magic Weakness",
-            "desc":"Cast a 600 radius blast that causes enemies to take 18% increased damage from spells.\n\nRange: 1000\nDuration: 16 seconds."
+            "desc":"Cast a 600 radius blast that causes enemy heroes to take 18% increased damage from spells.\n\nRange: 1000\nDuration: 16 seconds."
+         }
+      ],
+      "passive":[
+         {
+            "name":"Basilius Aura",
+            "desc":"Grants 1.5 mana regeneration to allies.\n\nRadius: 1200"
          }
       ]
    },
    {
       "id":"guardian_greaves",
       "dname":"Guardian Greaves",
-      "cost":4975,
+      "cost":5250,
       "attrib":[
          {
             "key":"bonus_movement",
@@ -4578,6 +5057,7 @@
       "components":[
          "mekansm",
          "arcane_boots",
+         "buckler",
          "recipe"
       ],
       "RecipeCost":1600,
@@ -4636,6 +5116,40 @@
       ]
    },
    {
+      "id":"iron_talon",
+      "dname":"Iron Talon",
+      "cost":301,
+      "attrib":[
+         {
+            "key":"bonus_attack_speed",
+            "header":"+",
+            "value":"15",
+            "footer":"Attack Speed"
+         },
+         {
+            "key":"bonus_armor",
+            "header":"+",
+            "value":"2",
+            "footer":"Armor"
+         }
+      ],
+      "mc":false,
+      "cd":25,
+      "lore":"A simple but effective weapon devised to quell a great Hellbear uprising.",
+      "components":[
+         "quelling_blade",
+         "ring_of_protection",
+         "recipe"
+      ],
+      "RecipeCost":125,
+      "active":[
+         {
+            "name":"Chop",
+            "desc":"Targets a non-player enemy unit to remove 40% of its current HP.\n\nIf cast on a tree, instantly destroys it.\n\nUnit Range: 350\nTree Range: 350"
+         }
+      ]
+   },
+   {
       "id":"abyssal_blade",
       "dname":"Abyssal Blade",
       "cost":6625,
@@ -4677,7 +5191,7 @@
       "active":[
          {
             "name":"Overwhelm",
-            "desc":"Blinks to and stuns a target enemy unit for 1.8 seconds. Pierces Spell Immunity.\n\nRange: 600"
+            "desc":"Blinks to and stuns a target enemy unit for 2 seconds. Pierces Spell Immunity.\n\nRange: 550"
          }
       ],
       "passive":[
@@ -4694,7 +5208,7 @@
    {
       "id":"heavens_halberd",
       "dname":"Heaven's Halberd",
-      "cost":3850,
+      "cost":3650,
       "attrib":[
          {
             "key":"bonus_evasion",
@@ -4711,13 +5225,13 @@
          {
             "key":"status_resistance",
             "header":"+",
-            "value":"20%",
+            "value":"16%",
             "footer":"Status Resistance"
          },
          {
             "key":"hp_regen_amp",
             "header":"+",
-            "value":"30%",
+            "value":"24%",
             "footer":"Self HP Regen and Lifesteal Amp"
          }
       ],
@@ -4729,7 +5243,7 @@
          "talisman_of_evasion",
          "recipe"
       ],
-      "RecipeCost":400,
+      "RecipeCost":200,
       "active":[
          {
             "name":"Disarm",
@@ -4776,7 +5290,7 @@
       "dname":"Shadow Amulet",
       "cost":1000,
       "attrib":[
-
+         
       ],
       "mc":false,
       "cd":7,
@@ -4793,14 +5307,8 @@
    {
       "id":"glimmer_cape",
       "dname":"Glimmer Cape",
-      "cost":1900,
+      "cost":1950,
       "attrib":[
-         {
-            "key":"bonus_attack_speed",
-            "header":"+",
-            "value":"20",
-            "footer":"Attack Speed"
-         },
          {
             "key":"bonus_magical_armor",
             "header":"+",
@@ -4814,13 +5322,32 @@
       "components":[
          "shadow_amulet",
          "cloak",
-         "gloves"
+         "recipe"
       ],
-      "RecipeCost":0,
+      "RecipeCost":450,
       "active":[
          {
             "name":"Glimmer",
             "desc":"After a 0.6 second delay, grants invisibility and 45% magic resistance to you or a target allied unit for 5 seconds.\n\nRange: 550\nCan be cast while channelling."
+         }
+      ]
+   },
+   {
+      "id":"mango_tree",
+      "dname":"Mango Tree",
+      "cost":null,
+      "attrib":[
+         
+      ],
+      "mc":false,
+      "cd":false,
+      "lore":"",
+      "components":null,
+      "RecipeCost":0,
+      "use":[
+         {
+            "name":"",
+            "desc":"Plant a Mango Tree Targets the ground to plant a mango tree that provides unlimited mango power. The tree generates Enchanted Mangoes every 60 seconds, and provides unobstructed vision in the area Range: 200"
          }
       ]
    }
