@@ -664,7 +664,7 @@ class Game extends React.Component {
             <Page>
                 <h1>Shopkeeper's Quiz</h1>
                 {game}
-                <h4>Current Dota 2 Version: 7.28b</h4>
+                <h4>Current Dota 2 Version: 7.29</h4>
                 <PopUpText ref={this.popupRef}>
                     {this.getScorePopup()}
                 </PopUpText>
