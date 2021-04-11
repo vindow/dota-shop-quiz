@@ -3387,7 +3387,7 @@
          "ring_of_regen",
          "recipe"
       ],
-      "RecipeCost":null,
+      "RecipeCost":0,
       "active":[
          {
             "name":"Barrier",
