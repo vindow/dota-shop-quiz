@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/dota-shop-quiz/static/css/main.edc23d94.chunk.css",
-    "main.js": "/dota-shop-quiz/static/js/main.84f545d0.chunk.js",
-    "main.js.map": "/dota-shop-quiz/static/js/main.84f545d0.chunk.js.map",
+    "main.js": "/dota-shop-quiz/static/js/main.0a7a4e62.chunk.js",
+    "main.js.map": "/dota-shop-quiz/static/js/main.0a7a4e62.chunk.js.map",
     "runtime-main.js": "/dota-shop-quiz/static/js/runtime-main.d94a7bae.js",
     "runtime-main.js.map": "/dota-shop-quiz/static/js/runtime-main.d94a7bae.js.map",
     "static/js/2.803e6584.chunk.js": "/dota-shop-quiz/static/js/2.803e6584.chunk.js",
     "static/js/2.803e6584.chunk.js.map": "/dota-shop-quiz/static/js/2.803e6584.chunk.js.map",
     "index.html": "/dota-shop-quiz/index.html",
-    "precache-manifest.fb4c3d6b00373023762decc8b5948653.js": "/dota-shop-quiz/precache-manifest.fb4c3d6b00373023762decc8b5948653.js",
+    "precache-manifest.2e15e5302d0972431ca6ceafd6c8b874.js": "/dota-shop-quiz/precache-manifest.2e15e5302d0972431ca6ceafd6c8b874.js",
     "service-worker.js": "/dota-shop-quiz/service-worker.js",
     "static/css/main.edc23d94.chunk.css.map": "/dota-shop-quiz/static/css/main.edc23d94.chunk.css.map",
     "static/js/2.803e6584.chunk.js.LICENSE.txt": "/dota-shop-quiz/static/js/2.803e6584.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.d94a7bae.js",
     "static/js/2.803e6584.chunk.js",
     "static/css/main.edc23d94.chunk.css",
-    "static/js/main.84f545d0.chunk.js"
+    "static/js/main.0a7a4e62.chunk.js"
   ]
 }
