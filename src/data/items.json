@@ -1944,7 +1944,7 @@
          {
             "key":"mana_regen",
             "header":"+",
-            "value":"0.6",
+            "value":"0.5",
             "footer":"Mana Regeneration"
          }
       ],
@@ -3962,7 +3962,7 @@
          {
             "key":"hp_regen_amp",
             "header":"+",
-            "value":"30%",
+            "value":"25%",
             "footer":"Self HP Regen and Lifesteal Amp"
          }
       ],
@@ -4013,7 +4013,7 @@
          {
             "key":"hp_regen_amp",
             "header":"+",
-            "value":"30%",
+            "value":"25%",
             "footer":"Self HP Regen and Lifesteal Amp"
          },
          {
@@ -4951,7 +4951,7 @@
       "active":[
          {
             "name":"Shine",
-            "desc":"When cast on an ally, grants them 6 armor, 65 attack speed, and 10% movement speed. When cast on an enemy, removes 6 armor, 65 attack speed, and 10% movement speed.\n\nRemoves the armor from the caster when used.\n\nCannot target spell immune enemies.\n\nRange: 1000"
+            "desc":"When cast on an ally, grants them 6 armor, 55 attack speed, and 10% movement speed. When cast on an enemy, removes 6 armor, 55 attack speed, and 10% movement speed.\n\nRemoves the armor from the caster when used.\n\nCannot target spell immune enemies.\n\nRange: 1000"
          }
       ]
    },
